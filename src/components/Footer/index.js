@@ -1,3 +1,4 @@
+import React from "react";
 import './style.scss';
 import logo from './logo.png';
 function Footer(){
@@ -14,12 +15,12 @@ function Footer(){
         </ul>
         <ul className="footer-navigation">
           <li className="footer-navigation--item">Навігація</li>
-          <li className="footer-navigation--item"><a href="/#Header">Головна</a></li>
-          <li className="footer-navigation--item"><a href="/#AboutUs">Про нас</a></li>
-          <li className="footer-navigation--item"><a href="/#Services">Послуги</a></li>
-          <li className="footer-navigation--item"><a href="/#Projects">Проєкти</a></li>
-          <li className="footer-navigation--item"><a href="/#Reviews">Відгуки</a></li>
-          <li className="footer-navigation--item"><a href="/#FAQs">Запитання</a></li>
+          <li className="footer-navigation--item"><a href="/bureaux/#Header">Головна</a></li>
+          <li className="footer-navigation--item"><a href="/bureaux/#AboutUs">Про нас</a></li>
+          <li className="footer-navigation--item"><a href="/bureaux/#Services">Послуги</a></li>
+          <li className="footer-navigation--item"><a href="/bureaux/#Projects">Проєкти</a></li>
+          <li className="footer-navigation--item"><a href="/bureaux/#Reviews">Відгуки</a></li>
+          <li className="footer-navigation--item"><a href="/bureaux/#FAQs">Запитання</a></li>
         </ul>
         <ul className="footer-contacts">
           <li className="footer-contacts--item">Контакти</li>

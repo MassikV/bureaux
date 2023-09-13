@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import PopUpContainer from '../../../PopUp/PopUp-container'; // Впевніться, що шлях правильний
-import './style.scss'; // Імпортуйте ваш стиль
-import union from './img/Union.svg'; // Імпортуйте вашу іконку
-import logo from './img/logo.png'; // Імпортуйте вашу іконку
-import textLogo from './img/text-logo.png'; // Імпортуйте вашу іконку
+import PopUpContainer from '../../../components/PopUp/PopUp-container';
+import './style.scss';
+import union from './img/Union.svg';
+import logo from './img/logo.png';
+import textLogo from './img/text-logo.png';
 
 const services = [
   {

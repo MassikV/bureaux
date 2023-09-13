@@ -56,20 +56,20 @@ function Header() {
   return (
       <header className="header" id="Header">
         <div className="header-container">
-          <a href="/" className="header-container--logo">
+          <Link to="/bureaux/" className="header-container--logo">
             <img src={logo} alt="Bureau" />
-          </a>
+          </Link>
           <nav className="header-container--navbar">
             <ul className="list">
-              <li className="list-item"><a href="/#AboutUs">Про нас</a></li>
-              <li className="list-item"><a href="/#Projects">Проєкти</a></li>
-              <li className="list-item"><a href="/#OurWork">Як ми працюємо</a></li>
-              <li className="list-item"><a href="/#Services">Послуги</a></li>
+              <li className="list-item"><a href="/bureaux/#AboutUs">Про нас</a></li>
+              <li className="list-item"><a href="/bureaux/#Projects">Проєкти</a></li>
+              <li className="list-item"><a href="/bureaux/#OurWork">Як ми працюємо</a></li>
+              <li className="list-item"><a href="/bureaux/#Services">Послуги</a></li>
             </ul>
           </nav>
-          <a href="#3" className="header-button" onClick={openPopup}>
+          <button  className="header-button" onClick={openPopup}>
             <span className="header-button--text">Безкоштовний розрахунок</span>
-          </a>
+          </button>
           {isPopupVisible && (
               <div className="popup-overlay">
                 <PopUpContainer

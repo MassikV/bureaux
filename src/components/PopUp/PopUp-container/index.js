@@ -7,7 +7,7 @@ function PopUpContainer({onCloseButton, onClose}) {
   const [name, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [selectedPackage, setSelectedPackage] = useState('');
-  const [timeSelection, setTimeSelection] = useState('Найближчим часом'); // Додали стан для вибору часу
+  const [timeSelection, setTimeSelection] = useState('Найближчим часом');
   const [isImmediateTimeSelected, setIsImmediateTimeSelected] = useState(true);
   const [isOpenByButton, setIsOpenByButton] = useState(false);
 
@@ -17,7 +17,7 @@ function PopUpContainer({onCloseButton, onClose}) {
   }, [isOpenByButton]);
 
   if (isOpenByButton) {
-    onCloseButton(); // Закрити попап, якщо він відкритий кнопкою
+    onCloseButton();
   }
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -83,7 +83,7 @@ function PopUpContainer({onCloseButton, onClose}) {
               <PhoneInput
                   value={phoneNumber}
                   onChange={setPhoneNumber}
-                  country={'ua'} // Вибираємо Україну
+                  country={'ua'}
                   enableSearch
                   inputStyle={{width: '100%', border: '1px solid black', borderRadius: '11px', height: '3rem'}}
                   placeholder='Введіть ваш номер'

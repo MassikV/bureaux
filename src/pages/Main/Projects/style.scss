@@ -168,7 +168,7 @@
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-miterlimit: 10;
-  animation: reverseStroke 1s forwards; // Додаємо анімацію для зворотнього руху
+  animation: reverseStroke 1s forwards;
 }
 
 @keyframes reverseStroke {
@@ -179,27 +179,23 @@
     stroke-dashoffset: 204;
   }
 }
-/* Стилі для блоку, який відкривається при наведенні */
+
 .grid-item {
-  position: relative; // Потрібно для позиціонування зображення
-  overflow: hidden; // Щоб зображення було обрізане, коли мишка поза блоком
+  position: relative;
+  overflow: hidden;
 }
 
 .grid-item-content {
-  transition: transform 0.3s ease; // Анімація зміни розміру
-  transform-origin: center center; // Зміна розміру з центру блоку
+  transition: transform 0.3s ease;
+  transform-origin: center center;
 }
 
 
-/* Додайте ці стилі в ваш файл style.scss */
 .full-width-height {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-/* Додайте ці стилі в ваш файл style.scss */
-
-/* Стилі для розгорнутої картинки */
 .expanded-image {
   position: fixed;
   top: 0;
@@ -228,7 +224,6 @@
   font-size: 18px;
   cursor: pointer;
 }
-/* Стилі для розгорнутої картинки */
 .expanded-image {
   position: fixed;
   top: 0;
@@ -275,21 +270,21 @@
   z-index: 999;
 }
 .overlay-image {
-  position: fixed; /* Позиціонування фіксованої */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  display: flex; /* Додавання відображення flex для центрування зображення */
-  justify-content: center; /* Горизонтальне центрування */
-  align-items: center; /* Вертикальне центрування */
-  background: rgba(0, 0, 0, 0.7); /* Півпрозорий фон */
-  z-index: 9999; /* Захист від перекриття інших елементів */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
 }
 
 .overlay-image img {
-  max-width: 100%; /* Максимальна ширина зображення на 100% блока */
-  max-height: 100%; /* Максимальна висота зображення на 100% блока */
-  height: auto; /* Автоматична висота для збереження співвідношення сторін */
-  display: block; /* Відображення як блок елементу img */
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  display: block;
 }

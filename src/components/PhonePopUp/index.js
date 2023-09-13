@@ -13,17 +13,16 @@ function PhonePopUp({onClose}) {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true); // Ваша логіка відправки форми
+    setIsSubmitting(true);
     const formData = {
       phoneNumber: phoneNumber,
-      // Додайте інші поля форми тут, якщо вони є
     };
 
     console.log("Дані форми:", formData);
     setTimeout(() => {
       setIsSubmitting(false);
       setIsPhonePopupOpen(false);
-    }, 2000); // Приклад імітації відправки
+    }, 2000);
   };
 
   return (

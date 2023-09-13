@@ -72,7 +72,7 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 16px;
       font-weight: 500;
-      line-height: 2.25rem;
+      line-height: 1rem;
       color: white;
       text-align: center;
     }
@@ -180,7 +180,6 @@
           background: #DF0E0E99;
           color: white;
           & img::before{
-            //background-color: rgba (0,0,0,.5);
             opacity: 0.6;
           }
         }
@@ -235,11 +234,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.8); /* Фон з прозорістю (полупрозорий білий) */
+  background: rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000; /* Встановлюємо вищий z-index для попапа, щоб він був над усіма іншими елементами */
+  z-index: 1000;
 }
 .no-scroll {
   overflow: hidden;

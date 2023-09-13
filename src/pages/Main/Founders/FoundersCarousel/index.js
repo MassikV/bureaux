@@ -7,10 +7,10 @@ const FoundersCarousel = ({ children }) => {
       <Carousel
           showStatus={false}
           showThumbs={false}
-          axis="vertical" // Встановіть вертикальний напрямок
-          emulateTouch // Дозволіть емулювати торкання для прокрутки скролом
-          infiniteLoop // Безкінечна карусель
-          selectedItem={0} // Початковий вибраний елемент
+          axis="vertical"
+          emulateTouch
+          infiniteLoop
+          selectedItem={0}
       >
         {children}
       </Carousel>

@@ -107,26 +107,6 @@ const imageArrays = [
 ];
 
 function OurProjects() {
-  // const [showImage1, setShowImage1] = useState(false);
-  // const [image1Position, setImage1Position] = useState({ x: 0, y: 0 });
-  // const [hoveredImageIndex, setHoveredImageIndex] = useState(null);
-  //
-  // const handleMouseMove = (e) => {
-  //   if (showImage1) {
-  //     setImage1Position({ x: e.clientX, y: e.clientY });
-  //   }
-  // };
-  //
-  // const handleGridItemMouseEnter = (index) => {
-  //   setHoveredImageIndex(index);
-  //   setShowImage1(true);
-  // };
-  //
-  // const handleGridItemMouseLeave = () => {
-  //   setHoveredImageIndex(null);
-  //   setShowImage1(false);
-  // };
-
   return (
       <section className="ourProjects" id="Projects">
         <div className="ourProjects-header">
@@ -266,16 +246,11 @@ function OurProjects() {
                                   containerIndex === 3 && index === 0 ? "first-column" : ""
                               }`}
                               key={index}
-                              // onMouseEnter={() => handleGridItemMouseEnter(index)}
-                              // onMouseLeave={handleGridItemMouseLeave}
                           >
                             <div className="grid-item-content">
                               <img
                                   src={imageArray[index]}
                                   alt={`Зображення ${index + 1}`}
-                                  // className={
-                                    // hoveredImageIndex === index ? "hovered" : ""
-                                  //}
                               />
                             </div>
                           </div>
@@ -291,15 +266,6 @@ function OurProjects() {
         <Link to="/projects" className="ourProjects-button">
           БІЛЬШЕ ПРОЄКТІВ <img src={union} alt="" />
         </Link>
-        {/*{showImage1 && (*/}
-        {/*    <div className="overlay-image" onMouseMove={handleMouseMove}>*/}
-        {/*      <img*/}
-        {/*          src={image1}*/}
-        {/*          alt="Зображення 1"*/}
-        {/*          style={{ left: image1Position.x, top: image1Position.y }}*/}
-        {/*      />*/}
-        {/*    </div>*/}
-        {/*)}*/}
       </section>
   );
 }

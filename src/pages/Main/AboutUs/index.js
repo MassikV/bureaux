@@ -44,12 +44,6 @@ function AboutUs(){
             <h3 className="container-title box4-title">Сімейні цінності</h3>
             <p className="container-info box4-paragraph">Ми знаємо, як важливо проводити час із сім'єю, і як важливий сімейний затишок, тому враховуємо побажання та захоплення всіх членів сім'ї для створення приємної атмосфери вдома.</p>
             <img src={fourthGridPhoto} alt="" className="container-image box4-photo"/>
-          {/*<div className="container-grid">*/}
-
-
-
-
-          {/*</div>*/}
         </div>
 
       </section>
