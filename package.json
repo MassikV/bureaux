@@ -2,7 +2,7 @@
   "name": "prox",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://massikv.github.io/jobs/",
+  "homepage": "https://massikv.github.io/bureaux/",
   "dependencies": {
     "@auth0/auth0-react": "^2.2.1",
     "@reduxjs/toolkit": "^1.9.2",
