@@ -74,20 +74,21 @@ function PopUpContainer({onCloseButton, onClose}) {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 style={{borderRadius: '11px'}}
-                autoComplete={false}
+                autoComplete="false"
                 required
             />
           </label>
           <label>
             Ваш телефон
               <PhoneInput
+                  name="number"
                   value={phoneNumber}
                   onChange={setPhoneNumber}
                   country={'ua'}
                   enableSearch
                   inputStyle={{width: '100%', border: '1px solid black', borderRadius: '11px', height: '3rem'}}
                   placeholder='Введіть ваш номер'
-                  autoComplete={false}
+                  autoComplete="false"
                   required
               />
           </label>
@@ -114,7 +115,7 @@ function PopUpContainer({onCloseButton, onClose}) {
                     value={customTime}
                     onChange={(e) => setCustomTime(e.target.value)}
                     style={{marginTop: '10px', borderRadius: '11px', width: '100%'}}
-                    autoComplete={false}
+                    autoComplete="false"
                     required
                 />
             )}

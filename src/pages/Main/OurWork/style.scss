@@ -65,6 +65,7 @@
       }
     }
     &--stepper{
+      position: relative;
       grid-column: 2;
       grid-row: 1;
       justify-self: center;
@@ -98,6 +99,10 @@
 .active{
   background-color: #BF1616;
   color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
 }
 .image-box1{
   justify-self: end;
@@ -122,7 +127,6 @@ ul {
 .step-number{
   background-color: rgba(255,255,255, 0.1);
   border: 3px solid #BF1616;
-  color: black;
   border-radius: 50px;
   width: 3rem;
   text-align: center;
@@ -138,21 +142,22 @@ ul {
   height: 3rem;
   text-align: center;
   color: white;
-  padding-top: 0.6rem;
   z-index: 99;
 }
-.vertical-dashed-line {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: calc(50% + 1.2rem);
-    transform: translateX(-50%);
-    border-left: 2px dashed black;
-    height: 9.5rem;
-    z-index: -1;
+.vertical-line-container {
+  position: absolute;
+  top: 7.7rem;
+  right: -3.25rem;
+  transform: rotate(90deg);
+  width: 9.5rem;
+  height: 2px;
+  background-color: #e0e0e0; /* Колір за замовчуванням */
 }
 
-
-.vertical-dashed-line.active-line {
-  border-color: #BF1616;
+.vertical-line {
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background-color: #BF1616; /* Колір, який змінюється */
+  transition: width 0.5s; /* Анімація зміни ширини */
 }

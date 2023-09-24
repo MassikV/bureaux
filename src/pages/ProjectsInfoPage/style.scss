@@ -1,0 +1,97 @@
+.project-block {
+  &__info {
+    background-image: url("img/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &__header {
+    padding-bottom: 127px;
+  }
+  &__intro {
+    padding-top: 143px;
+    padding-bottom: 202px;
+  }
+  &__wrapper {
+    background: #BF1616;
+    width: 577px;
+    height: 224px;
+    margin: auto;
+  }
+  &__title {
+    padding-top: 57px;
+    text-align: center;
+    font-family: Mariupol;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #FFF;
+  }
+  &__description {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 35px auto;
+  }
+  &__subtitle {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.project-info {
+  display: grid;
+  grid-template-columns: repeat(4, 292px);
+  grid-template-rows: repeat(4, 305px);
+  gap: 10px;
+  justify-content: center;
+  align-content: center;
+  margin: 27px auto;
+  width: max-content;
+  &__item {
+    width: 292px;
+    height: 305px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__img {
+    width: 292px;
+    height: 305px;
+    object-fit: cover;
+  }
+  &__load-more {
+    background: #BF1616;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.buttons {
+  padding-top: 65px;
+  padding-bottom: 120px;
+  display: flex;
+  justify-content: center;
+  gap: 102px;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  &__btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #BF1616;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}

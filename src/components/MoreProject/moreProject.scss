@@ -1,0 +1,18 @@
+.more-project {
+    background: rgba(223, 14, 14, 0.60);
+    width: 441px;
+    height: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    &__title {
+        color: #FFF;
+        font-family: Mariupol;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+}

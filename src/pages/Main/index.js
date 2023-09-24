@@ -6,10 +6,12 @@ import Services from "./Services";
 import OurWork from "./OurWork";
 import FAQs from "./FAQs";
 import Reviews from "./Reviews";
+import First from "./First/First";
 
 function Main() {
   return (
       <>
+        <First/>
         <AboutUs/>
         <Founders/>
         <OurProjects/>

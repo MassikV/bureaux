@@ -1,9 +1,14 @@
-import React, {useState} from 'react';
+import React, { useEffect, useState } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import PopUpContainer from '../../../components/PopUp/PopUp-container';
 import './style.scss';
 import union from './img/Union.svg';
 import logo from './img/logo.png';
 import textLogo from './img/text-logo.png';
+import ServiceBlock from "./Block";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
@@ -36,6 +41,30 @@ function Services() {
     document.body.classList.remove('no-scroll');
   };
 
+  useEffect(() => {
+    gsap.utils.toArray('.service-block').forEach((block, index) => {
+      gsap.fromTo(
+          block,
+          {
+            y: index === 0 ? 100 : 200, // Початкова позиція по вертикалі (перший блок вище, другий нижче)
+          },
+          {
+            y: index === 0 ? -50 : 50, // Кінцева позиція по вертикалі (перший блок вище, другий нижче)
+            duration: 2, // Тривалість анімації (змінив на 2 секунди, але ви можете змінити на потрібне значення)
+            scrollTrigger: {
+              trigger: block,
+              start: 'top 50%', // Початок анімації при прокручуванні до 50% висоти блоку
+              end: 'bottom 50%', // Закінчення анімації при прокручуванні до 50% висоти нижнього краю блоку
+              scrub: true, // Активуємо "скроббінг" для плавного ефекту
+            },
+          }
+      );
+    });
+  }, []);
+
+
+
+
   return (
       <section className="services" id="Services">
         <div className="services-top">
@@ -56,18 +85,11 @@ function Services() {
             </div>
           </div>
           {services.map((service, index) => (
-              <section
+              <ServiceBlock
                   key={index}
-                  className={index === 0 ? "black-bg" : "white-bg"}
-              >
-                <p className="services-center--title">{service.title}</p>
-                <p className="services-center--price">{service.price}</p>
-                <p className="services-center--info">{service.info}</p>
-                <p className="services-center--details">{service.details}</p>
-                <a href="#1" className="services-center--button">
-                  {service.button}
-                </a>
-              </section>
+                  service={service}
+                  index={index}
+              />
           ))}
         </div>
         <div className="services-bottom">
@@ -86,13 +108,7 @@ function Services() {
           </a>
           {isPopupVisible && (
               <div className="popup-overlay">
-                <PopUpContainer onClose={closePopup}
-                                onCloseButton={() => {
-                                  closePopup();
-                                  setPopupSubmitted(false);
-                                }}
-
-                                isOpenByButton={isPopupSubmitted}/>
+                <PopUpContainer onClose={closePopup} onCloseButton={() => { closePopup(); setPopupSubmitted(false); }} isOpenByButton={isPopupSubmitted}/>
               </div>
           )}
         </div>

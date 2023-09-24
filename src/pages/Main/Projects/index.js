@@ -1,10 +1,14 @@
+import { useState } from "react";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./style.scss";
 import ornament1 from "./img/ornament1.png";
 import ornament2 from "./img/ornament2.png";
 import union from "./img/Union.svg";
-// import image1 from './img/1.jpg'
+import image1 from './img/1.jpg'
+import image2 from "./img/2.jpg"
+import image3 from './img/3.jpg'
+import image4 from "./img/4.jpg"
 
 // Масив із посиланнями на зображення
 const imageArrays = [
@@ -106,7 +110,36 @@ const imageArrays = [
   ],
 ];
 
+const FullImage = [
+  {
+    id: 0,
+    image: image1
+  },
+  {
+    id: 1,
+    image: image2
+  },
+  {
+    id: 2,
+    image: image3
+  },
+  {
+    id: 3,
+    image: image4
+  },
+]
+
 function OurProjects() {
+  const [fullImageSrc, setFullImageSrc] = useState(null);
+
+  const showFullImage = (containerIndex, index) => {
+    setFullImageSrc(containerIndex);
+  };
+
+  const hideFullImage = () => {
+    setFullImageSrc(null);
+  };
+
   return (
       <section className="ourProjects" id="Projects">
         <div className="ourProjects-header">
@@ -205,65 +238,58 @@ function OurProjects() {
                 mask="url(#mask2)"
             />
           </svg>
-
-
-
-
         </div>
         <div className="ourProjects-container">
           {Array.from({ length: 4 }, (_, containerIndex) => (
               <div
-                  className={`ourProjects-container--grid ${
-                      containerIndex === 3 ? "grid-4" : "grid-3"
-                  } ${
-                      containerIndex === 0 || containerIndex === 2 ? "justify-end" : ""
-                  }`}
+                  className={
+                    `ourProjects-container--grid grid-${containerIndex}`
+                  }
                   key={containerIndex}
               >
-                <div
-                    className={`grid-row ${
-                        containerIndex === 0 || containerIndex === 2 ? "justify-end" : ""
-                    }`}
-                >
-                  {Array.from({ length: 4 * 6 }, (_, index) => {
-                    const imageArray = imageArrays[containerIndex];
-                    if (index <= 22 && imageArray[index]) {
-                      return (
-                          <div
-                              className={`grid-item ${
-                                  containerIndex === 2 && index === 21 ? "full-row" : ""
-                              } ${
-                                  containerIndex === 2 && (index === 0 || index === 1)
-                                      ? "second-row"
-                                      : ""
-                              } ${
-                                  containerIndex === 2 && index === 22 ? "third-row" : ""
-                              } ${
-                                  containerIndex === 3 && index === 21 ? "full-row" : ""
-                              } ${
-                                  containerIndex === 3 && index === 22 ? "first-row" : ""
-                              } ${
-                                  containerIndex === 3 && index === 0 ? "first-column" : ""
-                              }`}
-                              key={index}
-                          >
-                            <div className="grid-item-content">
-                              <img
-                                  src={imageArray[index]}
-                                  alt={`Зображення ${index + 1}`}
-                              />
-                            </div>
-                          </div>
-                      );
-                    } else {
-                      return null;
-                    }
-                  })}
-                </div>
+                {containerIndex === fullImageSrc ? (
+                    // Відображаємо велике зображення, якщо fullImageSrc відповідає поточному контейнеру
+                    <div
+                        className="full-image-container"
+                        onMouseLeave={hideFullImage}
+                    >
+                      <img
+                          src={FullImage[containerIndex].image}
+                          alt={`Зображення ${containerIndex + 1}`}
+                      />
+                    </div>
+                ) : (
+                    // Відображаємо мініатюри зображень
+                    <div className={`grid-row `}>
+                      {Array.from({ length: 4 * 6 }, (_, index) => {
+                        const imageArray = imageArrays[containerIndex];
+                        if (index <= 22 && imageArray[index]) {
+                          return (
+                              <div
+                                  className={`grid-item`}
+                                  key={index}
+                                  onMouseEnter={() =>
+                                      showFullImage(containerIndex, index)
+                                  }
+                              >
+                                <div className="grid-item-content">
+                                  <img
+                                      src={imageArray[index]}
+                                      alt={`Зображення ${index + 1}`}
+                                  />
+                                </div>
+                              </div>
+                          );
+                        } else {
+                          return null;
+                        }
+                      })}
+                    </div>
+                )}
               </div>
           ))}
         </div>
-        <Link to="/projects" className="ourProjects-button">
+        <Link to="/bureaux/projects" className="ourProjects-button">
           БІЛЬШЕ ПРОЄКТІВ <img src={union} alt="" />
         </Link>
       </section>

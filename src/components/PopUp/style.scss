@@ -71,7 +71,8 @@
       gap: 1rem;
       width: 100%;
       & div:nth-child(3) {
-        border-right: 0;
+        border: 0;
+        width: 0;
       }
 
       & input{
