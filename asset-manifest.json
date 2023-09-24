@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/bureaux/static/css/main.9d1070cc.css",
-    "main.js": "/bureaux/static/js/main.b5678a14.js",
+    "main.css": "/bureaux/static/css/main.7878970d.css",
+    "main.js": "/bureaux/static/js/main.a4f4b55e.js",
     "static/js/787.94c578f1.chunk.js": "/bureaux/static/js/787.94c578f1.chunk.js",
     "static/media/background.png": "/bureaux/static/media/background.5a45b45afc99a35c585d.png",
     "static/media/12.jpg": "/bureaux/static/media/12.bfd9d78030605803983d.jpg",
@@ -63,12 +63,12 @@
     "static/media/Union.svg": "/bureaux/static/media/Union.d5a373c94a5be063fac2ff92987526d1.svg",
     "index.html": "/bureaux/index.html",
     "static/media/icon.svg": "/bureaux/static/media/icon.087513ebfd1a97aff6888ed2804546ba.svg",
-    "main.9d1070cc.css.map": "/bureaux/static/css/main.9d1070cc.css.map",
-    "main.b5678a14.js.map": "/bureaux/static/js/main.b5678a14.js.map",
+    "main.7878970d.css.map": "/bureaux/static/css/main.7878970d.css.map",
+    "main.a4f4b55e.js.map": "/bureaux/static/js/main.a4f4b55e.js.map",
     "787.94c578f1.chunk.js.map": "/bureaux/static/js/787.94c578f1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d1070cc.css",
-    "static/js/main.b5678a14.js"
+    "static/css/main.7878970d.css",
+    "static/js/main.a4f4b55e.js"
   ]
 }
