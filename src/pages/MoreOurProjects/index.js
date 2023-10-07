@@ -3,14 +3,14 @@ import './style.scss';
 import logo from "./img/logo.png";
 import textLogo from "./img/text-logo.png";
 import { projects } from '../../data/projects';
-import Header from "../../components/Header";
+
 import First from "../Main/First/First";
 function MoreOurProjects() {
   const oldProjects = projects.filter(project => project.section === "old");
   return (
       <section className="moreOurProjects">
-        <Header/>
-        <First/>
+        {}
+        <First />
         <div className="moreOurProjects-section">
         <div className="moreOurProjects-center">
           <div className="moreOurProjects-center-ticker-wrapper">
@@ -30,10 +30,10 @@ function MoreOurProjects() {
             <NavLink
                 key={block.id}
                 to={`/bureaux/projects-info/${block.id}`}
-                className={`moreOurProjects-grid--block ${Math.floor(block.id / 2) % 4 === 0 ? 'first-pair' : Math.floor(block.id / 2) % 4 === 1 ? 'second-pair' : Math.floor(block.id / 2) % 4 === 2 ? 'third-pair' : 'fourth-pair'}`}>
+                className={`moreOurProjects-links moreOurProjects-grid--block ${Math.floor(block.id / 2) % 4 === 0 ? 'first-pair' : Math.floor(block.id / 2) % 4 === 1 ? 'second-pair' : Math.floor(block.id / 2) % 4 === 2 ? 'third-pair' : 'fourth-pair'}`}>
               <img src={block.mainPhoto} alt={block.name} />
               <h3>{block.name}</h3>
-              <span>{block.text}</span>
+              <span>{block.square}</span>
               <button className="round-button">
                 <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clipPath="url(#clip0_0_40003)">
@@ -48,7 +48,7 @@ function MoreOurProjects() {
                 </svg>
               </button>
             </NavLink>
-        ))}
+        )).slice(0, window.innerWidth < 1024 ? oldProjects.length : 8)}
       </div>
       </section>
   );

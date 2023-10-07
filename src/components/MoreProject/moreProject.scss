@@ -8,11 +8,36 @@
     gap: 50px;
     &__title {
         color: #FFF;
-        font-family: Mariupol;
+        font-family: 'Kyiv Region', sans-serif;
         font-size: 25px;
         font-style: normal;
         font-weight: 500;
         line-height: normal;
         text-transform: uppercase;
     }
+}
+@media (max-width: 1024px){
+  .more-project{
+    width: 25rem;
+    height: 6rem;
+    justify-self: center;
+    &__img{
+      width: 2rem;
+    }
+  }
+}
+@media (max-width: 480px){
+  .more-project{
+    width: 15rem;
+    height: 4.5rem;
+    justify-content: space-evenly;
+    gap: 0;
+    &__img{
+      width: 2rem;
+    }
+    &__title {
+      font-size: 17px;
+      text-transform: uppercase;
+    }
+  }
 }

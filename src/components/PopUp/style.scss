@@ -1,9 +1,10 @@
-.popUp{
+.popUp {
   background-image: url(./img/Bg.png);
   background-size: cover;
-  padding:3rem 0 2.5rem 0;
-  &-title{
-    font-family: 'Mariupol', sans-serif;
+  padding: 3rem 0 2.5rem 0;
+
+  &-title {
+    font-family: 'Kyiv Region', sans-serif;
     font-size: 48px;
     font-weight: 500;
     line-height: 46px;
@@ -12,9 +13,11 @@
     text-align: center;
     padding: 1rem;
     margin: 0;
+    text-transform:uppercase;
   }
-  &-text{
-    font-family: 'Montserrat',sans-serif;
+
+  &-text {
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 28px;
     font-weight: 500;
     line-height: 34px;
@@ -23,7 +26,8 @@
     margin: 1.5rem auto;
     width: 42rem;
   }
-  &-container{
+
+  &-container {
     position: relative;
     width: 42rem;
     height: 50rem;
@@ -32,69 +36,88 @@
     display: flex;
     flex-direction: column;
     padding: 1.5rem 2rem;
-    gap: 2rem;
-    &--text{
-      font-family: 'Montserrat', sans-serif;
+    gap: 1.5rem;
+    &--text {
+      font-family: 'IBM Plex Mono', monospace;
       font-size: 22px;
       font-weight: 500;
       line-height: 27px;
       letter-spacing: 0em;
       text-align: left;
+      align-self: baseline;
     }
-    &--closeButton{
+
+    &--closeButton {
       position: absolute;
       right: 15px;
       top: 15px;
       border-radius: 50%;
       cursor: pointer;
-      &:hover{
+
+      &:hover {
         background-color: #BF1616;
-        & path{
+
+        & path {
           stroke: #FFFFFF;
         }
-        & circle{
+
+        & circle {
           stroke: #FFFFFF;
         }
       }
     }
+
     &.immediate-time {
       height: 45rem;
-      align-items: start;
+      align-items: center;
     }
-    & label{
+
+    & label {
       display: flex;
       flex-direction: column;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'IBM Plex Mono', monospace;
       font-size: 22px;
       font-weight: 500;
       line-height: 27px;
       gap: 1rem;
       width: 100%;
+      & div{
+      & label:nth-of-type(1){
+        flex-direction: row;
+      }
+      & label:nth-of-type(2){
+        flex-direction: row;
+      }}
       & div:nth-child(3) {
         border: 0;
         width: 0;
       }
 
-      & input{
+      & input {
+        font-size: 20px;
         border-radius: 11px;
         padding: 0.5rem;
         height: 3rem;
         border: 2px solid black;
       }
-      & select{
-        border-radius:11px ;
+
+      & select {
+        border-radius: 11px;
         padding: 0.5rem;
         cursor: pointer;
         height: 3rem;
+          font-size: 20px;
       }
     }
-    &--phone{
+
+    &--phone {
       width: 100%;
     }
-    &--button{
+
+    &--button {
       background-color: #BF1616;
       color: #FFFBF6;
-      font-family: 'Montserrat',sans-serif;
+      font-family: 'IBM Plex Mono', monospace;
       font-size: 24px;
       font-weight: 400;
       line-height: 29px;
@@ -102,6 +125,151 @@
       width: 100%;
       height: 5rem;
       opacity: 0.5;
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.radio-label {
+  display: flex;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 4rem;
+  margin: 0;
+
+  & input{
+    width: 2rem;
+    margin: 0;
+    &:checked{
+      width: 2rem;
+      height: 2rem;
+      accent-color: #bf1616;
+      border: 2px solid #BF1631;
+      border-radius: 50%;
+    }
+  }
+}
+.react-tel-input .selected-flag:hover, .react-tel-input .selected-flag:focus {
+  background-color: transparent !important; /* Зміни фон на прозорий */
+}
+.form-control{
+  font-size: 20px;
+}
+@media screen and (max-width: 1024px){
+  .popUp {
+    &-title {
+      font-size: 48px;
+      line-height: 46px;
+    }
+
+    &-text {
+      font-size: 28px;
+      line-height: 34px;
+    }
+
+    &-container {
+      width: 90vw;
+
+      &--text {
+        font-size: 22px;
+        line-height: 26px;
+      }
+
+      & label {
+        font-size: 22px;
+        line-height: 26px;
+        &:nth-of-type(4){
+          flex-direction: row;
+        }
+        &:nth-of-type(5){
+          flex-direction: row;
+        }
+      }
+
+      &--button {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 29px;
+      }
+    }
+  }
+  .radio-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    flex-direction: row;
+    height: 2rem;
+    & input{
+      width: 1.8rem;
+      &:checked{
+        width: 1.8rem;
+        height: 1.8rem;
+        border: 2px solid #BF1616;
+        border-radius: 50%;
+        background-color: #BF1616;
+      }
+    }
+    & input:nth-of-type(2){
+      & input{
+        width: 1.5rem;
+      }
+    }
+  }
+
+}
+@media screen and (max-width: 420px) {
+  .popUp {
+    &-title {
+      font-size: 40px;
+      line-height: 38px;
+    }
+
+    &-text {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    &-container {
+      &--text {
+        font-size: 14px;
+        line-height: 17px;
+      }
+
+      & label {
+        font-size: 14px;
+        line-height: 17px;
+        &:nth-of-type(4){
+          & input{
+            width: 2.25rem;
+          }
+        }
+      }
+
+      &--button {
+        font-size: 24px;
+        line-height: 29px;
+      }
+    }
+  }
+  .radio-label {
+    font-size: 12px;
+    line-height: 15px;
+    & input{
+      &:checked{
+        width: 1.8rem;
+        height: 1.8rem;
+        border: 2px solid #BF1616;
+        border-radius: 50%;
+        background-color: #BF1616;
+      }
     }
   }
 }

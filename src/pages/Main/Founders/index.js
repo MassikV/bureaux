@@ -5,7 +5,9 @@ import secondFamilyPhoto from "./img/family2.png";
 import foundersIvan from "./img/Ivan.png";
 import foundersDasha from "./img/Daria.png";
 import ornament from "./img/ornament.png";
+import tabletOr from "./img/tabletOr.png";
 import FoundersCarousel from "./FoundersCarousel";
+import { useMediaQuery } from "react-responsive";
 
 const founders = [
   {
@@ -25,6 +27,10 @@ const founders = [
 ];
 
 function Founders() {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1025px)",
+  });
+
   return (
       <section className="founders">
         <h1 className="founders-title">Засновники</h1>
@@ -33,24 +39,38 @@ function Founders() {
           <p>молоде подружжя архітекторів за освітою та захопленням</p>
           <img src={secondFamilyPhoto} alt="" />
         </div>
-        <div className="founders-carousel">
-          <FoundersCarousel >
-            {founders.map((founder, index) => (
-                <div className="founders-container" key={index}>
-                  <img src={founder.image} alt="img" />
-                  <img
-                      src={ornament}
-                      alt=""
-                      className="founders-container--ornament"
-                  />
-                  <p className="founders-container--name">{founder.name}</p>
-                  <h4 className="founders-container--title">{founder.title}</h4>
-                  <p className="founders-container--info">{founder.info}</p>
-                  <p className="founders-container--text">{founder.text}</p>
-                </div>
-            ))}
-          </FoundersCarousel>
-        </div>
+        {isDesktopOrLaptop ? (
+            <div className="founders-carousel">
+            <FoundersCarousel>
+              {founders.map((founder, index) => (
+                  <div className="founders-container" key={index}>
+                    <img src={founder.image} alt="img" />
+                    <img src={ornament} alt="" className="founders-container--ornament" />
+                    <p className="founders-container--name">{founder.name}</p>
+                    <h4 className="founders-container--title">{founder.title}</h4>
+                    <p className="founders-container--info">{founder.info}</p>
+                    <p className="founders-container--text">{founder.text}</p>
+                  </div>
+              ))}
+            </FoundersCarousel>
+            </div>
+
+        ) : (
+            <div className="founders-data">
+              {founders.map((founder, index) => (
+                  <div className="founders-container" key={index}>
+                    <img src={founder.image} alt="img" />
+                    <div className="founders-container--ornament">
+                      <img src={tabletOr} alt=""  />
+                    </div>
+                    <p className="founders-container--name">{founder.name}</p>
+                    <h4 className="founders-container--title">{founder.title}</h4>
+                    <p className="founders-container--info">{founder.info}</p>
+                    <p className="founders-container--text">{founder.text}</p>
+                  </div>
+              ))}
+            </div>
+        )}
       </section>
   );
 }

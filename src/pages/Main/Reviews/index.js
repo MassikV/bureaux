@@ -1,7 +1,7 @@
 import "./style.scss";
 
-import review1 from "./img/Rectangle54.png";
-import review2 from "./img/Rectangle53.png";
+import review1 from "./img/Rectangle54.svg";
+import review2 from "./img/Rectangle53.svg";
 import inst from "./img/Frame.svg";
 import logo from "./img/logo.svg";
 
@@ -9,7 +9,7 @@ const reviews = [
   {
     image: review2,
     name: "Максим С.",
-    city: "Львів",
+    city: "Київ",
     instagram: inst,
     nickName: "maks.sergienko",
     text: "Замовив в BureauX розробку дизайну нашого ресторану і щиро задоволений результатом. Вони вміють дійсно злитися з бажаннями клієнта і додали веселого колориту та стильного оформлення до нашого приміщення. Висока якість та велике професійне знання!",
@@ -17,7 +17,7 @@ const reviews = [
   {
     image: review1,
     name: "Оксана Т.",
-    city: "Харків",
+    city: "Київ",
     instagram: inst,
     nickName: "oksana1986",
     text: "Дякую BureauX за стильний та сучасний дизайн мого будинку! Вони допомогли перетворити простір у гармонійне та функціональне житло. Завдяки ним моя мрія про ідеальний дім збулася! Рекомендую їх як надійного та талановитого партнера у справі створення унікальних інтер'єрів.",

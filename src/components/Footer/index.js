@@ -24,7 +24,7 @@ function Footer(){
         </ul>
         <ul className="footer-contacts">
           <li className="footer-contacts--item">Контакти</li>
-          <li className="footer-contacts--item"><a href="tel:+380 098 979 86 48" rel="noreferrer"  target="_blank">+380 098 979 86 48</a></li>
+          <li className="footer-contacts--item"><a href="tel:+380 98 979 86 48" rel="noreferrer"  target="_blank">+380 98 979 86 48</a></li>
           <li className="footer-contacts--item"><a href="mailto:bureaux.ivan@gmail.com" rel="noreferrer"  target="_blank">bureaux.ivan@gmail.com</a></li>
           <li className="footer-contacts--item"><a href="https://www.instagram.com/bureau.x_/" rel="noreferrer"  target="_blank">Instagram</a></li>
           <li className="footer-contacts--item"><a href="https://www.facebook.com/BureaX" rel="noreferrer"  target="_blank">Facebook</a></li>

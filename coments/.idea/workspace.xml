@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="801d459e-d77f-4337-8d1d-b4e04aeb3409" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/codestream.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/components/Footer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/Footer/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/components/Footer/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/components/Header/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/Header/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/components/Header/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/MoreProject/moreProject.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/components/MoreProject/moreProject.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/PhonePopUp/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/components/PhonePopUp/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/PhonePopUp/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/components/PhonePopUp/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/PopUp/PopUp-container/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/components/PopUp/PopUp-container/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/PopUp/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/components/PopUp/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-09.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/12/__MACOSX/._5 (54)-21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/._drive-download-20230720T130723Z-001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/._Кухня-гостинная" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/._Санузел" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/._Спальни" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/._І етап" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/._ІІ етап" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/._ІІІ етап" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/І етап/._01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/І етап/._02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/І етап/._03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/І етап/._04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/І етап/._05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/І етап/._06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІ етап/._01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІ етап/._02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІ етап/._03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІ етап/._04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІ етап/._05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІ етап/._06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІ етап/._07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІІ етап/._01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІІ етап/._02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІІ етап/._03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІІ етап/._04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІІ етап/._05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІІ етап/._06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІІ етап/._07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Санузел/._І етап" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Санузел/._ІІ етап" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Санузел/І етап/._07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Санузел/І етап/._08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Санузел/ІІ етап/._08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Санузел/ІІ етап/._09.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Санузел/ІІ етап/._22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Санузел/ІІ етап/._23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/._IV етап" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/._І етап" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/._ІІ етап" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/._ІІІ етап" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/IV етап/._01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/IV етап/._02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/IV етап/._03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/IV етап/._04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/IV етап/._05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/IV етап/._06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/IV етап/._07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/IV етап/._08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/IV етап/._09.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/IV етап/._10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/IV етап/._11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/І етап/._01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/І етап/._02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/І етап/._03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/І етап/._04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/І етап/._05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/І етап/._06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/І етап/._07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІ етап/._01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІ етап/._02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІ етап/._03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІ етап/._04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІ етап/._05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІ етап/._06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІ етап/._07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/._01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/._02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/._03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/._04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/._06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/._08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/._09.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/._10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/._11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/._12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/__MACOSX/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/._13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/І етап/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/І етап/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/І етап/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/І етап/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/І етап/05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/І етап/06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІ етап/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІ етап/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІ етап/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІ етап/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІ етап/05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІ етап/06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІ етап/07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІІ етап/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІІ етап/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІІ етап/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІІ етап/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІІ етап/05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІІ етап/06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Кухня-гостинная/ІІІ етап/07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Санузел/І етап/07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Санузел/І етап/08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Санузел/ІІ етап/08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Санузел/ІІ етап/09.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Санузел/ІІ етап/22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Санузел/ІІ етап/23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/IV етап/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/IV етап/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/IV етап/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/IV етап/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/IV етап/05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/IV етап/06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/IV етап/07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/IV етап/08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/IV етап/09.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/IV етап/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/IV етап/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/І етап/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/І етап/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/І етап/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/І етап/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/І етап/05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/І етап/06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/І етап/07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІ етап/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІ етап/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІ етап/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІ етап/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІ етап/05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІ етап/06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІ етап/07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/09.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/2/drive-download-20230720T130723Z-001/Спальни/ІІІ етап/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/._Визуализации-3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/._Ванная" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/._Гардероб" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/._Детская" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/._Душ" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/._Коридор-Кухня" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/._Постирочная" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/._СанУзел2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/._Спальня" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Ванная/._345.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Ванная/._vanna2_Post_LightMix Interactive.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Ванная/._Ванна_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Ванная/._Ванна_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Ванная/._ванна_Post.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Гардероб/._гардероб1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Гардероб/._гардероб2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Гардероб/._гардероб3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Детская/._1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Детская/._2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Детская/._3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Душ/._1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Душ/._2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Душ/._4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Коридор-Кухня/._1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Коридор-Кухня/._2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Коридор-Кухня/._3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Коридор-Кухня/._4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Коридор-Кухня/._5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Коридор-Кухня/._6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Коридор-Кухня/._7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Коридор-Кухня/._7_Environment - Skylight environment.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Коридор-Кухня/._Кузня_03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Коридор-Кухня/._Кухня_02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Коридор-Кухня/._коридор.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Коридор-Кухня/._кухня_01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Коридор-Кухня/._кухня_03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Постирочная/._1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Постирочная/._2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Постирочная/._3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/СанУзел2/._5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/СанУзел2/._6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/СанУзел2/._7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/СанУзел2/._8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_05v.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_06v.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_07v.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_08v.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_09v.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_10v.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_24.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_25.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_26.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_27.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._Spalnya_28.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/5/__MACOSX/Визуализации-3/Спальня/._preview.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/._Візи" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/._Вертикальні" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/._Горизонтальні" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._1 (89).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._10 (25).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._11 (18).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._12 (17).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._13 (14).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._14 (16).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._15 (13).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._16 (12).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._17 (8).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._18 (6).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._19 (3).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._2 (78).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._20 (4).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._3 (74).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._4 (41).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._5 (51).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._6 (33).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._7 (28).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._8 (22).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._9 (19).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._Water" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Вертикальні/._wood (2).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Горизонтальні/._s1 (4).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Горизонтальні/._s2 (3).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Горизонтальні/._s3 (4).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Горизонтальні/._s4 (2).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/img/9/__MACOSX/Візи/Горизонтальні/._s5 (3).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/data/projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/data/projects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/AboutUs/img/ornament.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/AboutUs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/Main/AboutUs/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/AboutUs/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/Main/AboutUs/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/FAQs/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/Main/FAQs/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/First/First.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/Main/First/First.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/First/first.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/Main/First/first.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/First/img/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/Founders/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/Main/Founders/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/Founders/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/Main/Founders/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/OurWork/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/Main/OurWork/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/OurWork/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/Main/OurWork/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/Projects/img/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/Projects/img/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/Projects/img/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/Projects/img/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/Projects/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/Main/Projects/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/Projects/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/Main/Projects/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/Reviews/img/Rectangle53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/Reviews/img/Rectangle54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/Reviews/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/Main/Reviews/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/Reviews/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/Main/Reviews/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/Services/Block/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/Main/Services/Block/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/Services/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/Main/Services/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/Main/Services/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/Main/Services/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/MoreOurProjects/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/MoreOurProjects/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/MoreOurProjects/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/MoreOurProjects/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/ProjectsInfoPage/img/bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/ProjectsInfoPage/img/bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/ProjectsInfoPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/ProjectsInfoPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/pages/ProjectsInfoPage/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../src/pages/ProjectsInfoPage/style.scss" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2WS1rCHMEcHUDLRBpkp7NvKDhAt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/volko/Desktop/coments",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="801d459e-d77f-4337-8d1d-b4e04aeb3409" name="Changes" comment="" />
+      <created>1696711364001</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696711364001</updated>
+      <workItem from="1696711365065" duration="79000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

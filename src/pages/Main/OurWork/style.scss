@@ -1,5 +1,5 @@
 .ourWork {
-
+overflow:hidden ;
   background-image: url(./img/Bg.png);
   padding-bottom:5rem ;
   &-header {
@@ -7,7 +7,7 @@
     justify-content: space-between;
     padding: 7rem 0 ;
     &--title {
-      font-family: 'Mariupol', sans-serif;
+      font-family: 'Kyiv Region', sans-serif;
       font-size: 83px;
       font-weight: 500;
       line-height: 80px;
@@ -80,14 +80,14 @@
 
     }
     &--title{
-      font-family: 'Mariupol',sans-serif;
+      font-family: 'Kyiv Region',sans-serif;
       font-size: 22px;
       font-weight: 700;
       line-height: 21px;
 
     }
     &--text{
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'IBM Plex Mono', monospace;
       font-size: 20px;
       font-weight: 500;
       line-height: 22px;
@@ -113,6 +113,10 @@
 }
 .image-box2{
   grid-column: 3;
+}
+.image-box3{
+  justify-self: end;
+
 }
 .info-box2{
   grid-column: 1;
@@ -151,13 +155,160 @@ ul {
   transform: rotate(90deg);
   width: 9.5rem;
   height: 2px;
-  background-color: #e0e0e0; /* Колір за замовчуванням */
+  background-color: #e0e0e0; 
 }
 
 .vertical-line {
   position: absolute;
   height: 100%;
   width: 0;
-  background-color: #BF1616; /* Колір, який змінюється */
-  transition: width 0.5s; /* Анімація зміни ширини */
+  background-color: #BF1616; 
+  transition: width 0.5s; 
+}
+@media screen and (max-width: 1024px) {
+  .ourWork {
+    padding-bottom: 4rem; 
+  }
+
+  .ourWork-header {
+    padding: 5rem 0 3rem; 
+  }
+
+  .ourWork-header--title {
+    font-size: 64px;
+    line-height: 61px;
+  }
+
+  .ourWork-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    align-items: center; 
+  }
+
+  .ourWork-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 2rem; 
+  }
+
+  .ourWork-container--image {
+    grid-column: 1;
+    width: 10.5rem; 
+    height: 10rem; 
+    background-color: #bf1616; 
+    border-radius: 0; 
+    justify-self: center;
+    padding: 0;
+    align-self: center;
+    & img{
+      width: 7rem;
+    }
+  }
+
+  .ourWork-container--info {
+    width: 100%;
+    grid-row: 2;
+    grid-column: 1;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .ourWork-container--title {
+    font-size: 28px;
+    line-height: 26px;
+    color: black;
+    text-align: center ;
+    font-weight: 600;
+  }
+
+  .ourWork-container--text {
+    font-size: 24px;
+    line-height: 29px;
+    width: 100%; 
+    text-align: center;
+    color: black;
+    font-weight: 400;
+  }
+
+  .step-number {
+    width: 2rem; 
+    height: 2rem; 
+    padding-top: 0.3rem; 
+  }
+
+  .vertical-line-container {
+    top: 2.7rem; 
+    right: -2rem; 
+    width: 2rem; 
+  }
+  .image-box3{
+    & img{
+      width: 5rem;
+
+    }
+  }
+  .header-logo{
+    position: absolute;
+    right: 0rem;
+  }
+  .ourWork-container--stepper {
+    display: none;
+  }
+
+}
+@media (max-width: 480px) {
+  .ourWork {
+    padding-bottom: 3rem; 
+  }
+
+  .ourWork-header {
+    padding: 3rem 0 3rem 2rem; 
+  }
+
+  .ourWork-header--title {
+    font-size: 40px;
+    line-height: 38px;
+  }
+
+
+  .ourWork-container {
+    margin-bottom: 2rem; 
+  }
+
+  .ourWork-container--image {
+    width: 6rem; 
+    height: 6rem; 
+    & img{
+      width: 4rem;
+    }
+  }
+
+  .ourWork-container--info {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .ourWork-container--title {
+    font-size: 19px;
+    line-height: 18px;
+    font-weight: 600;
+  }
+
+  .ourWork-container--text {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+
+  .image-box3{
+    & img{
+      width: 3.5rem;
+
+    }
+  }
+  .header-logo{
+    position: absolute;
+    right: 0;
+  }
 }

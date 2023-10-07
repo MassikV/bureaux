@@ -1,15 +1,16 @@
 import "./style.scss";
 import React, { useRef, useState, useEffect } from "react";
-import ornament from "./img/ornament.png";
-import ornament1 from "./img/ornament1.png";
 import frame from "./img/Frame.svg";
 import frame1 from "./img/Frame1.svg";
 import frame2 from "./img/Frame2.svg";
 import frame3 from "./img/Frame3.svg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import logo from "./img/logo.svg";
 
-gsap.registerPlugin(ScrollTrigger);
+if (window.innerWidth >= 1024) {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const ourWorks = [
   {
@@ -38,6 +39,8 @@ function OurWork() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
   const mainRef = useRef();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   useEffect(() => {
     const handleScroll = () => {
       const list = mainRef.current.querySelector("ul");
@@ -72,6 +75,11 @@ function OurWork() {
           imageContainer.classList.remove("active");
         }
       });
+
+      
+      if (gsap && ScrollTrigger) {
+        gsap.to(".ourWork-container--image", { borderRadius: "0", duration: 0.1 });
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -86,42 +94,64 @@ function OurWork() {
     const list = mainRef.current.querySelector("ul");
     const sections = list.querySelectorAll("li");
 
-
     sections.forEach((section, index) => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: "top center ",
-          end: "bottom 70%",
-          scrub: true,
-        },
-      });
+      if (gsap && ScrollTrigger) {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: "top center ",
+            end: "bottom 70%",
+            scrub: true,
+          },
+        });
 
-      tl.to(section, {
-        className: (index) => `+=active ${index % 2 === 0 ? "even" : "odd"}`,
-        duration: 0.5,
-      });
+        tl.to(section, {
+          className: (index) => `+=active ${index % 2 === 0 ? "even" : "odd"}`,
+          duration: 0.5,
+        });
 
-      const stepper = section.querySelector(".ourWork-container--stepper");
-      const lineContainer = document.createElement("div");
-      lineContainer.className = "vertical-line-container";
-      stepper.appendChild(lineContainer);
+        const stepper = section.querySelector(".ourWork-container--stepper");
+        const lineContainer = document.createElement("div");
+        lineContainer.className = "vertical-line-container";
+        stepper.appendChild(lineContainer);
 
-      const line = document.createElement("div");
-      line.className = "vertical-line";
-      lineContainer.appendChild(line);
+        const line = document.createElement("div");
+        line.className = "vertical-line";
+        lineContainer.appendChild(line);
 
-      if (line) {
-        const startScroll = (index - 1) / sections.length;
-        const endScroll = index / sections.length;
+        if (line) {
+          const startScroll = (index - 1) / sections.length;
+          const endScroll = index / sections.length;
 
-        tl.fromTo(
-            line,
-            { width: "0%" },
-            { width: "100%", duration: 0.5, scrub: true, start: startScroll, end: endScroll }
-        );
+          tl.fromTo(
+              line,
+              { width: "0%" },
+              { width: "100%", duration: 0.5, scrub: true, start: startScroll, end: endScroll }
+          );
+        }
       }
     });
+  }, []);
+
+  const logoWidth =
+      windowWidth <= 480
+          ? 34 
+          : windowWidth <= 1024
+              ? 65 
+              : 85; 
+
+  const maxLogosInRow = Math.floor(windowWidth / logoWidth);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const formatIndex = (index) => {
@@ -129,23 +159,42 @@ function OurWork() {
     return formattedIndex < 10 ? `0${formattedIndex}` : formattedIndex;
   };
 
+  const logos = Array(maxLogosInRow)
+      .fill(null)
+      .map((_, index) => <img src={logo} alt="#" className="section-container--logo" key={index} />);
+
   return (
       <section className="ourWork" id="OurWork" ref={mainRef}>
-        <div className="ourWork-header">
-          <img src={ornament} alt="" />
-          <h2 className="ourWork-header--title">як ми працюємо</h2>
-          <img src={ornament1} alt="" />
-        </div>
+        {windowWidth > 1024 && (
+            <div className="ourWork-header">
+              {logos.slice(0, 2)}
+              <h2 className="ourWork-header--title">як ми працюємо</h2>
+              {logos.slice(0, 5)}
+            </div>
+        )}
+        {windowWidth <= 480 && (
+            <div className="ourWork-header">
+              <h2 className="ourWork-header--title">як ми працюємо</h2>
+              <div className="header-logo">
+              {logos.slice(0, 6)}
+              </div>
+            </div>
+        )}
+        {windowWidth > 480  && windowWidth <= 1024 && (
+            <div className="ourWork-header">
+              <h2 className="ourWork-header--title">як ми працюємо</h2>
+              <div className="header-logo">
+                {logos.slice(0, 2)}
+              </div>
+            </div>
+        )}
         <ul className="ourWork-list">
           {ourWorks.map((works, index) => (
-              <li
-                  key={index}
-                  style={{ marginBottom: index === ourWorks.length - 1 ? "0" : "3rem" }}
-              >
-                <div className={`ourWork-container `}>
+              <li key={index} style={{ marginBottom: index === ourWorks.length - 1 ? "0" : "3rem" }}>
+                <div className={`ourWork-container box-${index + 1}`}>
                   <div
-                      className={`ourWork-container--image ${
-                          index % 2 === 0 ? "image-box1" : "image-box2"
+                      className={`ourWork-container--image image-box${index + 1} ${
+                          index === 2 ? "image-box3" : "image-box4"
                       } `}
                       style={{
                         borderRadius:
@@ -158,7 +207,7 @@ function OurWork() {
                                         : "0 10px 10px 10px",
                       }}
                   >
-                    <img src={works.image} className="box" alt="" />
+                    <img src={works.image} className={`box box-${index + 1}`} alt="" />
                   </div>
                   <div className="ourWork-container--stepper">
                     <div className="step-number">{formatIndex(index)}</div>
@@ -167,7 +216,7 @@ function OurWork() {
                   <div
                       className={`ourWork-container--info ${
                           index % 2 === 0 ? "info-box1" : "info-box2"
-                      } ${index === currentIndex ? "active" : ""}`}
+                      } ${windowWidth >= 1024 && index === currentIndex ? "active" : ""}`}
                   >
                     <h3 className="ourWork-container--title">{works.title}</h3>
                     <p className="ourWork-container--text box">{works.text}</p>

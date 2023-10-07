@@ -1,5 +1,5 @@
 .First {
-    background-image: url("img/bg.png");
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -15,7 +15,7 @@
     }
     &__title {
         color: #FFF;
-        font-family: Montserrat;
+        font-family: 'IBM Plex Mono', monospace;
         font-size: 24.542px;
         font-style: normal;
         font-weight: 400;
@@ -31,7 +31,7 @@
         &__title {
             transform: rotate(-90deg);
             color: #FFF;
-            font-family: Mariupol;
+            font-family: 'Kyiv Region', sans-serif;
             font-size: 16px;
             font-style: normal;
             font-weight: 500;
@@ -73,7 +73,7 @@
         color: white;
         width: 1.25rem;
         height: 1.25rem;
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'IBM Plex Mono', monospace;
         font-size: 11px;
         font-weight: 600;
         line-height: 19px;
@@ -85,7 +85,7 @@
         margin: 0 0.25rem 0.5rem 0.25rem;
       }
       &--title{
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'IBM Plex Mono', monospace;
         font-size: 12px;
         font-weight: 600;
         line-height: 11px;
@@ -98,7 +98,7 @@
         width: 8rem;
       }
       &--square{
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'IBM Plex Mono', monospace;
         font-size: 9px;
         font-weight: 400;
         line-height: 9px;
@@ -113,3 +113,135 @@
 
     }
 }
+.dots {
+  position: absolute;
+  bottom: 25rem;
+  right: 0rem;
+  transform: translateX(-50%) rotate(90deg);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px; 
+}
+
+.dotes {
+  width: 11px;
+  height: 11px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, width 0.3s ease, height 0.3s ease; 
+  z-index: 1;
+}
+
+.dotes.active {
+  background-color: #969696;
+  width: 11px;
+  height: 45px; 
+  border-radius: 31px;
+  transform: rotate(90deg);
+  margin: 0 1rem;
+  z-index: 2; 
+}
+
+@media (max-width: 1024px) {
+  
+  .First {
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto; 
+    position: relative;
+    padding-bottom: 1.5rem;
+    &__projects {
+      padding: 0.5rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      row-gap: 3rem;
+&--container{
+  width: 10rem;
+  margin: 0 1.5rem;
+}
+      &__wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      &__img {
+        width: 16rem;
+        height: 16rem;
+      }
+
+      &__title {
+        justify-self: center;
+        transform: rotate(0deg);
+        margin: 0;
+      }
+    }
+  }
+
+  .First__info {
+    padding: 3rem 3rem 0; 
+    display: flex;
+    flex-direction: column; 
+  }
+
+  .First__logo {
+
+    width: 100%; 
+  }
+
+  .First__title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+  }
+}
+  
+  @media (max-width: 480px) {
+    .First{
+      &__logo{
+        width: 100%;
+
+      }
+      &__projects{
+          padding: 1rem;
+      }
+      }
+
+    .First__info {
+      padding: 2rem 2rem 0; 
+    }
+    .First__title {
+      font-size: 13px;
+      line-height: 15px;
+    }
+    .First__projects__wrapper {
+      flex-direction: row; 
+       flex-wrap: nowrap;
+      justify-content: start;
+      gap: 1rem;
+    }
+    .First__projects__block {
+      width: 10.5rem; 
+      height: 10.5rem; 
+      margin-right: 0; 
+    }
+    .First__projects__img{
+      height: 10rem;
+      width: 10.5rem;
+    }
+    .First__projects--container {
+      display: block; 
+      transform: none; 
+    }
+    .First__projects--number {
+      display: none; 
+    }
+  }
