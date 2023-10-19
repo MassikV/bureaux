@@ -1,8 +1,17 @@
 {
   "files": {
-    "main.css": "/bureaux/static/css/main.1366d89d.css",
-    "main.js": "/bureaux/static/js/main.8246bd0c.js",
+    "main.css": "/bureaux/static/css/main.6f04bee1.css",
+    "main.js": "/bureaux/static/js/main.eb5d3a1f.js",
+    "static/css/801.f9da2d7d.chunk.css": "/bureaux/static/css/801.f9da2d7d.chunk.css",
+    "static/js/801.a628732a.chunk.js": "/bureaux/static/js/801.a628732a.chunk.js",
+    "static/css/310.d824714a.chunk.css": "/bureaux/static/css/310.d824714a.chunk.css",
+    "static/js/310.d9a4ca34.chunk.js": "/bureaux/static/js/310.d9a4ca34.chunk.js",
+    "static/css/365.265f1b01.chunk.css": "/bureaux/static/css/365.265f1b01.chunk.css",
+    "static/js/365.e896e197.chunk.js": "/bureaux/static/js/365.e896e197.chunk.js",
     "static/js/787.94c578f1.chunk.js": "/bureaux/static/js/787.94c578f1.chunk.js",
+    "static/js/783.858cabfe.chunk.js": "/bureaux/static/js/783.858cabfe.chunk.js",
+    "static/js/811.b908c193.chunk.js": "/bureaux/static/js/811.b908c193.chunk.js",
+    "static/js/450.bab4c2a6.chunk.js": "/bureaux/static/js/450.bab4c2a6.chunk.js",
     "static/media/ПАНОРАМА.jpg": "/bureaux/static/media/ПАНОРАМА.8e4163e813784a8c8e71.jpg",
     "static/media/Rectangle53.svg": "/bureaux/static/media/Rectangle53.f7e702a27f02b0ac3680b436a7446dc0.svg",
     "static/media/background.png": "/bureaux/static/media/background.5a45b45afc99a35c585d.png",
@@ -212,7 +221,7 @@
     "static/media/photo3.png": "/bureaux/static/media/photo3.d516fcfdf3b864664d2d.png",
     "static/media/family2.png": "/bureaux/static/media/family2.c09c56dc8942d6eaf5c4.png",
     "static/media/logo.png": "/bureaux/static/media/logo.3d6729b53ddd7b00a1ee.png",
-    "static/media/ornament.png": "/bureaux/static/media/ornament.fab3b783123ca69a28c3.png",
+    "static/media/ornament.png": "/bureaux/static/media/ornament.2ccb66e29bcab190ca43.png",
     "static/media/text-logo.png": "/bureaux/static/media/text-logo.4b2b7ac106b11b5a9ae7.png",
     "static/media/tabletOr.png": "/bureaux/static/media/tabletOr.00f2e9d28af605881efd.png",
     "static/media/logo.svg": "/bureaux/static/media/logo.77308791588747d19c76fdfc094aa18b.svg",
@@ -224,12 +233,21 @@
     "static/media/Union.svg": "/bureaux/static/media/Union.dcd2376aef89336dd50a3741f7e4b66f.svg",
     "index.html": "/bureaux/index.html",
     "static/media/icon.svg": "/bureaux/static/media/icon.507333765f8d5b050ab5491a71bcf476.svg",
-    "main.1366d89d.css.map": "/bureaux/static/css/main.1366d89d.css.map",
-    "main.8246bd0c.js.map": "/bureaux/static/js/main.8246bd0c.js.map",
-    "787.94c578f1.chunk.js.map": "/bureaux/static/js/787.94c578f1.chunk.js.map"
+    "main.6f04bee1.css.map": "/bureaux/static/css/main.6f04bee1.css.map",
+    "main.eb5d3a1f.js.map": "/bureaux/static/js/main.eb5d3a1f.js.map",
+    "801.f9da2d7d.chunk.css.map": "/bureaux/static/css/801.f9da2d7d.chunk.css.map",
+    "801.a628732a.chunk.js.map": "/bureaux/static/js/801.a628732a.chunk.js.map",
+    "310.d824714a.chunk.css.map": "/bureaux/static/css/310.d824714a.chunk.css.map",
+    "310.d9a4ca34.chunk.js.map": "/bureaux/static/js/310.d9a4ca34.chunk.js.map",
+    "365.265f1b01.chunk.css.map": "/bureaux/static/css/365.265f1b01.chunk.css.map",
+    "365.e896e197.chunk.js.map": "/bureaux/static/js/365.e896e197.chunk.js.map",
+    "787.94c578f1.chunk.js.map": "/bureaux/static/js/787.94c578f1.chunk.js.map",
+    "783.858cabfe.chunk.js.map": "/bureaux/static/js/783.858cabfe.chunk.js.map",
+    "811.b908c193.chunk.js.map": "/bureaux/static/js/811.b908c193.chunk.js.map",
+    "450.bab4c2a6.chunk.js.map": "/bureaux/static/js/450.bab4c2a6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1366d89d.css",
-    "static/js/main.8246bd0c.js"
+    "static/css/main.6f04bee1.css",
+    "static/js/main.eb5d3a1f.js"
   ]
 }
