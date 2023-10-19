@@ -1,4 +1,65 @@
+
 .ourWork {
+  section:not(.scrollable) {
+    height: 900px;
+    background: green;
+  }
+
+  .scrollable {
+    height: 3000px;
+  }
+
+  .scrollable .container {
+    position: sticky;
+    top: 0;
+    height: 98vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .line-container {
+    position: relative;
+    height: 100%;
+  }
+
+  .line {
+    position: absolute;
+    top: 0;
+    width: 2px;
+  }
+
+  .line--base {
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+  }
+
+  .line--active {
+    z-index: 2;
+    background: red;
+  }
+
+  .blocks-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .block {
+    height: 25%;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: grey;
+  }
+
+  .block--active {
+    background: red;
+  }
 overflow:hidden ;
   background-image: url(./img/Bg.png);
   padding-bottom:5rem ;
@@ -15,6 +76,7 @@ overflow:hidden ;
       text-align: left;
       text-transform: uppercase;
       margin: 0;
+      white-space: nowrap;
     }
   }
   &-list{
@@ -96,7 +158,7 @@ overflow:hidden ;
     }
   }
 }
-.active{
+.active-item{
   background-color: #BF1616;
   color: white;
     position: sticky;
@@ -155,49 +217,51 @@ ul {
   transform: rotate(90deg);
   width: 9.5rem;
   height: 2px;
-  background-color: #e0e0e0; 
+  background-color: #e0e0e0;
 }
 
 .vertical-line {
   position: absolute;
   height: 100%;
   width: 0;
-  background-color: #BF1616; 
-  transition: width 0.5s; 
+  background-color: #BF1616;
+  transition: width 0.5s;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .ourWork {
-    padding-bottom: 4rem; 
+    padding-bottom: 4rem;
   }
 
   .ourWork-header {
-    padding: 5rem 0 3rem; 
+    align-items: center;
+    padding: 5rem 0 3rem;
   }
 
   .ourWork-header--title {
-    font-size: 64px;
+    font-size: 8vw;
     line-height: 61px;
+    white-space: normal;
   }
 
   .ourWork-list {
     display: flex;
     flex-direction: column;
     padding: 0;
-    align-items: center; 
+    align-items: center;
   }
 
   .ourWork-container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    margin-bottom: 2rem; 
+    margin-bottom: 2rem;
   }
 
   .ourWork-container--image {
     grid-column: 1;
-    width: 10.5rem; 
-    height: 10rem; 
-    background-color: #bf1616; 
-    border-radius: 0; 
+    width: 10.5rem;
+    height: 10rem;
+    background-color: #bf1616;
+    border-radius: 0;
     justify-self: center;
     padding: 0;
     align-self: center;
@@ -225,22 +289,22 @@ ul {
   .ourWork-container--text {
     font-size: 24px;
     line-height: 29px;
-    width: 100%; 
+    width: 100%;
     text-align: center;
     color: black;
     font-weight: 400;
   }
 
   .step-number {
-    width: 2rem; 
-    height: 2rem; 
-    padding-top: 0.3rem; 
+    width: 2rem;
+    height: 2rem;
+    padding-top: 0.3rem;
   }
 
   .vertical-line-container {
-    top: 2.7rem; 
-    right: -2rem; 
-    width: 2rem; 
+    top: 2.7rem;
+    right: -2rem;
+    width: 2rem;
   }
   .image-box3{
     & img{
@@ -248,7 +312,7 @@ ul {
 
     }
   }
-  .header-logo{
+  .ourWork-header-logo{
     position: absolute;
     right: 0rem;
   }
@@ -259,11 +323,12 @@ ul {
 }
 @media (max-width: 480px) {
   .ourWork {
-    padding-bottom: 3rem; 
+    padding-bottom: 3rem;
   }
 
   .ourWork-header {
-    padding: 3rem 0 3rem 2rem; 
+    position: relative;
+    padding: 3rem 0 3rem 1rem;
   }
 
   .ourWork-header--title {
@@ -273,12 +338,12 @@ ul {
 
 
   .ourWork-container {
-    margin-bottom: 2rem; 
+    margin-bottom: 2rem;
   }
 
   .ourWork-container--image {
-    width: 6rem; 
-    height: 6rem; 
+    width: 6rem;
+    height: 6rem;
     & img{
       width: 4rem;
     }
@@ -307,8 +372,16 @@ ul {
 
     }
   }
-  .header-logo{
+  .ourWork-header-logo{
     position: absolute;
-    right: 0;
+    right: 20%;
+    top: 28%;
+
+    @media screen and (max-width: 320px){
+      right: 0;
+    }
+    @media screen and (min-width: 375px){
+      right: 2%;
+    }
   }
 }

@@ -97,7 +97,7 @@ function PopUpContainer({ onCloseButton, onClose }) {
                   <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#BF1616" strokeWidth="1.5" strokeLinecap="round"></path>
                 </g>              </svg>
           )}
-          <form onSubmit={handleSubmit} style={{gap:"2rem"}}>
+          <form onSubmit={handleSubmit} >
             <label>
               Ваше ім'я
               <input
@@ -107,7 +107,7 @@ function PopUpContainer({ onCloseButton, onClose }) {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   style={{ borderRadius: '11px' }}
-                  autoComplete="false"
+                  autoComplete="off"
                   required
               />
             </label>
@@ -121,7 +121,7 @@ function PopUpContainer({ onCloseButton, onClose }) {
                   enableSearch
                   inputStyle={{ width: '100%', border: '1px solid black', borderRadius: '11px', height: '3rem' }}
                   placeholder='Введіть ваш номер'
-                  autoComplete="false"
+                  autoComplete="off"
                   required
               />
             </label>
@@ -148,14 +148,13 @@ function PopUpContainer({ onCloseButton, onClose }) {
                       value={customTime}
                       onChange={(e) => setCustomTime(e.target.value)}
                       style={{ marginTop: '10px', borderRadius: '11px', width: '100%' }}
-                      autoComplete="false"
+                      autoComplete="off"
                       required
                   />
               )}
             </label>
             <p className="popUp-container--text">Який пакет послуг Вас цікавить?</p>
-            <div style={{gap:"1rem"}}>
-            <label className="radio-label" style={{flexDirection:"row"}}>
+            <label className="radio-label" >
               <input
                   type="radio"
                   name="Пакет послуг"
@@ -166,7 +165,7 @@ function PopUpContainer({ onCloseButton, onClose }) {
               />
               Авторський проєкт в українському етностилі
             </label>
-            <label className="radio-label" style={{flexDirection:"row"}}>
+            <label className="radio-label" >
               <input
                   type="radio"
                   name="Пакет послуг"
@@ -177,7 +176,6 @@ function PopUpContainer({ onCloseButton, onClose }) {
               />
               Міні-проєкт
             </label>
-            </div>
             <button className="popUp-container--button" onClick={handleSubmit}>
               Відправити
             </button>

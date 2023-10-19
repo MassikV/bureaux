@@ -187,7 +187,7 @@ function ServiceModal({ onClose }) {
                   </motion.label>
               ))
           ) : (
-              <motion.div style={{ width: '100%' }} variants={contentVariants}>
+              <motion.div style={{ display:"contents",width: '100%' }} variants={contentVariants}>
                 <label className={labelClass}>Ім'я:</label>
                 <input
                     ref={inputRefs.nameRef}

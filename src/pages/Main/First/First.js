@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, useLocation } from "react-router-dom";
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import { Link, useLocation } from "react-router-dom";
 import Logo from "./img/logo.png"
 import "./first.scss";
 import { projects } from "../../../data/projects";
 import MoreProject from "../../../components/MoreProject/MoreProject";
+import PhonePopUp from "../../../components/PhonePopUp";
 
 const First = () => {
   const location = useLocation();
@@ -26,10 +27,13 @@ const First = () => {
     }
   }
 
+  const [isDesktop, setIsDesktop] = useState(false);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 480);
-      setIsTablet(window.innerWidth <= 873);
+      setIsTablet(window.innerWidth <= 1024);
+      setIsDesktop(window.innerWidth > 1024);
     }
 
     window.addEventListener('resize', handleResize);
@@ -40,32 +44,24 @@ const First = () => {
     }
   }, []);
 
-  const backgroundImageUrls = [
+  const backgroundImageUrls = useMemo(() => [
     require("./img/Bg/bg.png"),
     require("./img/Bg/bg2.png"),
     require("./img/Bg/bg3.png"),
     require("./img/Bg/bg4.png"),
-  ];
+  ], []);
 
   const backgroundImageUrl = backgroundImageUrls[currentPhotoIndex];
 
-  const goToNextPhoto = () => {
+  const goToNextPhoto = useCallback(() => {
     setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % backgroundImageUrls.length);
-  };
+  }, [backgroundImageUrls]);
 
-  // const goToPreviousPhoto = () => {
-  //   setCurrentPhotoIndex((prevIndex) => (prevIndex - 1 + backgroundImageUrls.length) % backgroundImageUrls.length);
-  // };
-if (isMobile && isTablet){
-  console.log(1)
-}
-  
   useEffect(() => {
-    const interval = setInterval(goToNextPhoto, 20000); 
+    const interval = setInterval(goToNextPhoto, 20000);
     return () => clearInterval(interval);
-  }, );
+  }, [goToNextPhoto]);
 
-  
   const [dotsVisible, setDotsVisible] = useState(false);
 
   const toggleDotsVisibility = () => {
@@ -92,16 +88,16 @@ if (isMobile && isTablet){
               <h3 className="First__projects__title">Проєкти</h3>
               <div className="First__projects__wrapper">
                 {newProjects.slice(0, 3).map((item) => (
-                    <NavLink to={`/bureaux/projects-info/${item.id}`} className="First__projects__block" key={item.id} onMouseEnter={() => handleMouseEnter(item.id)} onMouseLeave={handleMouseLeave}>
+                    <Link to={`/bureaux/projects/info/${item.id}`} className="First__projects__block" key={item.id} onMouseEnter={() => handleMouseEnter(item.id)} onMouseLeave={handleMouseLeave}>
                       <img src={item.mainPhoto} className="First__projects__img" alt="" />
-                      {hoveredProject === item.id && (
+                      {((isMobile || isTablet) || (isDesktop && hoveredProject === item.id)) && (
                           <div className="First__projects--container">
                             <span className="First__projects--number">{item.id - 8}</span>
                             <p className="First__projects--title">{item.name}</p>
                             <p className="First__projects--square">{item.square}</p>
                           </div>
                       )}
-                    </NavLink>
+                    </Link>
                 ))}
               </div>
               <MoreProject />
@@ -117,8 +113,7 @@ if (isMobile && isTablet){
               </p>
             </div>
         )}
-        {}
-
+        <PhonePopUp />
       </section>
   );
 }

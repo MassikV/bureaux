@@ -28,7 +28,7 @@ const founders = [
 
 function Founders() {
   const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-width: 1025px)",
+    query: "(min-width: 1024px)",
   });
 
   return (

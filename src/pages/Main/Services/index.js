@@ -37,8 +37,6 @@ function Services() {
   const openModal = () => {
     setModalOpen(true);
     document.body.classList.add('no-scroll');
-    console.log('isModalOpen тепер рівний true:', isModalOpen);
-
   };
 
 
@@ -61,7 +59,7 @@ function Services() {
   useEffect(() => {
     const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 1025px)", () => {
+    mm.add("(min-width: 1023px)", () => {
       gsap.utils.toArray('.service-block').forEach((block, index) => {
         gsap.fromTo(
             block,
@@ -73,7 +71,7 @@ function Services() {
               duration: 2,
               scrollTrigger: {
                 trigger: block,
-                start: 'top 50%',
+                start: 'top 80%',
                 end: 'bottom 50%',
                 scrub: true,
               },
@@ -102,7 +100,7 @@ function Services() {
         <div className="services-top">
           <div className="services-top--logos">
             <h2 className="services-top--title">Послуги</h2>
-            {window.innerWidth < 1024 && logos}
+            {window.innerWidth < 1023 && logos}
           </div>
         </div>
         <div className="services-center">

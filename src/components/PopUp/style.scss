@@ -2,7 +2,9 @@
   background-image: url(./img/Bg.png);
   background-size: cover;
   padding: 3rem 0 2.5rem 0;
-
+& form{
+  gap: 2rem;
+}
   &-title {
     font-family: 'Kyiv Region', sans-serif;
     font-size: 48px;
@@ -24,13 +26,16 @@
     color: white;
     text-align: center;
     margin: 1.5rem auto;
-    width: 42rem;
+    padding: 0 20vw;
+    @media screen and (max-width: 1023px){
+      padding: 0;
+    }
   }
 
   &-container {
     position: relative;
     width: 42rem;
-    height: 50rem;
+    height: auto;
     background-color: white;
     margin: 0 auto;
     display: flex;
@@ -68,13 +73,12 @@
     }
 
     &.immediate-time {
-      height: 45rem;
+      height: auto;
       align-items: center;
     }
 
     & label {
-      display: flex;
-      flex-direction: column;
+      display: grid;
       font-family: 'IBM Plex Mono', monospace;
       font-size: 22px;
       font-weight: 500;
@@ -94,19 +98,24 @@
       }
 
       & input {
+
         font-size: 20px;
         border-radius: 11px;
-        padding: 0.5rem;
-        height: 3rem;
-        border: 2px solid black;
+        padding: 0 1.5rem;
+        height: 48px;
+        border: 1px solid black;
       }
 
       & select {
+        width: 100%;
         border-radius: 11px;
-        padding: 0.5rem;
+        padding: 0 1.5rem;
         cursor: pointer;
-        height: 3rem;
+        height: 48px;
           font-size: 20px;
+        @media screen and (max-width: 480px) {
+          font-size: 15px;
+        }
       }
     }
 
@@ -133,14 +142,14 @@
 }
 
 .radio-label {
-  display: flex;
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+  align-items: center;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
   height: 4rem;
   margin: 0;
 
@@ -148,8 +157,6 @@
     width: 2rem;
     margin: 0;
     &:checked{
-      width: 2rem;
-      height: 2rem;
       accent-color: #bf1616;
       border: 2px solid #BF1631;
       border-radius: 50%;
@@ -162,22 +169,28 @@
 .form-control{
   font-size: 20px;
 }
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1023px){
   .popUp {
+    & form{
+      gap: 1.5rem;
+    }
     &-title {
       font-size: 48px;
       line-height: 46px;
+      padding-bottom: 0.5rem;
     }
 
     &-text {
       font-size: 28px;
       line-height: 34px;
+      padding: 0 1rem;
     }
 
     &-container {
-      width: 90vw;
+      width: 70vw;
 
       &--text {
+
         font-size: 22px;
         line-height: 26px;
       }
@@ -185,12 +198,6 @@
       & label {
         font-size: 22px;
         line-height: 26px;
-        &:nth-of-type(4){
-          flex-direction: row;
-        }
-        &:nth-of-type(5){
-          flex-direction: row;
-        }
       }
 
       &--button {
@@ -206,26 +213,20 @@
     font-weight: 400;
     line-height: 24px;
     flex-direction: row;
-    height: 2rem;
+    height:auto;
+
     & input{
-      width: 1.8rem;
+      width: 28px;
+      height: 42px;
       &:checked{
-        width: 1.8rem;
-        height: 1.8rem;
         border: 2px solid #BF1616;
         border-radius: 50%;
         background-color: #BF1616;
       }
     }
-    & input:nth-of-type(2){
-      & input{
-        width: 1.5rem;
-      }
     }
-  }
-
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 480px) {
   .popUp {
     &-title {
       font-size: 40px;
@@ -238,6 +239,7 @@
     }
 
     &-container {
+      width: 85vw;
       &--text {
         font-size: 14px;
         line-height: 17px;
@@ -246,14 +248,10 @@
       & label {
         font-size: 14px;
         line-height: 17px;
-        &:nth-of-type(4){
-          & input{
-            width: 2.25rem;
-          }
-        }
       }
 
       &--button {
+        height: 4rem;
         font-size: 24px;
         line-height: 29px;
       }
@@ -262,10 +260,11 @@
   .radio-label {
     font-size: 12px;
     line-height: 15px;
+    height: auto;
     & input{
+      height: 36px;
+      width: 22px;
       &:checked{
-        width: 1.8rem;
-        height: 1.8rem;
         border: 2px solid #BF1616;
         border-radius: 50%;
         background-color: #BF1616;

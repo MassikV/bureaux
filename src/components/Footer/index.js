@@ -1,36 +1,67 @@
 import React from "react";
 import './style.scss';
 import logo from './logo.png';
-function Footer(){
-  return(
+import { Link } from "react-scroll";
+
+function Footer() {
+  return (
       <footer className="footer">
-        <ul className="footer-info">
-          <li className="footer-info--item">
-            <a href="/" className="footer-logo">
+        <div className="footer-info">
+          <Link
+              to="First"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="footer-logo"
+          >
             <img src={logo} alt="Bureau" />
-          </a></li>
-          <li className="footer-info--item">Design & Architecture</li>
-          <li className="footer-info--item">Україна, Київ</li>
-          <li className="footer-info--item">Copyright</li>
-        </ul>
-        <ul className="footer-navigation">
-          <li className="footer-navigation--item">Навігація</li>
-          <li className="footer-navigation--item"><a href="/bureaux/#Header">Головна</a></li>
-          <li className="footer-navigation--item"><a href="/bureaux/#AboutUs">Про нас</a></li>
-          <li className="footer-navigation--item"><a href="/bureaux/#Services">Послуги</a></li>
-          <li className="footer-navigation--item"><a href="/bureaux/#Projects">Проєкти</a></li>
-          <li className="footer-navigation--item"><a href="/bureaux/#Reviews">Відгуки</a></li>
-          <li className="footer-navigation--item"><a href="/bureaux/#FAQs">Запитання</a></li>
-        </ul>
-        <ul className="footer-contacts">
-          <li className="footer-contacts--item">Контакти</li>
-          <li className="footer-contacts--item"><a href="tel:+380 98 979 86 48" rel="noreferrer"  target="_blank">+380 98 979 86 48</a></li>
-          <li className="footer-contacts--item"><a href="mailto:bureaux.ivan@gmail.com" rel="noreferrer"  target="_blank">bureaux.ivan@gmail.com</a></li>
-          <li className="footer-contacts--item"><a href="https://www.instagram.com/bureau.x_/" rel="noreferrer"  target="_blank">Instagram</a></li>
-          <li className="footer-contacts--item"><a href="https://www.facebook.com/BureaX" rel="noreferrer"  target="_blank">Facebook</a></li>
-          <li className="footer-contacts--item"><a href="https://www.behance.net/bureaux" rel="noreferrer"  target="_blank">Behance</a></li>
-        </ul>
+          </Link>
+          <span className="footer-info--item">Design & Architecture</span>
+          <span className="footer-info--item">Україна, Київ</span>
+          <span className="footer-info--item">Copyright</span>
+        </div>
+        <div className="footer-navigation">
+          <h3 className="footer-navigation--title">Навігація</h3>
+          <Link to="First" spy={true} smooth={true} offset={-70} duration={500} >
+            <span className="footer-navigation--item">Головна</span>
+          </Link>
+          <Link to="AboutUs" spy={true} smooth={true} offset={-70} duration={500} >
+            <span className="footer-navigation--item">Про нас</span>
+          </Link>
+          <Link to="Services" spy={true} smooth={true} offset={-70} duration={500} >
+            <span className="footer-navigation--item">Послуги</span>
+          </Link>
+          <Link to="Projects" spy={true} smooth={true} offset={-70} duration={500} >
+            <span className="footer-navigation--item">Проєкти</span>
+          </Link>
+          <Link to="Reviews" spy={true} smooth={true} offset={-70} duration={500} >
+            <span className="footer-navigation--item">Відгуки</span>
+          </Link>
+          <Link to="FAQs" spy={true} smooth={true} offset={-70} duration={500} >
+            <span className="footer-navigation--item">Запитання</span>
+          </Link>
+        </div>
+        <div className="footer-contacts">
+          <h3 className="footer-contacts--title">Контакти</h3>
+          <a href="tel:+380 98 979 86 48" rel="noreferrer" target="_blank">
+            <span className="footer-contacts--item">+380 98 979 86 48</span>
+          </a>
+          <a href="mailto:bureaux.ivan@gmail.com" rel=" noreferrer" target="_blank" >
+            <span className="footer-contacts--item">bureaux.ivan@gmail.com</span>
+          </a>
+          <a href="https://www.instagram.com/bureau.x_/"  rel="noreferrer" target="_blank">
+            <span className="footer-contacts--item">Instagram</span>
+          </a>
+          <a href="https://www.facebook.com/BureaX" rel="noreferrer" target="_blank">
+            <span className="footer-contacts--item">Facebook</span>
+          </a>
+          <a href="https://www.behance.net/bureaux" rel="noreferrer" target="_blank">
+            <span className="footer-contacts--item">Behance</span>
+          </a>
+        </div>
       </footer>
-  )
+  );
 }
+
 export default Footer;

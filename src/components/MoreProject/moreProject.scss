@@ -6,6 +6,10 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
+  &:hover{
+    background-color: #BF16167D;
+    transition: 0.35s;
+  }
     &__title {
         color: #FFF;
         font-family: 'Kyiv Region', sans-serif;
@@ -16,7 +20,7 @@
         text-transform: uppercase;
     }
 }
-@media (max-width: 1024px){
+@media (max-width: 1023px){
   .more-project{
     width: 25rem;
     height: 6rem;

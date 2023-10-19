@@ -76,7 +76,7 @@ function OurWork() {
         }
       });
 
-      
+
       if (gsap && ScrollTrigger) {
         gsap.to(".ourWork-container--image", { borderRadius: "0", duration: 0.1 });
       }
@@ -135,10 +135,10 @@ function OurWork() {
 
   const logoWidth =
       windowWidth <= 480
-          ? 34 
+          ? 34
           : windowWidth <= 1024
-              ? 65 
-              : 85; 
+              ? 65
+              : 85;
 
   const maxLogosInRow = Math.floor(windowWidth / logoWidth);
 
@@ -176,7 +176,7 @@ function OurWork() {
             <div className="ourWork-header">
               <h2 className="ourWork-header--title">як ми працюємо</h2>
               <div className="header-logo">
-              {logos.slice(0, 6)}
+                {logos.slice(0, 6)}
               </div>
             </div>
         )}

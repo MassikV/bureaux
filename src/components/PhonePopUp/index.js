@@ -19,9 +19,16 @@ function PhonePopUp({onClose}) {
       phoneNumber: phoneNumber,
     };
 
+    const phonePattern = /^\+?\d{10,12}$/;
+
+    if (!phonePattern.test(phoneNumber)) {
+      toast.error('Введений номер телефону не є дійсним.');
+      setIsSubmitting(false);
+      return;
+    }
+
     console.log("Дані форми дзвінка:", formData);
 
-    
     toast.success('Ваш номер телефону було надіслано успішно.');
 
     setTimeout(() => {

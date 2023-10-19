@@ -2,15 +2,50 @@ import './style.scss';
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PopUpContainer from '../PopUp/PopUp-container';
-import BurgerMenu from './BurgerMenu';
-import SidebarMenu from './SidebarMenu';
-import logo from './img/logo.png';
+import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
+import Logo from './img/logo.png';
 
 function Header() {
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [isPopupSubmitted, setPopupSubmitted] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(true); 
+  const [isScrolled, setIsScrolled] = useState(true);
+  const [nav, setNav] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    if (nav) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [nav]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY >= 200) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  const handleMobileNavClick = () => {
+    setNav(false);
+    setTimeout(() => {
+    }, 300);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,43 +76,48 @@ function Header() {
     document.body.classList.remove('no-scroll');
   };
 
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
-
   return (
-      <header className={`header`} id="Header">
-        <div className={`header-container padding ${isScrolled ? 'scrolled' : ''}`}>
-          <BurgerMenu onClick={toggleMenu} />
-          <Link to="/bureaux/" className="header-container--logo">
-            <img src={logo} alt="Bureau" />
-          </Link>
-          {isMenuOpen && <SidebarMenu isOpen={isMenuOpen} onClose={toggleMenu} />}
-          <nav className={`header-container--navbar ${isMenuOpen ? 'open' : ''}`}>
-            <ul className="list">
-              <li className="list-item"><a href="/bureaux/#AboutUs">Про нас</a></li>
-              <li className="list-item"><a href="/bureaux/#Projects">Проєкти</a></li>
-              <li className="list-item"><a href="/bureaux/#OurWork">Як ми працюємо</a></li>
-              <li className="list-item"><a href="/bureaux/#Services">Послуги</a></li>
+      <div className='containerr'>
+        <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+          <a href="/bureaux/">
+          <img src={Logo} alt="logo" className="header-logo" />
+          </a>
+          <div className={`header-wrapper ${nav ? "active" : ""}`}>
+            <ul className="header-list">
+              <li className="header-list__item">
+                <a href="/bureaux/#AboutUs" onClick={() => handleMobileNavClick()}>Про нас</a>
+              </li>
+              <li className="header-list__item">
+                <a href="/bureaux/#Projects" onClick={() => handleMobileNavClick()}>Проєкти</a>
+              </li>
+              <li className="header-list__item">
+                <a href="/bureaux/#OurWork" onClick={() => handleMobileNavClick()}>Як ми працюємо</a>
+              </li>
+              <li className="header-list__item">
+                <a href="/bureaux/#Services" onClick={() => handleMobileNavClick()}>Послуги</a>
+              </li>
             </ul>
-          </nav>
-          <button className="header-button" onClick={openPopup}>
-            <span className="header-button--text">Безкоштовний розрахунок</span>
-          </button>
-          {isPopupVisible && (
-              <div className="popup-overlay">
-                <PopUpContainer
-                    onClose={closePopup}
-                    onCloseButton={() => {
-                      closePopup();
-                      setPopupSubmitted(false);
-                    }}
-                    isOpenByButton={isPopupSubmitted}
-                />
-              </div>
-          )}
-        </div>
-      </header>
+            <button className="header__btn" onClick={openPopup}>
+              Безкоштовний розрахунок
+            </button>
+          </div>
+          <div onClick={() => setNav(!nav)} className="header__btns">
+            {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
+          </div>
+        </header>
+        {isPopupVisible && (
+            <div className="popup-overlay">
+              <PopUpContainer
+                  onClose={closePopup}
+                  onCloseButton={() => {
+                    closePopup();
+                    setPopupSubmitted(false);
+                  }}
+                  isOpenByButton={isPopupSubmitted}
+              />
+            </div>
+        )}
+      </div>
   );
 }
 

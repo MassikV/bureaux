@@ -11,8 +11,7 @@
     padding-top: 3rem;
 
     &--title {
-      border-radius: 5px;
-      background-color: #BF1616; 
+      background-color: #BF1616;
       color: white;
       font-family: 'Kyiv Region', sans-serif;
       font-size: 48px;
@@ -98,7 +97,7 @@
         line-height: 5rem;
         text-align: center;
         &:hover{
-          background-color: #880b08;
+            background-color: #BF16169D;
         }
       }
     }
@@ -148,10 +147,9 @@
     background-image: url(./img/imgbottom.png);
     background-size: cover;
     width: 100%;
-    height: 27rem;
+    height: auto;
     overflow: hidden;
     z-index: 1;
-
     &--text {
       margin: 0;
       font-family: 'IBM Plex Mono', monospace;
@@ -159,7 +157,7 @@
       font-weight: 500;
       line-height: 30px;
       color: white;
-      width: 38.5rem;
+      padding: 1rem;
     }
 
     &--button {
@@ -179,6 +177,7 @@
       position: relative;
       padding: 3rem;
       overflow: hidden;
+      margin: 0 auto;
       &:hover{
         background-color: #880b08;
       }
@@ -311,6 +310,8 @@
   font-size: 24px;
   padding: 0;
   color: #BF1616;
+  width: 1rem;
+  height: 1rem;
 }
 
 input[type="text"],
@@ -388,20 +389,27 @@ button:disabled {
 
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .modal-inner{
     width: 90%;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 90%;
-    padding: 0.5rem;
     & h3{
-      font-size: 12px; 
-      line-height: 7px;
+      margin-top: 3rem;
+      font-size: 30px;
+      line-height: 30px;
     }
   }
   .progress-bar{
-    display: none;
+    order: 3;
   }
   .question-counter{
+    top: 1.4rem;
+    left: 1.5rem;
+    width: auto;
     position: absolute;
     text-align: start;
     color: #BF1616;
@@ -413,30 +421,35 @@ button:disabled {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 0;
-    height: 1.5rem;
+    height: 2.5rem;
   }
   .react-tel-input .form-control {
     font-size: 14px;
     border: 1px solid #CACACA;
-   height: 1.5rem;
+   height: 2.5rem;
   }
   .react-tel-input .flag {
     width: 16px;
     height: 11px;
   }
   .question-counter, .label-class{
-    font-size: 9px; 
-    line-height: 5px;
+    font-size: 20px;
+    line-height: 24px;
   }
   .label-class{
-    height: 1rem;
+    height: 1.5rem;
     width: 100%;
     grid-template-columns: 1fr 0.1fr;
     margin-bottom: 0.25rem;
 
   }
+  .modal-controls{
+    order: 3;
+    margin-top: 10px;
+  }
   .input-class{
-    width: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
       justify-self: end;
   }
   .services {
@@ -452,6 +465,8 @@ button:disabled {
         text-align: left;
         background-color: rgba(0, 0, 0, 0);
         color: black;
+        width: auto;
+        margin-top: 0.5rem;
       }
     }
 
@@ -468,6 +483,9 @@ button:disabled {
       .service-block {
         justify-items: center;
         height: auto;
+        @media screen and (max-width: 1023px){
+          transform: none !important;
+        }
       }
 
       .black-bg {
@@ -563,7 +581,6 @@ grid-template-rows: 0.7fr 0.2fr;
         font-size: 20px;
         line-height: 24px;
         text-align: center;
-        width: 52vw;
         padding-bottom: 2rem;
         & span {
           padding-top: 1rem;
@@ -576,20 +593,21 @@ grid-template-rows: 0.7fr 0.2fr;
         width: 100vw;
         text-align: center;
         padding: 1rem;
-        height: 25vh;
+        height: 10rem;
         align-self: end;
 
         & img {
           position: relative;
           top: 0;
           right: 0;
-          width: 6rem;
+          width: 4rem;
         }
       }
     }
   }
   .services-top--logos{
     display: flex;
+    align-items: flex-start;
   }
 }
 @media (max-width: 480px) {
@@ -686,7 +704,7 @@ grid-template-rows: 0.7fr 0.2fr;
         font-size: 14px;
         line-height: 17px;
         margin: 0;
-        text-align: left;
+        text-align: center;
       }
 
       &--details {
@@ -710,7 +728,6 @@ grid-template-rows: 0.7fr 0.2fr;
         font-size: 16px;
         line-height: 19px;
         text-align: center;
-        width: 52vw;
         padding-bottom: 2rem;
         & p {
           padding-top: 1rem;
@@ -727,7 +744,7 @@ grid-template-rows: 0.7fr 0.2fr;
         align-self: end;
 
         & img {
-          width: 4.5rem;
+          width: 3rem;
         }
       }
     }
@@ -741,10 +758,21 @@ grid-template-rows: 0.7fr 0.2fr;
   .modal-inner{
     width: 100%;
     height: 100%;
+    & h3{
+      margin-top: 2rem;
+      font-size: 18px;
+      line-height: 21px;
+    }
+  }
+  .question-counter{
+    top: 1.4rem;
+    left: 1.5rem;
+    width: auto;
+    position: absolute;
+    text-align: start;
+    color: #BF1616;
   }
   .close-modal-button {
-    
-    
     width: 0.5rem;
     height: 0.5rem;
     &::before, &::after{
@@ -752,5 +780,38 @@ grid-template-rows: 0.7fr 0.2fr;
       cursor: pointer;
     }
   }
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 0;
+    height: 2rem;
+  }
+  .react-tel-input .form-control {
+    font-size: 14px;
+    border: 1px solid #CACACA;
+    height: 2rem;
+  }
+  .question-counter, .label-class{
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .label-class{
+    height: 1rem;
+  }
+  .modal-controls{
+    order: 3;
+    margin-top: 10px;
+    & button{
+      padding: 0.5rem 1.3rem;
+    }
+  }
+  .input-class{
+    width: 1rem;
+    height: 1rem;
+    justify-self: end;
+  }
+  }
 
-}

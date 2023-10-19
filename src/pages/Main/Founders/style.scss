@@ -39,14 +39,12 @@
       height: 97px;
       color: white;
       background-color: #BF1616;
-      padding-left: 2.5em;
-      padding-top: 1em;
       margin: 0;
-
+      padding: 0.5rem 0 1rem 2.5rem;
       &::before {
         content: '“';
         position: absolute;
-        top: 25px;
+        top: 20px;
         left: 15px;
         font-size: 48px;
         font-family: "Montserrat", serif;
@@ -125,7 +123,6 @@
     position: relative;
     grid-row: 2/6;
     grid-column: 2/3;
-    width: 36.8rem;
     margin: 0 auto;
 }
 }
@@ -142,12 +139,12 @@
   padding: 3px !important;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .founders {
     background-image: url(./img/tabletBg.png);
-    height: 150rem;
+    height: auto;
     grid-template-columns: 1fr;
-    grid-template-rows:1fr 1fr;
+    grid-template-rows:0.3fr 1fr;
     &-data{
       display: grid;
       grid-template-rows: 1fr 1fr ;
@@ -173,17 +170,26 @@
 display: none;
     }
 &-container{
-  grid-template-columns: 1fr 0.1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
-  padding-top: 0;
-  height: 60rem;
-  width: 39rem;
+  padding: 0 0.5rem 1rem;
+  height: auto;
+  width: 80vw;
+  justify-items: start;
+
+  & img{
+    width: 85%;
+    justify-self: center;
+  }
   &--ornament{
-    overflow: hidden;
-    width: 36rem;
+    width: 90%;
     grid-row:2 ;
     align-self: center;
     grid-column: 1;
+    justify-self: center;
+    & img{
+      width: 100%;
+    }
   }
 }
     .founders-container--name {
@@ -191,6 +197,8 @@ display: none;
       font-size: 28px; 
       line-height: 26px; 
       grid-column:1 ;
+      margin-left: 2.75rem;
+      width: auto;
     }
 
     .founders-container--title {
@@ -199,13 +207,17 @@ display: none;
       line-height: 29px; 
       grid-row: 4;
       grid-column: 1;
+      margin-left: 2.75rem;
+      width: auto;
     }
 
     .founders-container--info {
       text-align: start;
       grid-row: 5;
       font-size: 24px; 
-      line-height: 29px; 
+      line-height: 29px;
+      margin-left: 2.75rem;
+      width: auto;
     }
 
     .founders-container--text {
@@ -213,28 +225,38 @@ display: none;
       grid-row: 6;
       font-size: 24px; 
       line-height: 29px;
+      margin-left: 2.75rem;
+      width: auto;
     }
   }
 }
 @media screen and (max-width: 480px) {
   .founders {
     max-width: 480px;
-    height: 108rem;
+    height: 101rem;
+    grid-template-rows: 200px 1fr;
     &-container {
       grid-template-columns: 1fr;
       grid-template-rows: auto;
       height: 40rem;
       width: 95vw;
       padding: 0 0 1rem;
+      & img{
+        width: 90vw;
+        justify-self: center;
+      }
       &--ornament{
         width: 95vw;
         text-align: center;
+        margin: 0;
       }
     }
 
+
+
     &-title {
       font-size: 38px; 
-      line-height: 40px; 
+      line-height: 60px;
     }
 
     &-data {
@@ -246,34 +268,36 @@ display: none;
 
     .founders-container--name {
       width: 95vw;
-      padding-left: 0.5rem;
+      padding-left: 1rem;
       font-size: 16px; 
-      line-height: 15px; 
+      line-height: 15px;
+      margin: 0;
     }
 
     .founders-container--title {
       width: 95vw;
-      padding-left: 0.5rem;
+      padding-left: 1rem;
       font-size: 14px; 
-      line-height: 17px; 
+      line-height: 17px;
+      margin: 0;
     }
 
     .founders-container--info {
       width: 95vw;
-      padding-left: 0.5rem;
+      padding-left: 1rem;
       font-size: 14px; 
-      line-height: 17px; 
+      line-height: 17px;
+      margin: 0;
     }
 
     .founders-container--text {
       width: 95vw;
-      padding-left: 0.5rem;
+      padding-left: 1rem;
       font-size: 14px; 
-      line-height: 17px; 
+      line-height: 17px;
+      margin: 0;
     }
+
   }
-  img{
-    width: 90vw;
-    justify-self: center;
-  }
+
 }
