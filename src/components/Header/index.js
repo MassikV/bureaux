@@ -1,6 +1,5 @@
 import './style.scss';
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import PopUpContainer from '../PopUp/PopUp-container';
 import { AiOutlineMenu } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
@@ -9,7 +8,6 @@ import Logo from './img/logo.png';
 function Header() {
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [isPopupSubmitted, setPopupSubmitted] = useState(false);
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(true);
   const [nav, setNav] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -97,10 +95,10 @@ function Header() {
                 <a href="/bureaux/#Services" onClick={() => handleMobileNavClick()}>Послуги</a>
               </li>
             </ul>
-            <button className="header__btn" onClick={openPopup}>
-              Безкоштовний розрахунок
-            </button>
           </div>
+          <button className="header__btn" onClick={openPopup}>
+            Безкоштовний розрахунок
+          </button>
           <div onClick={() => setNav(!nav)} className="header__btns">
             {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
           </div>

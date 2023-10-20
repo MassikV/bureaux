@@ -6,6 +6,7 @@ import { Link } from "react-scroll";
 function Footer() {
   return (
       <footer className="footer">
+        <div className="footer-content">
         <div className="footer-info">
           <Link
               to="First"
@@ -59,6 +60,7 @@ function Footer() {
           <a href="https://www.behance.net/bureaux" rel="noreferrer" target="_blank">
             <span className="footer-contacts--item">Behance</span>
           </a>
+        </div>
         </div>
       </footer>
   );

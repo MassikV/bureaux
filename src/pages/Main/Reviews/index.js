@@ -123,6 +123,7 @@
 
     return (
         <section className="reviews" id="Reviews">
+          <div className="reviews-content">
           <div className="reviews-container" ref={containerRef}>
             <img src={logoImg} alt="#" className="reviews-container--logo" />
             <h2 className="reviews-container--title" ref={titleRef}>
@@ -148,6 +149,7 @@
               bureau.x_
             </a>
           </p>
+          </div>
         </section>
     );
   }

@@ -6,6 +6,9 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
+  @media screen and (min-width: 1024px) and (max-width: 1100px){
+    width: 100%;
+  }
   &:hover{
     background-color: #BF16167D;
     transition: 0.35s;

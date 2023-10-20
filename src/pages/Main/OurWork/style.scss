@@ -157,6 +157,9 @@ overflow:hidden ;
       width: 27rem;
     }
   }
+  ul {
+    margin: 0 auto;
+  }
 }
 .active-item{
   background-color: #BF1616;
@@ -187,9 +190,7 @@ overflow:hidden ;
 }
 
 
-ul {
-  margin: 0;
-}
+
 .step-number{
   background-color: rgba(255,255,255, 0.1);
   border: 3px solid #BF1616;

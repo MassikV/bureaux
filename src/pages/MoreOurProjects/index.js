@@ -53,6 +53,7 @@ function MoreOurProjects() {
       <section className="moreOurProjects">
         <First />
         <div className="moreOurProjects-section">
+          <div className="moreOurProjects-section-content">
           <div className="moreOurProjects-center">
             <div className="moreOurProjects-center-ticker-wrapper">
               <div className="moreOurProjects-center-ticker">
@@ -117,6 +118,7 @@ function MoreOurProjects() {
                 </button>
               </NavLink>
           )).slice(0,8)}
+        </div>
         </div>
       </section>
   );

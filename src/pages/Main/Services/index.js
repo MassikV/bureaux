@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import PopUpContainer from '../../../components/PopUp/PopUp-container';
 import './style.scss';
-import union from './img/Union.svg';
 import logo from './img/logo.png';
 import textLogo from './img/text-logo.png';
 import ServiceBlock from "./Block";
-import logotype from "./img/logos.svg";
 import ServiceModal from "./ServiceModal";
+import Top from "./Top";
+import Bottom from "./Bottom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,8 +29,7 @@ const services = [
 ];
 
 function Services() {
-  const [isPopupVisible, setPopupVisible] = useState(false);
-  const [isPopupSubmitted, setPopupSubmitted] = useState(false);
+
   const [isModalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
@@ -45,16 +43,6 @@ function Services() {
     document.body.classList.remove('no-scroll');
   };
 
-  const openPopup = () => {
-    setPopupVisible(true);
-    document.body.classList.add('no-scroll');
-  };
-
-
-  const closePopup = () => {
-    setPopupVisible(false);
-    document.body.classList.remove('no-scroll');
-  };
 
   useEffect(() => {
     const mm = gsap.matchMedia();
@@ -82,27 +70,10 @@ function Services() {
 
   }, []);
 
-  const logoWidth =
-      window.innerWidth <= 480
-          ? 34
-          : window.innerWidth <= 1024
-              ? 65
-              : 85;
-
-  const maxLogosInRow = Math.floor(window.innerWidth / logoWidth);
-  const logos = Array(maxLogosInRow)
-      .fill(null)
-      .map((_, index) => <img src={logotype} alt="#" className="section-container--logo" key={index} />);
-
 
   return (
       <section className="services" id="Services">
-        <div className="services-top">
-          <div className="services-top--logos">
-            <h2 className="services-top--title">Послуги</h2>
-            {window.innerWidth < 1023 && logos}
-          </div>
-        </div>
+        <Top/>
         <div className="services-center">
           <div className="services-center-ticker-wrapper">
             <div className="services-center-ticker">
@@ -121,34 +92,10 @@ function Services() {
               <ServiceBlock key={index} service={service} index={index}  openModal={openModal}  />
           ))}
         </div>
-        <div className="services-bottom">
-          <p className="services-bottom--text">
-            Кожен проект є унікальним і розробляється під потреби клієнта, саме
-            тому точна вартість залежить від низки факторів.
-            <span>
-            Пропонуємо вам заповнити коротку анкету, після якої ми зможемо
-            порахувати вартість та обговорити більше деталей у телефонній
-            розмові!
-          </span>
-          </p>
-          <a href="#3" className="services-bottom--button" onClick={openPopup}>
-            безкоштовний розрахунок
-            <img src={union} alt="" />
-          </a>
-          {isPopupVisible && (
-              <div className="popup-overlay">
-                <PopUpContainer
-                    onClose={closePopup}
-                    onCloseButton={() => {
-                      closePopup();
-                      setPopupSubmitted(false);
-                    }}
-                    isOpenByButton={isPopupSubmitted}
-                />
-              </div>
-          )}
-        </div>
-        {isModalOpen && <ServiceModal onClose={closeModal} />}
+        <Bottom/>
+        {
+            isModalOpen && <ServiceModal onClose={closeModal}/>
+        }
       </section>
   );
 }

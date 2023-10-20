@@ -33,6 +33,7 @@ function Founders() {
 
   return (
       <section className="founders">
+        <div className="founders-content">
         <h1 className="founders-title">Засновники</h1>
         <div className="founders-img">
           <img src={firstFamilyPhoto} alt="" />
@@ -71,6 +72,7 @@ function Founders() {
               ))}
             </div>
         )}
+        </div>
       </section>
   );
 }

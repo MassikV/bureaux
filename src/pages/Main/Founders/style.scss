@@ -1,10 +1,12 @@
 .founders {
   background-image: url(./img/Bg.png);
-  display: grid;
-  height: 67rem;
   background-size: cover;
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-columns: 0.5fr 1fr;
+  &-content{
+    display: grid;
+    height: 67rem;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 0.5fr 1fr;
+  }
   &-title {
     grid-row-start: 2;
     margin: 0;

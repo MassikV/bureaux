@@ -70,6 +70,7 @@ const First = () => {
 
   return (
       <section className="First projects-first" id="First" style={{ ...projectsWrapperStyle, backgroundImage: `url(${backgroundImageUrl})` }}>
+       <div className="First-content">
         <div className="First__info">
           <img src={Logo} alt="" className="First__logo" />
           <p className="First__title">Оселя з українською душею</p>
@@ -113,6 +114,7 @@ const First = () => {
               </p>
             </div>
         )}
+       </div>
         <PhonePopUp />
       </section>
   );
