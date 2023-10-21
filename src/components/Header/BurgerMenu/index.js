@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 function BurgerMenu({ onClick }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,10 +9,10 @@ function BurgerMenu({ onClick }) {
   };
 
   return (
-      <div className={`burger-menu ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
-        <div className="burger-menu-line"></div>
-        <div className="burger-menu-line"></div>
-      </div>
+    <div className={`burger-menu ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+      <div className="burger-menu-line"></div>
+      <div className="burger-menu-line"></div>
+    </div>
   );
 }
 

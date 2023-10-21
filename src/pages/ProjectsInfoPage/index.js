@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { projects } from "../../data/projects";
+import { projects } from '../../data/projects';
 import Header from '../../components/Header';
 import ProjectLoader from '../../components/ProjectLoader';
-import "./style.scss";
-import Buttons from "./Buttons";
-import Modal from "./Modal";
+import './style.scss';
+import Buttons from './Buttons';
+import Modal from './Modal';
 
 const ProjectInfo = () => {
   const [shownPhotosCount, setShownPhotosCount] = useState(16);
@@ -20,16 +20,16 @@ const ProjectInfo = () => {
     setLoading(true);
     setShownPhotosCount(16);
     setTimeout(() => setLoading(false), 500);
-  }, [projectId])
+  }, [projectId]);
 
   useEffect(() => {
     setLoading(false);
-  }, [shownPhotosCount])
+  }, [shownPhotosCount]);
 
   const handleLoadMorePhotos = (event) => {
     event.stopPropagation();
     setLoading(true);
-    setShownPhotosCount(prevCount => prevCount + 16);
+    setShownPhotosCount((prevCount) => prevCount + 16);
     setTimeout(() => setLoading(false), 500);
   };
 
@@ -58,55 +58,60 @@ const ProjectInfo = () => {
   };
 
   return (
-      <div className='project-container'>
-        <ProjectLoader loading={loading} />
-        {!loading && (
-            <div className="project-container__info" style={projectBlockInfoStyle}>
-              <Header />
-              <div className="project-container__intro">
-                <div className="project-container__wrapper">
-                  <h1 className="project-container__title">{project.name}</h1>
-                  <div className="project-container__description">
-                    <span className="project-container__subtitle">{project.square}</span>
-                    <span className="project-container__subtitle">{project.city}</span>
-                    <span className="project-container__subtitle">{project.year}</span>
-                  </div>
-                </div>
+    <div className="project-container">
+      <ProjectLoader loading={loading} />
+      {!loading && (
+        <div className="project-container__info" style={projectBlockInfoStyle}>
+          <Header />
+          <div className="project-container__intro">
+            <div className="project-container__wrapper">
+              <h1 className="project-container__title">{project.name}</h1>
+              <div className="project-container__description">
+                <span className="project-container__subtitle">{project.square}</span>
+                <span className="project-container__subtitle">{project.city}</span>
+                <span className="project-container__subtitle">{project.year}</span>
               </div>
             </div>
-        )}
-        <div className='projects-container-info'>
-          <Buttons />
-          {!loading && (
-              <div className='project-info'>
-                {project.allPhoto.slice(0, shownPhotosCount).map((item, i) => (
-                    <div className='project-info__item' key={i} onClick={() => {
-                      setSliderIndex(i);
-                      setShowSlider(true);
-                    }}>
-                      <img key={i} className='project-info__img' src={item} alt='' />
-                    </div>
-                ))}
-              </div>
-          )}
-          {!loading && shownPhotosCount < project.allPhoto.length && (
-              <button className="project-info__load-more" onClick={handleLoadMorePhotos}>Показати більше</button>
-          )}
-          <Buttons />
+          </div>
         </div>
-        {showSlider && (
-            <Modal
-                onClose={() => setShowSlider(false)}
-                imageSrc={project.allPhoto[sliderIndex]}
-                imageAlt="gallery image"
-                onPrev={handlePrev}
-                onNext={handleNext}
-                isPrevDisabled={sliderIndex === 0}
-                isNextDisabled={sliderIndex === project.allPhoto.length - 1}
-            />
+      )}
+      <div className="projects-container-info">
+        <Buttons />
+        {!loading && (
+          <div className="project-info">
+            {project.allPhoto.slice(0, shownPhotosCount).map((item, i) => (
+              <div
+                className="project-info__item"
+                key={i}
+                onClick={() => {
+                  setSliderIndex(i);
+                  setShowSlider(true);
+                }}>
+                <img key={i} className="project-info__img" src={item} alt="" />
+              </div>
+            ))}
+          </div>
         )}
+        {!loading && shownPhotosCount < project.allPhoto.length && (
+          <button className="project-info__load-more" onClick={handleLoadMorePhotos}>
+            Показати більше
+          </button>
+        )}
+        <Buttons />
       </div>
+      {showSlider && (
+        <Modal
+          onClose={() => setShowSlider(false)}
+          imageSrc={project.allPhoto[sliderIndex]}
+          imageAlt="gallery image"
+          onPrev={handlePrev}
+          onNext={handleNext}
+          isPrevDisabled={sliderIndex === 0}
+          isNextDisabled={sliderIndex === project.allPhoto.length - 1}
+        />
+      )}
+    </div>
   );
-}
+};
 
 export default ProjectInfo;

@@ -1,6 +1,6 @@
-import union from "../img/Union.svg";
-import PopUpContainer from "../../../../components/PopUp/PopUp-container";
-import React, {useState} from "react";
+import union from '../img/Union.svg';
+import PopUpContainer from '../../../../components/PopUp/PopUp-container';
+import React, { useState } from 'react';
 function Bottom() {
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [isPopupSubmitted, setPopupSubmitted] = useState(false);
@@ -10,43 +10,40 @@ function Bottom() {
     document.body.classList.add('no-scroll');
   };
 
-
   const closePopup = () => {
     setPopupVisible(false);
     document.body.classList.remove('no-scroll');
   };
 
-
-  return(
-  <section className="services-bottom">
-    <div className="services-bottom-content">
-    <p className="services-bottom--text">
-      Кожен проект є унікальним і розробляється під потреби клієнта, саме
-      тому точна вартість залежить від низки факторів.
-      <span>
-            Пропонуємо вам заповнити коротку анкету, після якої ми зможемо
-            порахувати вартість та обговорити більше деталей у телефонній
-            розмові!
+  return (
+    <section className="services-bottom">
+      <div className="services-bottom-content">
+        <p className="services-bottom--text">
+          Кожен проект є унікальним і розробляється під потреби клієнта, саме тому точна вартість
+          залежить від низки факторів.
+          <span>
+            Пропонуємо вам заповнити коротку анкету, після якої ми зможемо порахувати вартість та
+            обговорити більше деталей у телефонній розмові!
           </span>
-    </p>
-    <a href="#3" className="services-bottom--button" onClick={openPopup}>
-      безкоштовний розрахунок
-      <img src={union} alt=""/>
-    </a>
-    {isPopupVisible && (
-        <div className="popup-overlay">
-          <PopUpContainer
+        </p>
+        <a href="#3" className="services-bottom--button" onClick={openPopup}>
+          безкоштовний розрахунок
+          <img src={union} alt="" />
+        </a>
+        {isPopupVisible && (
+          <div className="popup-overlay">
+            <PopUpContainer
               onClose={closePopup}
               onCloseButton={() => {
                 closePopup();
                 setPopupSubmitted(false);
               }}
               isOpenByButton={isPopupSubmitted}
-          />
-        </div>
-    )}
-    </div>
-  </section>
-)
+            />
+          </div>
+        )}
+      </div>
+    </section>
+  );
 }
 export default Bottom;

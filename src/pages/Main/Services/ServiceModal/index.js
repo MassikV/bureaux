@@ -42,13 +42,8 @@ function ServiceModal({ onClose }) {
   const questions = [
     {
       step: 1,
-      text: 'Яка у вас площа об\'єкту?',
-      options: [
-        'До 50 кв. м.',
-        '50-100 кв. м.',
-        '100-200 кв. м.',
-        'Більше 200 кв. м.',
-      ],
+      text: "Яка у вас площа об'єкту?",
+      options: ['До 50 кв. м.', '50-100 кв. м.', '100-200 кв. м.', 'Більше 200 кв. м.'],
     },
     {
       step: 2,
@@ -102,13 +97,13 @@ function ServiceModal({ onClose }) {
 
   const handleSubmit = () => {
     if (
-        !selectedOptions.step1 ||
-        !selectedOptions.step2 ||
-        !selectedOptions.step3 ||
-        !selectedOptions.step4 ||
-        !name ||
-        !phone ||
-        !email
+      !selectedOptions.step1 ||
+      !selectedOptions.step2 ||
+      !selectedOptions.step3 ||
+      !selectedOptions.step4 ||
+      !name ||
+      !phone ||
+      !email
     ) {
       toast.error('Будь ласка, заповніть всі поля перед відправкою форми.');
     } else {
@@ -148,119 +143,107 @@ function ServiceModal({ onClose }) {
     }
 
     return (
-        <motion.div
-            className="modal-inner"
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={modalVariants}
-        >
-          <button className="close-modal-button" onClick={onClose}>
-            <span></span>
-          </button>
-          <div className="question-counter">
-            {currentStep + 1}/{questions.length}
-          </div>
-          <div className="progress-bar">
-            <div
-                className={`progress-bar-fill step-${currentStep + 1}`}
-                style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
-            ></div>
-          </div>
-          <h3>{currentQuestion.text}</h3>
-          {currentStep !== 4 ? (
-              currentQuestion.options.map((option, index) => (
-                  <motion.label className={labelClass} key={index} variants={contentVariants}>
-                    <input
-                        className={inputClass}
-                        type="radio"
-                        value={option}
-                        checked={selectedOptions[`step${currentStep + 1}`] === option}
-                        onChange={() => handleOptionChange(`step${currentStep + 1}`, option)}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter' && selectedOptions[`step${currentStep + 1}`]) {
-                            nextStep();
-                          }
-                        }}
-                    />
-                    {option}
-                  </motion.label>
-              ))
+      <motion.div
+        className="modal-inner"
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        variants={modalVariants}>
+        <button className="close-modal-button" onClick={onClose}>
+          <span></span>
+        </button>
+        <div className="question-counter">
+          {currentStep + 1}/{questions.length}
+        </div>
+        <div className="progress-bar">
+          <div
+            className={`progress-bar-fill step-${currentStep + 1}`}
+            style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}></div>
+        </div>
+        <h3>{currentQuestion.text}</h3>
+        {currentStep !== 4 ? (
+          currentQuestion.options.map((option, index) => (
+            <motion.label className={labelClass} key={index} variants={contentVariants}>
+              <input
+                className={inputClass}
+                type="radio"
+                value={option}
+                checked={selectedOptions[`step${currentStep + 1}`] === option}
+                onChange={() => handleOptionChange(`step${currentStep + 1}`, option)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && selectedOptions[`step${currentStep + 1}`]) {
+                    nextStep();
+                  }
+                }}
+              />
+              {option}
+            </motion.label>
+          ))
+        ) : (
+          <motion.div style={{ display: 'contents', width: '100%' }} variants={contentVariants}>
+            <label className={labelClass}>Ім'я:</label>
+            <input
+              ref={inputRefs.nameRef}
+              name="name"
+              className={inputClass}
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <label className={labelClass}>Email:</label>
+            <input
+              ref={inputRefs.phoneRef}
+              name="phone"
+              className={inputClass}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label className={labelClass}>Телефон:</label>
+            <div className="phone-input-container">
+              <PhoneInput country={'ua'} value={phone} onChange={(phone) => setPhone(phone)} />
+            </div>
+          </motion.div>
+        )}
+        <div className="modal-controls">
+          {currentStep < 4 ? (
+            <motion.button
+              onClick={nextStep}
+              disabled={!selectedOptions[`step${currentStep + 1}`]}
+              whileTap={{ scale: 0.95 }}>
+              Далі
+            </motion.button>
           ) : (
-              <motion.div style={{ display:"contents",width: '100%' }} variants={contentVariants}>
-                <label className={labelClass}>Ім'я:</label>
-                <input
-                    ref={inputRefs.nameRef}
-                    name="name"
-                    className={inputClass}
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-                <label className={labelClass}>Email:</label>
-                <input
-                    ref={inputRefs.phoneRef}
-                    name="phone"
-                    className={inputClass}
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <label className={labelClass}>Телефон:</label>
-                <div className="phone-input-container">
-                  <PhoneInput
-                      country={'ua'}
-                      value={phone}
-                      onChange={(phone) => setPhone(phone)}
-                  />
-                </div>
-              </motion.div>
+            <motion.button onClick={handleSubmit} whileTap={{ scale: 0.95 }}>
+              Відправити форму
+            </motion.button>
           )}
-          <div className="modal-controls">
-            {currentStep < 4 ? (
-                <motion.button
-                    onClick={nextStep}
-                    disabled={!selectedOptions[`step${currentStep + 1}`]}
-                    whileTap={{ scale: 0.95 }}
-                >
-                  Далі
-                </motion.button>
-            ) : (
-                <motion.button onClick={handleSubmit} whileTap={{ scale: 0.95 }}>
-                  Відправити форму
-                </motion.button>
-            )}
-            {currentStep > 0 ? (
-                <motion.button
-                    onClick={prevStep}
-                    whileTap={{ scale: 0.95 }}
-                >
-                  Назад
-                </motion.button>
-            ) : (
-                <motion.button disabled>Назад</motion.button>
-            )}
-          </div>
-        </motion.div>
+          {currentStep > 0 ? (
+            <motion.button onClick={prevStep} whileTap={{ scale: 0.95 }}>
+              Назад
+            </motion.button>
+          ) : (
+            <motion.button disabled>Назад</motion.button>
+          )}
+        </div>
+      </motion.div>
     );
   };
 
   return (
-      <AnimatePresence>
-        {currentStep >= 0 && (
-            <motion.div
-                className="modal-overlay"
-                variants={modalBackgroundVariants}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                style={{ bottom: 0 }}
-
-            >
-              {contentVisible && renderStep()}
-            </motion.div>
-        )}
-      </AnimatePresence>
+    <AnimatePresence>
+      {currentStep >= 0 && (
+        <motion.div
+          className="modal-overlay"
+          variants={modalBackgroundVariants}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          style={{ bottom: 0 }}>
+          {contentVisible && renderStep()}
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 

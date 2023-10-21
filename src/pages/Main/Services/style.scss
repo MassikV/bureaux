@@ -13,9 +13,9 @@
     padding-top: 3rem;
 
     &--title {
-      background-color: #BF1616;
+      background-color: #bf1616;
       color: white;
-      font-family: 'Kyiv Region', sans-serif;
+      font-family: "Kyiv Region", sans-serif;
       font-size: 48px;
       font-weight: 500;
       line-height: 6rem;
@@ -66,45 +66,45 @@
       color: white;
       position: relative;
       bottom: 10rem;
-      box-shadow: 6px 7px 90px 0 #0000001F;
+      box-shadow: 6px 7px 90px 0 #0000001f;
 
       & a {
         background-color: #fff;
         color: black;
-        font-family: 'IBM Plex Mono', monospace;
+        font-family: "IBM Plex Mono", monospace;
         font-size: 24px;
         font-weight: 500;
         line-height: 5rem;
         text-align: center;
-        &:hover{
+        &:hover {
           background-color: #dddddd;
         }
       }
     }
 
     .white-bg {
-      background-color: #FFFBF6; 
+      background-color: #fffbf6;
       position: relative;
       bottom: 4rem;
-      box-shadow: 6px 7px 90px 0 #0000001F;
+      box-shadow: 6px 7px 90px 0 #0000001f;
       order: 2;
 
       & a {
-        background-color: #BF1616; 
+        background-color: #bf1616;
         color: white;
-        font-family: 'IBM Plex Mono', monospace;
+        font-family: "IBM Plex Mono", monospace;
         font-size: 24px;
         font-weight: 500;
         line-height: 5rem;
         text-align: center;
-        &:hover{
-            background-color: #BF16169D;
+        &:hover {
+          background-color: #bf16169d;
         }
       }
     }
 
     &--title {
-      font-family: 'IBM Plex Mono', monospace;
+      font-family: "IBM Plex Mono", monospace;
       font-size: 24px;
       font-weight: 500;
       line-height: 27px;
@@ -112,14 +112,15 @@
     }
 
     &--price {
-      font-family: 'IBM Plex Mono', monospace;
+      font-family: "IBM Plex Mono", monospace;
       font-size: 20px;
       font-weight: 400;
       line-height: 24px;
     }
 
-    &--info, &--details {
-      font-family: 'IBM Plex Mono', monospace;
+    &--info,
+    &--details {
+      font-family: "IBM Plex Mono", monospace;
       font-size: 16px;
       font-weight: 400;
       line-height: 20px;
@@ -131,7 +132,7 @@
     }
 
     &--button {
-      font-family: 'IBM Plex Mono', monospace;
+      font-family: "IBM Plex Mono", monospace;
       font-size: 24px;
       font-weight: 500;
       line-height: 29px;
@@ -145,7 +146,7 @@
     background-image: url(./img/imgbottom.png);
     background-size: cover;
 
-    &-content{
+    &-content {
       display: grid;
       grid-template-columns: 1fr 0.5fr;
       justify-items: center;
@@ -157,7 +158,7 @@
     }
     &--text {
       margin: 0;
-      font-family: 'IBM Plex Mono', monospace;
+      font-family: "IBM Plex Mono", monospace;
       font-size: 25px;
       font-weight: 500;
       line-height: 30px;
@@ -166,12 +167,12 @@
     }
 
     &--button {
-      font-family: 'Kyiv Region', sans-serif;
+      font-family: "Kyiv Region", sans-serif;
       font-size: 43px;
       font-weight: 500;
       line-height: 42px;
       text-transform: uppercase;
-      background-color: #BF1616; 
+      background-color: #bf1616;
       color: white;
       text-decoration: none;
       width: 41.5rem;
@@ -183,7 +184,7 @@
       padding: 3rem;
       overflow: hidden;
       margin: 0 auto;
-      &:hover{
+      &:hover {
         background-color: #880b08;
       }
       & img {
@@ -221,7 +222,6 @@
   z-index: 9999;
 }
 
-
 .modal-content {
   background: white;
   border-radius: 8px;
@@ -231,24 +231,21 @@
   text-align: center;
   position: relative;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
-
 .question-options {
-  flex-grow: 1; 
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-
 .modal-controls {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px; 
+  margin-top: 20px;
 }
-
 
 .label-class {
   display: grid;
@@ -258,8 +255,9 @@
   grid-template-rows: 1fr;
   width: 40rem;
 }
-.label-class, .question-counter{
-  font-family: 'IBM Plex Mono', monospace;
+.label-class,
+.question-counter {
+  font-family: "IBM Plex Mono", monospace;
   font-size: 24px;
   font-weight: 500;
   line-height: 3rem;
@@ -270,7 +268,7 @@
   margin: 0;
   grid-row: 1;
   grid-column: 2;
-  accent-color: #BF1631;
+  accent-color: #bf1631;
 }
 
 .modal-inner {
@@ -281,14 +279,15 @@
   max-width: 100%;
   text-align: center;
   position: relative;
-  & h3{
-    font-family: 'Kyiv Region', sans-serif;
+  & h3 {
+    font-family: "Kyiv Region", sans-serif;
     font-size: 48px;
     font-weight: 500;
-    
+
     text-transform: uppercase;
-    width: 100%; 
-    text-align: center;  }
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .progress-bar {
@@ -302,7 +301,7 @@
 
 .progress-bar-fill {
   height: 100%;
-  background: #BF1616;
+  background: #bf1616;
 }
 
 .close-modal-button {
@@ -314,7 +313,7 @@
   border: none;
   font-size: 24px;
   padding: 0;
-  color: #BF1616;
+  color: #bf1616;
   width: 1rem;
   height: 1rem;
 }
@@ -330,7 +329,7 @@ input[type="email"] {
 }
 
 button {
-  background-color: #BF1616;
+  background-color: #bf1616;
   color: white;
   border: none;
   border-radius: 8px;
@@ -348,7 +347,7 @@ button:disabled {
 
 .close-modal-button::before,
 .close-modal-button::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -370,7 +369,7 @@ button:disabled {
 .close-modal-button:hover::before,
 .close-modal-button:hover::after {
   background-color: red;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .flag-dropdown {
@@ -392,32 +391,30 @@ button:disabled {
   width: 100%;
 }
 
-
-
 @media (max-width: 1023px) {
-  .modal-inner{
+  .modal-inner {
     width: 90%;
     padding: 1rem 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 90%;
-    & h3{
+    & h3 {
       margin-top: 3rem;
       font-size: 30px;
       line-height: 30px;
     }
   }
-  .progress-bar{
+  .progress-bar {
     order: 3;
   }
-  .question-counter{
+  .question-counter {
     top: 1.4rem;
     left: 1.5rem;
     width: auto;
     position: absolute;
     text-align: start;
-    color: #BF1616;
+    color: #bf1616;
   }
   input[type="text"],
   input[type="email"] {
@@ -430,38 +427,38 @@ button:disabled {
   }
   .react-tel-input .form-control {
     font-size: 14px;
-    border: 1px solid #CACACA;
-   height: 2.5rem;
+    border: 1px solid #cacaca;
+    height: 2.5rem;
   }
   .react-tel-input .flag {
     width: 16px;
     height: 11px;
   }
-  .question-counter, .label-class{
+  .question-counter,
+  .label-class {
     font-size: 20px;
     line-height: 24px;
   }
-  .label-class{
+  .label-class {
     height: 1.5rem;
     width: 100%;
     grid-template-columns: 1fr 0.1fr;
     margin-bottom: 0.25rem;
-
   }
-  .modal-controls{
+  .modal-controls {
     order: 3;
     margin-top: 10px;
   }
-  .input-class{
+  .input-class {
     width: 1.5rem;
     height: 1.5rem;
-      justify-self: end;
+    justify-self: end;
   }
   .services {
     &-top {
       height: auto;
       background-image: url(./img/Bg.png);
-      &--logos{
+      &--logos {
         padding-bottom: 2rem;
       }
       &--title {
@@ -488,7 +485,7 @@ button:disabled {
       .service-block {
         justify-items: center;
         height: auto;
-        @media screen and (max-width: 1023px){
+        @media screen and (max-width: 1023px) {
           transform: none !important;
         }
       }
@@ -497,13 +494,13 @@ button:disabled {
         background-color: black;
         color: white;
         position: relative;
-        box-shadow: 6px 7px 90px 0 #0000001F;
+        box-shadow: 6px 7px 90px 0 #0000001f;
         bottom: 0;
 
         & a {
           background-color: #fff;
           color: black;
-          font-family: 'IBM Plex Mono', monospace;
+          font-family: "IBM Plex Mono", monospace;
           font-size: 24px;
           font-weight: 500;
           line-height: 5rem;
@@ -512,16 +509,16 @@ button:disabled {
       }
 
       .white-bg {
-        background-color: #FFFBF6;
+        background-color: #fffbf6;
         position: relative;
-        box-shadow: 6px 7px 90px 0 #0000001F;
+        box-shadow: 6px 7px 90px 0 #0000001f;
         order: 2;
         bottom: 0;
 
         & a {
-          background-color: #BF1616;
+          background-color: #bf1616;
           color: white;
-          font-family: 'IBM Plex Mono', monospace;
+          font-family: "IBM Plex Mono", monospace;
           font-size: 24px;
           font-weight: 500;
           line-height: 5rem;
@@ -535,7 +532,7 @@ button:disabled {
         align-items: flex-start;
         margin-bottom: 2rem;
         text-align: left;
-        background-color: #FFFBF6;
+        background-color: #fffbf6;
 
         &:last-child {
           margin-bottom: 0;
@@ -558,7 +555,8 @@ button:disabled {
         line-height: 24px;
       }
 
-      &--info, &--details {
+      &--info,
+      &--details {
         font-size: 24px;
         line-height: 29px;
         margin: 0;
@@ -579,7 +577,7 @@ button:disabled {
 
     &-bottom {
       grid-template-columns: 1fr;
-grid-template-rows: 0.7fr 0.2fr;
+      grid-template-rows: 0.7fr 0.2fr;
       height: auto;
       padding-top: 2rem;
       &--text {
@@ -610,7 +608,7 @@ grid-template-rows: 0.7fr 0.2fr;
       }
     }
   }
-  .services-top--logos{
+  .services-top--logos {
     display: flex;
     align-items: flex-start;
   }
@@ -619,7 +617,6 @@ grid-template-rows: 0.7fr 0.2fr;
   .services {
     &-top {
       &--title {
-
         font-size: 40px;
         line-height: 38px;
       }
@@ -644,13 +641,13 @@ grid-template-rows: 0.7fr 0.2fr;
         background-color: black;
         color: white;
         position: relative;
-        box-shadow: 6px 7px 90px 0 #0000001F;
+        box-shadow: 6px 7px 90px 0 #0000001f;
         bottom: 0;
 
         & a {
           background-color: #fff;
           color: black;
-          font-family: 'IBM Plex Mono', monospace;
+          font-family: "IBM Plex Mono", monospace;
           font-size: 24px;
           font-weight: 500;
           line-height: 5rem;
@@ -659,16 +656,16 @@ grid-template-rows: 0.7fr 0.2fr;
       }
 
       .white-bg {
-        background-color: #FFFBF6;
+        background-color: #fffbf6;
         position: relative;
-        box-shadow: 6px 7px 90px 0 #0000001F;
+        box-shadow: 6px 7px 90px 0 #0000001f;
         order: 2;
         bottom: 0;
 
         & a {
-          background-color: #BF1616;
+          background-color: #bf1616;
           color: white;
-          font-family: 'IBM Plex Mono', monospace;
+          font-family: "IBM Plex Mono", monospace;
           font-size: 24px;
           font-weight: 500;
           line-height: 5rem;
@@ -682,7 +679,7 @@ grid-template-rows: 0.7fr 0.2fr;
         align-items: flex-start;
         margin-bottom: 2rem;
         text-align: left;
-        background-color: #FFFBF6;
+        background-color: #fffbf6;
 
         &:last-child {
           margin-bottom: 0;
@@ -705,7 +702,8 @@ grid-template-rows: 0.7fr 0.2fr;
         line-height: 19px;
       }
 
-      &--info, &--details {
+      &--info,
+      &--details {
         font-size: 14px;
         line-height: 17px;
         margin: 0;
@@ -754,33 +752,34 @@ grid-template-rows: 0.7fr 0.2fr;
       }
     }
   }
-  .services-top--logos{
+  .services-top--logos {
     display: flex;
     align-items: center;
   }
 }
 @media (max-width: 480px) {
-  .modal-inner{
+  .modal-inner {
     width: 100%;
     height: 100%;
-    & h3{
+    & h3 {
       margin-top: 2rem;
       font-size: 18px;
       line-height: 21px;
     }
   }
-  .question-counter{
+  .question-counter {
     top: 1.4rem;
     left: 1.5rem;
     width: auto;
     position: absolute;
     text-align: start;
-    color: #BF1616;
+    color: #bf1616;
   }
   .close-modal-button {
     width: 0.5rem;
     height: 0.5rem;
-    &::before, &::after{
+    &::before,
+    &::after {
       width: 0.65rem;
       cursor: pointer;
     }
@@ -796,27 +795,27 @@ grid-template-rows: 0.7fr 0.2fr;
   }
   .react-tel-input .form-control {
     font-size: 14px;
-    border: 1px solid #CACACA;
+    border: 1px solid #cacaca;
     height: 2rem;
   }
-  .question-counter, .label-class{
+  .question-counter,
+  .label-class {
     font-size: 14px;
     line-height: 18px;
   }
-  .label-class{
+  .label-class {
     height: 1rem;
   }
-  .modal-controls{
+  .modal-controls {
     order: 3;
     margin-top: 10px;
-    & button{
+    & button {
       padding: 0.5rem 1.3rem;
     }
   }
-  .input-class{
+  .input-class {
     width: 1rem;
     height: 1rem;
     justify-self: end;
   }
-  }
-
+}

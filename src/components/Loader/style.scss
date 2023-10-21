@@ -21,17 +21,27 @@
   left: 0;
 }
 
-.dot3 { left: 1.5em; }
+.dot3 {
+  left: 1.5em;
+}
 
-.dot4 { left: 3em; }
+.dot4 {
+  left: 3em;
+}
 
 @keyframes reveal {
-  from { transform: scale(0.001); }
-  to { transform: scale(1); }
+  from {
+    transform: scale(0.001);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 @keyframes slide {
-  to { transform: translateX(1.5em) }
+  to {
+    transform: translateX(1.5em)
+  }
 }
 
 

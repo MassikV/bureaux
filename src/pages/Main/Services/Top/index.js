@@ -1,29 +1,25 @@
-import React from "react";
-import logotype from "../img/logos.svg";
+import React from 'react';
+import logotype from '../img/logos.svg';
 
-function Top () {
-  const logoWidth =
-      window.innerWidth <= 480
-          ? 34
-          : window.innerWidth <= 1024
-              ? 65
-              : 85;
+function Top() {
+  const logoWidth = window.innerWidth <= 480 ? 34 : window.innerWidth <= 1024 ? 65 : 85;
 
   const maxLogosInRow = Math.floor(window.innerWidth / logoWidth);
   const logos = Array(maxLogosInRow)
-      .fill(null)
-      .map((_, index) => <img src={logotype} alt="#" className="section-container--logo" key={index} />);
+    .fill(null)
+    .map((_, index) => (
+      <img src={logotype} alt="#" className="section-container--logo" key={index} />
+    ));
 
-
-  return(
-  <section className="services-top">
-    <div className="service-top-content">
-    <div className="services-top--logos">
-      <h2 className="services-top--title">Послуги</h2>
-      {window.innerWidth < 1023 && logos}
-    </div>
-    </div>
-  </section>
-  )
+  return (
+    <section className="services-top">
+      <div className="service-top-content">
+        <div className="services-top--logos">
+          <h2 className="services-top--title">Послуги</h2>
+          {window.innerWidth < 1023 && logos}
+        </div>
+      </div>
+    </section>
+  );
 }
 export default Top;
