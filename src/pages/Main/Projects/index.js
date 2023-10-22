@@ -283,7 +283,7 @@ function OurProjects() {
       <div className="ourProjects-container">
         {staticImages.map((image, index) => (
           <div className={`ourProjects-staticImage staticImage-${index}`} key={index}>
-            <img src={image} alt={`Зображення ${index + 1}`} />
+            {/*<img src={image} alt={`Зображення ${index + 1}`} />*/}
           </div>
         ))}
         {windowWidth > 1023
