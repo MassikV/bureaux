@@ -1,4 +1,3 @@
-import React from 'react';
 import './style.scss';
 import logo from './logo.png';
 import { Link } from 'react-scroll';
@@ -15,7 +14,7 @@ function Footer() {
             offset={-70}
             duration={500}
             className="footer-logo">
-            <img src={logo} alt="Bureau" />
+            <img src={logo} alt="Bureaux" />
           </Link>
           <span className="footer-info--item">Design & Architecture</span>
           <span className="footer-info--item">Україна, Київ</span>

@@ -339,22 +339,24 @@ function OurProjects() {
               </div>
             ))
           : FullImage.slice(0, 3).map((item, index) => (
-              <div
-                className={`grid-item`}
-                key={index}
-                onMouseEnter={() => showFullImage(index, index)}
-                style={{
-                  height: '20rem',
-                  backgroundImage: `url(${item.image})`,
-                }}>
-                <div className="grid-item-content">
-                  <div className="grid-item-imageInfo">
-                    <p> 0{item.id + 1}</p>
-                    <p> {item.name}</p>
-                    <p> {item.square} м. кв.</p>
+              <Link to={`/bureaux/projects/info/${item.id + 9}`}>
+                <div
+                  className={`grid-item`}
+                  key={index}
+                  onMouseEnter={() => showFullImage(index, index)}
+                  style={{
+                    height: '20rem',
+                    backgroundImage: `url(${item.image})`,
+                  }}>
+                  <div className="grid-item-content">
+                    <div className="grid-item-imageInfo">
+                      <p> 0{item.id + 1}</p>
+                      <p> {item.name}</p>
+                      <p> {item.square} м. кв.</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
       </div>
 

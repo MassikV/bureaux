@@ -74,7 +74,7 @@ function PopUpContainer({ onCloseButton, onClose }) {
   return (
     <AnimatePresence>
       <motion.div
-        className={`popUp-container ${isImmediateTimeSelected ? 'immediate-time' : ''}`}
+        className={`popUp-wrapper`}
         variants={popupVariants}
         initial="hidden"
         animate="visible"
@@ -82,7 +82,7 @@ function PopUpContainer({ onCloseButton, onClose }) {
         {onCloseButton && (
           <svg
             onClick={onCloseButton}
-            className="popUp-container--closeButton"
+            className="popUp-wrapper--closeButton"
             width="2.5rem"
             height="2.5rem"
             viewBox="0 0 24 24"
@@ -105,8 +105,8 @@ function PopUpContainer({ onCloseButton, onClose }) {
             </g>{' '}
           </svg>
         )}
-        <form onSubmit={handleSubmit}>
-          <label>
+        <form onSubmit={handleSubmit} style={{ display: 'contents' }}>
+          <label className="popUp-wrapper__label">
             Ваше ім'я
             <input
               type="text"
@@ -114,12 +114,11 @@ function PopUpContainer({ onCloseButton, onClose }) {
               placeholder="Ім'я"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              style={{ borderRadius: '11px' }}
               autoComplete="off"
               required
             />
           </label>
-          <label>
+          <label className="popUp-wrapper__label">
             Ваш телефон
             <PhoneInput
               name="number"
@@ -138,7 +137,7 @@ function PopUpContainer({ onCloseButton, onClose }) {
               required
             />
           </label>
-          <label>
+          <label className="popUp-wrapper__label">
             Коли вам передзвонити?
             <select
               value={timeSelection}
@@ -165,19 +164,19 @@ function PopUpContainer({ onCloseButton, onClose }) {
               />
             )}
           </label>
-          <p className="popUp-container--text">Який пакет послуг Вас цікавить?</p>
-          <label className="radio-label">
+          <p className="popUp-wrapper__text">Який пакет послуг Вас цікавить?</p>
+          <label className="popUp-wrapper__radio-label">
             <input
               type="radio"
               name="Пакет послуг"
-              value="Авторський проєкт в українському етностилі"
+              value="Авторський проєкт"
               onChange={(e) => setSelectedPackage(e.target.value)}
               style={{}}
               required
             />
-            Авторський проєкт в українському етностилі
+            Авторський проєкт
           </label>
-          <label className="radio-label">
+          <label className="popUp-wrapper__radio-label">
             <input
               type="radio"
               name="Пакет послуг"
@@ -188,7 +187,7 @@ function PopUpContainer({ onCloseButton, onClose }) {
             />
             Міні-проєкт
           </label>
-          <button className="popUp-container--button" onClick={handleSubmit}>
+          <button className="popUp-wrapper__button" onClick={handleSubmit}>
             Відправити
           </button>
         </form>

@@ -59,10 +59,10 @@ const ProjectInfo = () => {
 
   return (
     <div className="project-container">
+      <Header />
       <ProjectLoader loading={loading} />
       {!loading && (
         <div className="project-container__info" style={projectBlockInfoStyle}>
-          <Header />
           <div className="project-container__intro">
             <div className="project-container__wrapper">
               <h1 className="project-container__title">{project.name}</h1>
@@ -75,7 +75,7 @@ const ProjectInfo = () => {
           </div>
         </div>
       )}
-      <div className="projects-container-info">
+      <div className="container">
         <Buttons />
         {!loading && (
           <div className="project-info">

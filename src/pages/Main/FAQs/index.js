@@ -59,7 +59,11 @@ function FAQs() {
               }`}>
               <p className="question-container--number">{question.number}</p>
               <button onClick={() => toggleQuestion(index)} className="question-container--button">
-                <span className="question-container--text">{question.title}</span>
+                <span
+                  className={`question-container--text`}
+                  style={{ fontWeight: expandedQuestions.includes(index) ? 700 : 500 }}>
+                  {question.title}
+                </span>
               </button>
               <img
                 onClick={() => toggleQuestion(index)}

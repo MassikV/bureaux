@@ -42,12 +42,12 @@
       color: white;
       background-color: #BF1616;
       margin: 0;
-      padding: 0.5rem 0 1rem 2.5rem;
+      padding: 0.75rem 0 1rem 2.2rem;
       &::before {
         content: '“';
         position: absolute;
         top: 20px;
-        left: 15px;
+        left: 10px;
         font-size: 48px;
         font-family: "Montserrat", serif;
       }
@@ -140,13 +140,29 @@
 .carousel.carousel-slider .control-arrow {
   padding: 3px !important;
 }
+.animate-carousel-change {
+  animation: changeCarouselContent 0.5s ease-in-out;
+}
+
+@keyframes changeCarouselContent {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
 
 @media screen and (max-width: 1023px) {
   .founders {
     background-image: url(./img/tabletBg.png);
-    height: auto;
-    grid-template-columns: 1fr;
-    grid-template-rows:0.3fr 1fr;
+    &-content{
+      height: 550vh;
+      grid-template-columns: 1fr;
+    grid-template-rows: 10% 1fr;
+    }
     &-data{
       display: grid;
       grid-template-rows: 1fr 1fr ;

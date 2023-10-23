@@ -1,20 +1,26 @@
 .more-project {
-  background: rgba(223, 14, 14, 0.60);
+  background: rgba(223, 14, 14, 0.6);
+  padding: 20px;
   width: 441px;
   height: 175px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 50px;
-  @media screen and (min-width: 1024px) and (max-width: 1100px) {
-    width: 100%;
-  }
-
-  &:hover {
+  &:hover{
     background-color: #BF16167D;
     transition: 0.35s;
   }
-
+  @media (max-width: 992px) {
+    background: rgba(223, 14, 14, 1);
+    margin-top: 65px;
+    width: 400px;
+    height: 95px;
+  }
+  @media (max-width: 568px) {
+    width: 248px;
+    height: 78.177px;
+  }
   &__title {
     color: #FFF;
     font-family: 'Kyiv Region', sans-serif;
@@ -23,35 +29,26 @@
     font-weight: 500;
     line-height: normal;
     text-transform: uppercase;
-  }
-}
-
-@media (max-width: 1023px) {
-  .more-project {
-    width: 25rem;
-    height: 6rem;
-    justify-self: center;
-
-    &__img {
-      width: 2rem;
+    @media (max-width: 1300px) {
+      font-size: 16px;
+    }
+    @media (max-width: 992px) {
+      font-size: 24px;
+    }
+    @media (max-width: 568px) {
+      font-size: 14px;
     }
   }
-}
-
-@media (max-width: 480px) {
-  .more-project {
-    width: 15rem;
-    height: 4.5rem;
-    justify-content: space-evenly;
-    gap: 0;
-
-    &__img {
-      width: 2rem;
+  &__img {
+    width: 66px;
+    height: 66px;
+    @media (max-width: 1300px) {
+      width: 50px;
+      height: 50px;
     }
-
-    &__title {
-      font-size: 17px;
-      text-transform: uppercase;
+    @media (max-width: 992px) {
+      width: 30px;
+      height: 30px;
     }
   }
 }

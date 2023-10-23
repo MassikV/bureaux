@@ -99,7 +99,7 @@
       width: 57rem;
       margin-left: 5.5vw;
     }
-    &--grid .grid {
+     .grid {
 
       &-row {
         width: 100%;
@@ -408,6 +408,9 @@ display: none
     &-svg{
       display: none;
     }
+    &-staticImage{
+      display: none;
+    }
     &-container {
       grid-template-columns: 1fr;
       width: 90vw;
@@ -436,8 +439,9 @@ display: none
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-
-
+    &-content{
+      background-color: rgba(0,0,0,0.4);
+    }
   }
 }
 @media (max-width: 480px) {

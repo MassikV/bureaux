@@ -3,10 +3,10 @@ import './style.scss';
 import logoImg from './img/logo.svg'; // Додайте імпорт логотипу
 import firstPhoto from './img/first.png';
 import phonePhoto from './img/phonePhoto.png';
-import firstGridPhoto from './img/photo1.png';
-import secondGridPhoto from './img/photo2.png';
-import thirdGridPhoto from './img/photo3.png';
-import fourthGridPhoto from './img/photo4.png';
+import firstGridPhoto from './img/photo2.png';
+import secondGridPhoto from './img/photo1.png';
+import thirdGridPhoto from './img/photo4.png';
+import fourthGridPhoto from './img/photo3.png';
 import fifthGridPhoto from './img/photo5.png';
 
 const LOGO_WIDTHS = {
@@ -123,40 +123,66 @@ function AboutUs() {
           </>
         )}
       </div>
-      <div className="container">
-        <span className="container-number box1">01</span>
-        <h3 className="container-title box1-title">Відносини з клієнтом</h3>
-        <p className="container-info box1-paragraph">
-          Для нас клієнт – це потенційний друг. Ми ведемо чесні та відкриті стосунки, а також
-          прагнемо зберігати довгострокові відносини зі своїми замовниками.
-        </p>
-        <img src={firstGridPhoto} alt="" className="container-image box1-photo" />
-        <span className="container-number box2">02</span>
-        <h3 className="container-title box2-title">Якість та надійність</h3>
-        <p className="container-info box2-paragraph">
-          Надійність - це головна ознака гарного ремонту та добре спроектованого будинку. Ми надаємо
-          гарантії як на ремонтні роботи, так і на дизайн-проект.
-        </p>
-        <img src={secondGridPhoto} alt="" className="container-image box2-photo" />
-        <span className="container-number box3">03</span>
-        <h3 className="container-title box3-title">Український етнос</h3>
-        <p className="container-info box3-paragraph">
-          Ми цінуємо та поважаємо нашу українську культуру та віримо, що український етнос
-          любитимуть не лише у нас на батьківщині, а й у всьому світі, більше ніж скандинавський
-          стиль.
-        </p>
-        <img src={thirdGridPhoto} alt="" className="container-image box3-photo" />
-        <span className="container-number box4">04</span>
-        <h3 className="container-title box4-title">Сімейні цінності</h3>
-        <p className="container-info box4-paragraph">
-          Ми знаємо, як важливо проводити час із сім'єю, і як важливий сімейний затишок, тому
-          враховуємо побажання та захоплення всіх членів сім'ї для створення приємної атмосфери
-          вдома.
-        </p>
-        {windowWidth > 480 && windowWidth <= 1024 && (
-          <img src={fifthGridPhoto} alt="" className="container-image box3-photo" />
-        )}
-        <img src={fourthGridPhoto} alt="" className="container-image box4-photo" />
+      <div className="container1">
+        <div className="container1-wrapper ">
+          <div className="wrapper-info wrapper-1">
+            <h3 className="container1-title box1-title">Відносини з клієнтом</h3>
+            <p className="container1-info box1-paragraph">
+              Для нас клієнт – це потенційний друг. Ми ведемо чесні та відкриті стосунки, а також
+              прагнемо зберігати довгострокові відносини зі своїми замовниками.
+            </p>
+          </div>
+          <div className="wrapper-number">
+            <span className="container1-number box1">01</span>
+            <img src={firstGridPhoto} alt="" className="container1-image box1-photo" />
+          </div>
+        </div>
+        <div className="container1-wrapper ">
+          <div className="wrapper-info wrapper-2">
+            <h3 className="container1-title box2-title">Якість та надійність</h3>
+            <p className="container1-info box2-paragraph">
+              Надійність - це головна ознака гарного ремонту та добре спроектованого будинку. Ми
+              надаємо гарантії як на ремонтні роботи, так і на дизайн-проект.
+            </p>
+          </div>
+          <div className="wrapper-number">
+            <span className="container1-number box2">02</span>
+            <img src={secondGridPhoto} alt="" className="container1-image box2-photo" />
+          </div>
+        </div>
+        <div className="container1-wrapper ">
+          <div className="wrapper-info wrapper-3">
+            <h3 className="container1-title box3-title">Український етнос</h3>
+            <p className="container1-info box3-paragraph">
+              Ми цінуємо та поважаємо нашу українську культуру та віримо, що український етнос
+              любитимуть не лише у нас на батьківщині, а й у всьому світі, більше ніж скандинавський
+              стиль.
+            </p>
+          </div>
+          <div className="wrapper-number">
+            <span className="container1-number box3">03</span>
+            <img src={thirdGridPhoto} alt="" className="container1-image box3-photo" />
+          </div>
+        </div>
+        <div className="container1-wrapper ">
+          <div className="wrapper-info wrapper-4">
+            <h3 className="container1-title box4-title">Сімейні цінності</h3>
+            <p className="container1-info box4-paragraph">
+              Ми знаємо, як важливо проводити час із сім'єю, і як важливий сімейний затишок, тому
+              враховуємо побажання та захоплення всіх членів сім'ї для створення приємної атмосфери
+              вдома.
+            </p>
+          </div>
+          <div className="wrapper-number">
+            <span className="container1-number box4">04</span>
+            {windowWidth > 480 && windowWidth <= 1024 && (
+              <img src={fifthGridPhoto} alt="" className="container1-image box4-photo" />
+            )}
+            {windowWidth > 1024 && (
+              <img src={fourthGridPhoto} alt="" className="container1-image box4-photo" />
+            )}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -74,43 +74,44 @@ function Header() {
   };
 
   return (
-    <div className="containerr">
-      <header className={`header ${scrolled ? 'scrolled' : ''}`}>
-        <a href="/bureaux/">
-          <img src={Logo} alt="logo" className="header-logo" />
-        </a>
-        <div className={`header-wrapper ${nav ? 'active' : ''}`}>
-          <ul className="header-list">
-            <li className="header-list__item">
-              <a href="/bureaux/#AboutUs" onClick={() => handleMobileNavClick()}>
-                Про нас
-              </a>
-            </li>
-            <li className="header-list__item">
-              <a href="/bureaux/#Projects" onClick={() => handleMobileNavClick()}>
-                Проєкти
-              </a>
-            </li>
-            <li className="header-list__item">
-              <a href="/bureaux/#OurWork" onClick={() => handleMobileNavClick()}>
-                Як ми працюємо
-              </a>
-            </li>
-            <li className="header-list__item">
-              <a href="/bureaux/#Services" onClick={() => handleMobileNavClick()}>
-                Послуги
-              </a>
-            </li>
-          </ul>
-          <button className="header__btn" onClick={openPopup}>
-            Безкоштовний розрахунок
-          </button>
+    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+      <div className="container">
+        <div className="header-block">
+          <a href="/bureaux/">
+            <img src={Logo} alt="logo" className="header-logo" />
+          </a>
+          <div className={`header-wrapper ${nav ? 'active' : ''}`}>
+            <ul className="header-list">
+              <li className="header-list__item">
+                <a href="/bureaux/#AboutUs" onClick={() => handleMobileNavClick()}>
+                  Про нас
+                </a>
+              </li>
+              <li className="header-list__item">
+                <a href="/bureaux/#Projects" onClick={() => handleMobileNavClick()}>
+                  Проєкти
+                </a>
+              </li>
+              <li className="header-list__item">
+                <a href="/bureaux/#OurWork" onClick={() => handleMobileNavClick()}>
+                  Як ми працюємо
+                </a>
+              </li>
+              <li className="header-list__item">
+                <a href="/bureaux/#Services" onClick={() => handleMobileNavClick()}>
+                  Послуги
+                </a>
+              </li>
+            </ul>
+            <button className="header__btn" onClick={openPopup}>
+              Безкоштовний розрахунок
+            </button>
+          </div>
+          <div onClick={() => setNav(!nav)} className="header__btns">
+            {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
+          </div>
         </div>
-
-        <div onClick={() => setNav(!nav)} className="header__btns">
-          {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
-        </div>
-      </header>
+      </div>
       {isPopupVisible && (
         <div className="popup-overlay">
           <PopUpContainer
@@ -123,7 +124,7 @@ function Header() {
           />
         </div>
       )}
-    </div>
+    </header>
   );
 }
 

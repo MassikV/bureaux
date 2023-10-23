@@ -1,10 +1,7 @@
 .popUp {
   background-image: url(./img/Bg.png);
   background-size: cover;
-  padding: 3rem 0 2.5rem 0;
-& form{
-  gap: 2rem;
-}
+  padding: 4rem 0;
   &-title {
     font-family: 'Kyiv Region', sans-serif;
     font-size: 48px;
@@ -13,36 +10,102 @@
     background-color: #BF1616;
     color: white;
     text-align: center;
-    padding: 1rem;
-    margin: 0 auto;
+    padding: 1.65rem 0;
     text-transform:uppercase;
+    @media (max-width: 768px) {
+      font-size: 35px;
+    }
+    @media (max-width: 568px) {
+      font-size: 35px;
+      text-align: left;
+      width: 100%;
+      padding: 10px 5%;
+    }
   }
 
   &-text {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 28px;
     font-weight: 500;
-    line-height: 34px;
+    line-height: normal;
     color: white;
-    text-align: center;
-    margin: 1.5rem auto;
-    padding: 0 20rem;
-    @media screen and (max-width: 1023px){
-      padding: 0;
+    width: 675px;
+    margin: 1.87rem auto 3.13rem;
+    @media (max-width: 768px) {
+      width: auto;
+      font-size: 20px;
+    }
+    @media (max-width: 568px) {
+      font-size: 14px;
     }
   }
-
-  &-container {
+  &-wrapper {
     position: relative;
-    width: 42rem;
-    height: auto;
-    background-color: white;
-    margin: 0 auto;
+    background: #fff;
+    padding: 40px 50px;
     display: flex;
+    width: 675px;
     flex-direction: column;
-    padding: 1.5rem 2rem;
-    gap: 1.5rem;
-    &--text {
+    margin: 0 auto;
+    @media (max-width: 768px) {
+      padding: 35px 40px;
+    }
+    &--closeButton {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      &:hover {
+        background-color: #BF1616;
+        & path {
+          stroke: #FFFFFF;
+        }
+        & circle {
+          stroke: #FFFFFF;
+        }
+      }
+    }
+    &__label {
+      display: grid;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 27px;
+      margin-top: 30px;
+      gap: 1rem;
+      width: 100%;
+      @media (max-width: 768px) {
+        font-size: 18px;
+      }
+      @media (max-width: 568px) {
+        margin-top: 15px;
+        font-size: 16px;
+      }
+      &:first-child {
+        margin-top: 0;
+      }
+      & input {
+        width: 100%;
+        font-size: 20px;
+        border-radius: 11px;
+        padding: 30px 40px;
+        height: 48px;
+        border: 1px solid black;
+      }
+      & select {
+        width: 100%;
+        height: 65px;
+        border-radius: 11px;
+        padding: 8px 40px;
+        cursor: pointer;
+        font-size: 20px;
+        @media (max-width: 568px) {
+          padding: 8px 20px;
+        }
+      }
+    }
+    &__text {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 22px;
       font-weight: 500;
@@ -50,80 +113,51 @@
       letter-spacing: 0em;
       text-align: left;
       align-self: baseline;
-    }
-
-    &--closeButton {
-      position: absolute;
-      right: 15px;
-      top: 15px;
-      border-radius: 50%;
-      cursor: pointer;
-
-      &:hover {
-        background-color: #BF1616;
-
-        & path {
-          stroke: #FFFFFF;
-        }
-
-        & circle {
-          stroke: #FFFFFF;
-        }
+      margin-top: 30px;
+      @media (max-width: 768px) {
+        font-size: 18px;
+      }
+      @media (max-width: 568px) {
+        margin-top: 15px;
+        font-size: 14px;
       }
     }
-
-    &.immediate-time {
-      height: auto;
-      align-items: center;
-    }
-
-    & label {
+    &__radio-label {
       display: grid;
+      grid-template-columns: 0.15fr 1fr;
+      align-items: center;
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 22px;
-      font-weight: 500;
-      line-height: 27px;
-      gap: 1rem;
-      width: 100%;
-      & div{
-      & label:nth-of-type(1){
-        flex-direction: row;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+      flex-direction: row;
+      height: 4rem;
+      margin: 0;
+      @media (max-width: 768px) {
+        font-size: 16px;
       }
-      & label:nth-of-type(2){
-        flex-direction: row;
-      }}
-      & div:nth-child(3) {
-        border: 0;
-        width: 0;
+      @media (max-width: 568px) {
+        height: 2rem;
+        font-size: 16px;
       }
-
-      & input {
-
-        font-size: 20px;
-        border-radius: 11px;
-        padding: 0 1.5rem;
-        height: 48px;
-        border: 1px solid black;
-      }
-
-      & select {
-        width: 100%;
-        border-radius: 11px;
-        padding: 0 1.5rem;
-        cursor: pointer;
-        height: 48px;
-          font-size: 20px;
-        @media screen and (max-width: 480px) {
-          font-size: 15px;
+      & input{
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 0;
+        @media (max-width: 768px) {
+          height: 1.25rem;
+        }
+        @media (max-width: 568px) {
+          height: 1rem;
+        }
+        &:checked{
+          accent-color: #bf1616;
+          border: 2px solid #BF1631;
+          border-radius: 50%;
         }
       }
     }
-
-    &--phone {
-      width: 100%;
-    }
-
-    &--button {
+    &__button {
       background-color: #BF1616;
       color: #FFFBF6;
       font-family: 'IBM Plex Mono', monospace;
@@ -134,141 +168,42 @@
       width: 100%;
       height: 5rem;
       opacity: 0.5;
+      margin-top: 2.5rem;
+      border: none;
+      @media (max-width: 768px) {
+        margin-top: 1.5rem;
+      }
+      @media (max-width: 568px) {
+        margin-top: 1rem;
+      }
       &:hover{
         opacity: 1;
       }
     }
   }
-}
+  .flag-dropdown {
+    background-color: transparent !important;
+    border: 0 !important;
+  }
 
-.radio-label {
-  display: grid;
-  grid-template-columns: 0.1fr 1fr;
-  align-items: center;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-  flex-direction: row;
-  height: 4rem;
-  margin: 0;
+  .react-tel-input .selected-flag:hover,
+  .react-tel-input .selected-flag:focus {
+    background-color: transparent !important;
+  }
 
-  & input{
-    width: 2rem;
-    margin: 0;
-    &:checked{
-      accent-color: #bf1616;
-      border: 2px solid #BF1631;
-      border-radius: 50%;
-    }
+  .react-tel-input .form-control:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .react-tel-input .form-control {
+    width: 100%;
+  }
+  .react-tel-input .flag-dropdown.open .selected-flag {
+    background:  transparent !important;
+    border-radius: 3px 0 0 0;
   }
 }
 .react-tel-input .selected-flag:hover, .react-tel-input .selected-flag:focus {
-  background-color: transparent !important; /* Зміни фон на прозорий */
-}
-.form-control{
-  font-size: 20px;
-}
-@media screen and (max-width: 1023px){
-  .popUp {
-    & form{
-      gap: 1.5rem;
-    }
-    &-title {
-      font-size: 48px;
-      line-height: 46px;
-      padding-bottom: 0.5rem;
-    }
-
-    &-text {
-      font-size: 28px;
-      line-height: 34px;
-      padding: 0 1rem;
-    }
-
-    &-container {
-      width: 70vw;
-
-      &--text {
-
-        font-size: 22px;
-        line-height: 26px;
-      }
-
-      & label {
-        font-size: 22px;
-        line-height: 26px;
-      }
-
-      &--button {
-        font-size: 24px;
-        font-weight: 400;
-        line-height: 29px;
-      }
-    }
-  }
-  .radio-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
-    flex-direction: row;
-    height:auto;
-
-    & input{
-      width: 28px;
-      height: 42px;
-      &:checked{
-        border: 2px solid #BF1616;
-        border-radius: 50%;
-        background-color: #BF1616;
-      }
-    }
-    }
-}
-@media screen and (max-width: 480px) {
-  .popUp {
-    &-title {
-      font-size: 40px;
-      line-height: 38px;
-    }
-
-    &-text {
-      font-size: 14px;
-      line-height: 17px;
-    }
-
-    &-container {
-      width: 85vw;
-      &--text {
-        font-size: 14px;
-        line-height: 17px;
-      }
-
-      & label {
-        font-size: 14px;
-        line-height: 17px;
-      }
-
-      &--button {
-        height: 4rem;
-        font-size: 24px;
-        line-height: 29px;
-      }
-    }
-  }
-  .radio-label {
-    font-size: 12px;
-    line-height: 15px;
-    height: auto;
-    & input{
-      height: 36px;
-      width: 22px;
-      &:checked{
-        border: 2px solid #BF1616;
-        border-radius: 50%;
-        background-color: #BF1616;
-      }
-    }
-  }
+  background-color: transparent !important;
 }

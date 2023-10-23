@@ -74,56 +74,58 @@ const First = () => {
 
   return (
     <section
-      className="First projects-first"
+      className="First"
       id="First"
       style={{ ...projectsWrapperStyle, backgroundImage: `url(${backgroundImageUrl})` }}>
-      <div className="First-content">
-        <div className="First__info">
-          <img src={Logo} alt="" className="First__logo" />
-          <p className="First__title">Оселя з українською душею</p>
-        </div>
-        <div className={`dots ${dotsVisible ? 'visible' : ''}`} onClick={toggleDotsVisibility}>
-          {backgroundImageUrls.map((_, index) => (
-            <span
-              key={index}
-              className={`dotes ${index === currentPhotoIndex ? 'active' : ''}`}
-              onClick={() => setCurrentPhotoIndex(index)}></span>
-          ))}
-        </div>
-        {!location.pathname.includes('/projects') && (
-          <div className="First__projects">
-            <h3 className="First__projects__title">Проєкти</h3>
-            <div className="First__projects__wrapper">
-              {newProjects.slice(0, 3).map((item) => (
-                <Link
-                  to={`/bureaux/projects/info/${item.id}`}
-                  className="First__projects__block"
-                  key={item.id}
-                  onMouseEnter={() => handleMouseEnter(item.id)}
-                  onMouseLeave={handleMouseLeave}>
-                  <img src={item.mainPhoto} className="First__projects__img" alt="" />
-                  {(isMobile || isTablet || (isDesktop && hoveredProject === item.id)) && (
-                    <div className="First__projects--container">
-                      <span className="First__projects--number">{item.id - 8}</span>
-                      <p className="First__projects--title">{item.name}</p>
-                      <p className="First__projects--square">{item.square}</p>
-                    </div>
-                  )}
-                </Link>
-              ))}
+      <div className="container">
+        <div className="First-content">
+          <div className="First__info">
+            <img src={Logo} alt="" className="First__logo" />
+            <p className="First__title">Оселя з українською душею</p>
+          </div>
+          <div className={`dots ${dotsVisible ? 'visible' : ''}`} onClick={toggleDotsVisibility}>
+            {backgroundImageUrls.map((_, index) => (
+              <span
+                key={index}
+                className={`dotes ${index === currentPhotoIndex ? 'active' : ''}`}
+                onClick={() => setCurrentPhotoIndex(index)}></span>
+            ))}
+          </div>
+          {!location.pathname.includes('/projects') && (
+            <div className="First__projects">
+              <h3 className="First__projects__title">Проєкти</h3>
+              <div className="First__projects__wrapper">
+                {newProjects.slice(0, 3).map((item) => (
+                  <Link
+                    to={`/bureaux/projects/info/${item.id}`}
+                    className="First__projects__block"
+                    key={item.id}
+                    onMouseEnter={() => handleMouseEnter(item.id)}
+                    onMouseLeave={handleMouseLeave}>
+                    <img src={item.mainPhoto} className="First__projects__img" alt="" />
+                    {(isMobile || isTablet || (isDesktop && hoveredProject === item.id)) && (
+                      <div className="First__projects--container">
+                        <span className="First__projects--number">{item.id - 8}</span>
+                        <p className="First__projects--title">{item.name}</p>
+                        <p className="First__projects--square">{item.square}</p>
+                      </div>
+                    )}
+                  </Link>
+                ))}
+              </div>
+              <MoreProject />
             </div>
-            <MoreProject />
-          </div>
-        )}
-        {location.pathname === '/bureaux/projects' && (
-          <div className="moreOurProjects-info">
-            <h2>Наші проєкти</h2>
-            <p>
-              У нас є можливість виконання проектів під ключ і для цього ми маємо надійних
-              підрядників, які здатні якісно закрити весь спектр необхідних послуг.
-            </p>
-          </div>
-        )}
+          )}
+          {location.pathname === '/bureaux/projects' && (
+            <div className="moreOurProjects-info">
+              <h2>Наші проєкти</h2>
+              <p>
+                У нас є можливість виконання проектів під ключ і для цього ми маємо надійних
+                підрядників, які здатні якісно закрити весь спектр необхідних послуг.
+              </p>
+            </div>
+          )}
+        </div>
       </div>
       <PhonePopUp />
     </section>

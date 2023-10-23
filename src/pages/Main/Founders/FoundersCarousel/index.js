@@ -8,6 +8,8 @@ const FoundersCarousel = ({ children }) => {
       showStatus={false}
       showThumbs={false}
       axis="vertical"
+      autoPlay={true}
+      interval={10000}
       emulateTouch
       infiniteLoop
       selectedItem={0}>

@@ -1,46 +1,47 @@
 .First {
+  position: relative;
   max-width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 49rem;
   position: relative;
   transition: background-image 3s ease-in-out;
   transition-delay: 0.2s;
-
-  &-content {
-    display: grid;
-    grid-template-rows: 40% 10% 40%;
-  }
-
   &__info {
     padding-top: 122px;
     display: grid;
-    justify-content: start;
-    margin-left: 16vw;
+    justify-content: center;
   }
-
   &__logo {
-    width: 841px;
+    width: 800px;
+    @media (max-width: 992px) {
+      width: 100%;
+    }
   }
-
   &__title {
     color: #FFF;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 24.542px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
+    @media (max-width: 568px) {
+      &:last-child {
+        font-size: 14px;
+      }
+    }
   }
-
   &__projects {
     padding-top: 186px;
     padding-bottom: 108px;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    @media (max-width: 992px) {
+      padding-top: 90px;
+      flex-direction: column;
+    }
     &__title {
       transform: rotate(-90deg);
       color: #FFF;
@@ -50,43 +51,60 @@
       font-weight: 500;
       line-height: normal;
       text-transform: uppercase;
+      @media (max-width: 992px) {
+        font-size: 20px;
+        transform: rotate(0deg);
+      }
     }
-
     &__wrapper {
       display: flex;
       gap: 25px;
+      @media (max-width: 992px) {
+        margin-top: 40px;
+      }
+      @media (max-width: 568px) {
+        gap: 5%;
+      }
     }
-
     &__block {
       position: relative;
       display: flex;
       border: 3px solid #FFF;
-
       &:hover .First__projects__img {
         filter: grayscale(0%);
       }
+      @media (max-width: 992px) {
+        width: 166px;
+        height: 169px;
+      }
+      @media (max-width: 568px) {
+        width: 150px;
+        height: 153px;
+        &:last-child {
+          display: none;
+        }
+      }
     }
-
     &__img {
       width: 166px;
       height: 169px;
       object-fit: cover;
       filter: grayscale(100%);
       transition: filter 0.3s ease;
+      @media (max-width: 992px) {
+        width: 100%;
+        height: 100%;
+      }
     }
-
-    &--container {
+    &--container{
       position: absolute;
-      width: 15%;
-      display: grid;
-      grid-template-columns: 0.25fr 1fr;
-      grid-template-rows: 0.35fr 1fr;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      align-items: center;
       transition: transform 0.25s;
-      margin: 0 0.4rem;
-
     }
-
-    &--number {
+    &--number{
       text-align: center;
       color: white;
       width: 1.25rem;
@@ -97,58 +115,48 @@
       line-height: 19px;
       background-color: #BF1616;
       border-radius: 50%;
-      grid-row: 1/3;
       align-self: center;
       justify-self: end;
-      margin: 0 0.25rem 0.5rem 0.25rem;
     }
-
-    &--title {
+    &--info {
+      display: flex;
+      flex-direction: column;
+      margin-left: 5px;
+      gap: 5px;
+    }
+    &--title{
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 600;
       line-height: 11px;
-      text-align: center;
       text-transform: uppercase;
       color: white;
-      margin: 1rem 0 0 0;
       justify-self: center;
       align-self: center;
-      width: 8rem;
     }
-
-    &--square {
+    &--square{
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9px;
       font-weight: 400;
       line-height: 9px;
-      text-align: center;
       text-transform: uppercase;
       color: white;
-      margin: 0;
-      width: 5rem;
-      grid-column-start: 2;
       justify-self: center;
     }
 
   }
 }
-
 .dots {
   justify-self: end;
-  position: relative;
-  top: 1rem;
-  right: 3rem;
+  position: absolute;
+  right: 20px;
   transform: translateX(0) rotate(90deg);
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 45px;
-  @media screen and (max-width: 1060px) {
-    transform: translateX(0) rotate(90deg);
-  }
-  @media screen and (max-width: 1023px){
+  @media (max-width: 992px) {
     display: none;
   }
 }
@@ -173,116 +181,4 @@
   transform: rotate(90deg);
   margin: 0 1rem;
   z-index: 2;
-}
-
-@media (max-width: 1023px) {
-
-  .First {
-
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: auto;
-    position: relative;
-    padding-bottom: 1.5rem;
-
-    &__projects {
-      padding: 0.5rem 1.5rem;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
-      row-gap: 3rem;
-
-      &--container {
-        width: 10rem;
-        margin: 0 1.5rem;
-      }
-
-      &__wrapper {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-      }
-
-      &__img {
-        width: 16rem;
-        height: 16rem;
-      }
-
-      &__title {
-        justify-self: center;
-        transform: rotate(0deg);
-        margin: 0;
-      }
-    }
-  }
-
-  .First__info {
-    padding: 5rem 3rem 0;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .First__logo {
-
-    width: 100%;
-  }
-
-  .First__title {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 29px;
-  }
-  .dots {
-    transform: translate(0, 0);
-    position: relative;
-    bottom: 0;
-    right: 0;
-    grid-row: 3;
-  }
-}
-
-@media (max-width: 480px) {
-  .First {
-    &__logo {
-      width: 100%;
-
-    }
-
-    &__projects {
-      padding: 1rem;
-    }
-  }
-
-  .First__info {
-    padding: 2rem 2rem 0;
-  }
-  .First__title {
-    font-size: 13px;
-    line-height: 15px;
-  }
-  .First__projects__wrapper {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 2rem;
-  }
-  .First__projects__block {
-    width: 10.5rem;
-    height: 10.5rem;
-    margin-right: 0;
-  }
-  .First__projects__img {
-    height: 10rem;
-    width: 10.5rem;
-  }
-  .First__projects--container {
-    margin: 0;
-    display: grid;
-    transform: none;
-  }
-  .First__projects--number {
-    width: 1rem;
-    height: 1rem;
-  }
 }
