@@ -12,12 +12,9 @@ function PhonePopUp({ onClose }) {
     setIsPhonePopupOpen(!isPhonePopupOpen);
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    const formData = {
-      phoneNumber: phoneNumber,
-    };
 
     const phonePattern = /^\+?\d{10,12}$/;
 
@@ -27,16 +24,38 @@ function PhonePopUp({ onClose }) {
       return;
     }
 
-    console.log('Дані форми дзвінка:', formData);
+    try {
+      const botToken = '6809113635:AAEAPNVeXhN78oUhxyGEpuahfr1pMTWSLM0';
+      const groupId = '-1002050844018';
 
-    toast.success('Ваш номер телефону було надіслано успішно.');
+      const formData = `
+        📞 Запит на дзвінок!\n\n📱 Номер телефону: ${phoneNumber}
+      `;
 
-    setTimeout(() => {
+      const message = encodeURIComponent(formData);
+      const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${groupId}&text=${message}`;
+
+      const response = await fetch(url, {
+        method: 'POST',
+      });
+
+      if (response.ok) {
+        console.log('Дані відправлені в групу в Telegram.');
+        toast.success('Ваш номер телефону було надіслано успішно.');
+        setIsSubmitting(false);
+        setIsPhonePopupOpen(false);
+      } else {
+        console.error('Помилка під час відправлення даних.', response.status, response.statusText);
+        toast.error('Помилка! Не вдалося відправити форму.');
+        setIsSubmitting(false);
+      }
+    } catch (error) {
+      console.error(error);
+      alert('Помилка сервера.');
+      toast.error('Помилка! Не вдалося відправити форму.');
       setIsSubmitting(false);
-      setIsPhonePopupOpen(false);
-    }, 2000);
+    }
   };
-
   return (
     <section className="phonePopUp">
       <button onClick={handlePhoneButtonClick} title="form" className="phonePopUp-button">

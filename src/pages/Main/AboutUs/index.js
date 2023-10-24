@@ -67,13 +67,13 @@ function AboutUs() {
   return (
     <section className="section">
       <div className="section-container" id="AboutUs" ref={containerRef}>
-        <img src={logoImg} alt="#" className="section-container--logo" />
+        <img src={logoImg} alt="#" className="section-container--logos" />
         <h1 className="section-container--title" ref={titleRef}>
           Про нас
         </h1>
 
         {logos.map((logo, index) => (
-          <img src={logo} alt="#" className="reviews-container--logo" key={index} />
+          <img src={logo} alt="#" className="section-container--logos" key={index} />
         ))}
       </div>
 
@@ -105,11 +105,11 @@ function AboutUs() {
         {windowWidth > 1023 ? (
           <div className="logo-container">
             {logos.slice(0, 2).map((logo, index) => (
-              <img src={logo} alt="#" className="reviews-container--logo" key={index} />
+              <img src={logo} alt="#" className="section-container--logo" key={index} />
             ))}
             <h2 className="title">Чому слід обирати нас</h2>
             {logos.slice(0, 1).map((logo, index) => (
-              <img src={logo} alt="#" className="reviews-container--logo" key={index} />
+              <img src={logo} alt="#" className="section-container--logo" key={index} />
             ))}
           </div>
         ) : (
@@ -117,7 +117,7 @@ function AboutUs() {
             <h2 className="title">Чому слід обирати нас</h2>
             <div className="logo-container logo-containers">
               {logos.map((logo, index) => (
-                <img src={logo} alt="#" className="reviews-container--logo" key={index} />
+                <img src={logo} alt="#" className="section-container--logo" key={index} />
               ))}
             </div>
           </>

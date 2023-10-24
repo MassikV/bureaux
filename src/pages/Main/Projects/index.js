@@ -136,19 +136,40 @@ const FullImage = [
     square: '80',
   },
 ];
-
+const LOGO_WIDTHS = {
+  small: 34,
+  medium: 65,
+  large: 85,
+};
 function OurProjects() {
   const [fullImageSrc, setFullImageSrc] = useState(null);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   let logoCount;
-  if (window.innerWidth <= 480) {
+  if (windowWidth <= 480) {
     logoCount = 2;
-  } else if (window.innerWidth > 480 && window.innerWidth <= 1024) {
+  } else if (windowWidth > 480 && windowWidth <= 576) {
+    logoCount = 2;
+  } else if (windowWidth > 480 && windowWidth <= 810) {
+    logoCount = 3;
+  } else if (windowWidth > 480 && windowWidth <= 912) {
     logoCount = 4;
+  } else if (windowWidth > 480 && windowWidth <= 1024) {
+    logoCount = 5;
   } else {
     logoCount = 3;
   }
+  const getLogoWidth = () => {
+    if (windowWidth <= 480) {
+      return LOGO_WIDTHS.small;
+    } else if (windowWidth > 480 && windowWidth <= 1024) {
+      return LOGO_WIDTHS.medium;
+    } else {
+      return LOGO_WIDTHS.large;
+    }
+  };
+
+  const logoWidth = getLogoWidth();
 
   useEffect(() => {
     function handleResize() {
@@ -164,7 +185,15 @@ function OurProjects() {
 
   const logos = Array(logoCount)
     .fill(null)
-    .map((_, index) => <img src={logo} alt="#" className="section-container--logo" key={index} />);
+    .map((_, index) => (
+      <img
+        src={logo}
+        alt="#"
+        className="ourProjects-container--logo"
+        style={{ width: logoWidth }}
+        key={index}
+      />
+    ));
 
   useEffect(() => {
     const handleResize = () => {
@@ -202,7 +231,7 @@ function OurProjects() {
           Тут зібрані проєкти, якими ми найбільше пишаємось, <span>наведіть</span> на кожен з них,
           щоб побачити більше
         </p>
-        <div className="logos">{logos.slice(0, 3)}</div>
+        <div className="logos">{logos}</div>
         <svg
           width="214"
           height="90"

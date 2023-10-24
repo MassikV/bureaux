@@ -90,45 +90,69 @@ function ServiceModal({ onClose }) {
   const prevStep = () => {
     setCurrentStep(currentStep - 1);
   };
-
+  const resetForm = () => {
+    setSelectedOptions({
+      step1: '',
+      step2: '',
+      step3: '',
+      step4: '',
+    });
+    setName('');
+    setPhone('');
+    setEmail('');
+    setCurrentStep(0);
+    onClose();
+  };
   const handleOptionChange = (step, value) => {
     setSelectedOptions({ ...selectedOptions, [step]: value });
   };
-
-  const handleSubmit = () => {
+  const showErrorNotification = () => {
+    toast.error('Помилка! Не вдалося відправити форму.', {
+      position: 'top-right',
+      autoClose: 5000,
+    });
+  };
+  const handleSubmit = async () => {
     if (
-      !selectedOptions.step1 ||
-      !selectedOptions.step2 ||
-      !selectedOptions.step3 ||
-      !selectedOptions.step4 ||
-      !name ||
-      !phone ||
-      !email
+      selectedOptions.step1 &&
+      selectedOptions.step2 &&
+      selectedOptions.step3 &&
+      selectedOptions.step4 &&
+      name &&
+      phone &&
+      email
     ) {
-      toast.error('Будь ласка, заповніть всі поля перед відправкою форми.');
-    } else {
-      console.log('Дані з форми замовлення', {
-        square: selectedOptions.step1,
-        type: selectedOptions.step2,
-        style: selectedOptions.step3,
-        time: selectedOptions.step4,
-        name,
-        phone,
-        email,
-      });
+      const formData = `
+        🔥 Нове повідомлення з сайту! 🔥\n\n 📩 Квіз\n 🏠 Площа об'єкту: ${selectedOptions.step1}\n 🏢 Тип приміщення: ${selectedOptions.step2}\n 🎨 Стиль ремонту: ${selectedOptions.step3}\n ⏰ Планований час початку: ${selectedOptions.step4}\n 🤵 Ім'я: ${name}\n 📱 Телефон: +${phone}\n ✉️ Email: ${email}
+      `.trim();
 
-      setSelectedOptions({
-        step1: '',
-        step2: '',
-        step3: '',
-        step4: '',
-      });
-      setName('');
-      setPhone('');
-      setEmail('');
-      setCurrentStep(0);
-      onClose();
-      toast.success('Форму успішно відправлено');
+      try {
+        const botToken = '6809113635:AAEAPNVeXhN78oUhxyGEpuahfr1pMTWSLM0';
+        const groupId = '-1002050844018';
+
+        const message = encodeURIComponent(formData);
+        const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${groupId}&text=${message}`;
+
+        const response = await fetch(url, {
+          method: 'POST',
+        });
+
+        if (response.ok) {
+          console.log('Дані відправлені в групу в Telegram.');
+          toast.success('Дані успішно відправлено');
+          resetForm();
+        } else {
+          showErrorNotification();
+          console.log('Помилка під час відправлення даних.', response.status, response.statusText);
+        }
+      } catch (error) {
+        console.error(error);
+        alert('Помилка сервера.');
+        showErrorNotification();
+      }
+      console.log(formData);
+    } else {
+      toast.error('Будь ласка, заповніть всі поля перед відправкою форми.');
     }
   };
 

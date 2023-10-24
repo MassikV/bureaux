@@ -65,6 +65,7 @@ function Header() {
   }, []);
   const openPopup = () => {
     setPopupVisible(true);
+    setPopupSubmitted(true);
     document.body.classList.add('no-scroll');
   };
 
@@ -72,7 +73,6 @@ function Header() {
     setPopupVisible(false);
     document.body.classList.remove('no-scroll');
   };
-
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
@@ -116,6 +116,7 @@ function Header() {
         <div className="popup-overlay">
           <PopUpContainer
             onClose={closePopup}
+            source="кнопка в меню"
             onCloseButton={() => {
               closePopup();
               setPopupSubmitted(false);

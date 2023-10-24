@@ -159,9 +159,12 @@
   .founders {
     background-image: url(./img/tabletBg.png);
     &-content{
-      height: 550vh;
+      height: 500vh;
       grid-template-columns: 1fr;
     grid-template-rows: 10% 1fr;
+      @media screen and (max-width: 500px){
+        height: 400vh;
+      }
     }
     &-data{
       display: grid;
@@ -251,8 +254,11 @@ display: none;
 @media screen and (max-width: 480px) {
   .founders {
     max-width: 480px;
-    height: 101rem;
-    grid-template-rows: 200px 1fr;
+    &-content{
+      height: 101rem;
+      grid-template-rows: 200px 1fr;
+
+    }
     &-container {
       grid-template-columns: 1fr;
       grid-template-rows: auto;
@@ -270,7 +276,9 @@ display: none;
       }
     }
 
-
+    &-content{
+      height: 100%;
+    }
 
     &-title {
       font-size: 38px; 

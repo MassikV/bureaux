@@ -6,7 +6,9 @@ overflow: hidden;
     display: flex;
     justify-content: space-between;
     margin-bottom: 3rem;
-
+    &--logo{
+      opacity: 0.7;
+    }
     &--title {
       margin-top: 1rem;
       font-family: 'Kyiv Region', sans-serif;
@@ -141,6 +143,7 @@ overflow: hidden;
     column-gap: 1rem;
     width: 90vw;
     padding:1rem ;
+    grid-template-rows: 0.25fr 0.25fr 0.5fr;
   }
   .reviews-people--name {
     font-size: 24px;
@@ -192,6 +195,8 @@ overflow: hidden;
     margin-top: 0.75rem;
   }
   .reviews-people{
+    padding: 1.5rem;
+    height: auto;
   }
   .reviews-people--name {
     align-self: center;

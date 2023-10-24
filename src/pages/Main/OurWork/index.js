@@ -169,25 +169,19 @@ function OurWork() {
 
   return (
     <section className="ourWork" id="OurWork" ref={mainRef}>
-      {windowWidth > 1024 && (
-        <div className="ourWork-header">
-          {logos.slice(0, 2)}
-          <h2 className="ourWork-header--title">як ми працюємо</h2>
-          {logos.slice(0, 5)}
+      <div className="ourWork-header">
+        <div className="ourWork-header-logos">{windowWidth > 1024 && logos.slice(0, 2)}</div>
+        <h2 className="ourWork-header--title">як ми працюємо</h2>
+        <div className="ourWork-header-logo">
+          {windowWidth > 1024
+            ? logos.slice(0, 5)
+            : windowWidth > 480
+            ? logos.slice(0, 3)
+            : windowWidth > 395
+            ? logos.slice(0, 7)
+            : logos.slice(0, 6)}
         </div>
-      )}
-      {windowWidth <= 480 && (
-        <div className="ourWork-header">
-          <h2 className="ourWork-header--title">як ми працюємо</h2>
-          <div className="ourWork-header-logo">{logos.slice(0, 6)}</div>
-        </div>
-      )}
-      {windowWidth > 480 && windowWidth <= 1024 && (
-        <div className="ourWork-header">
-          <h2 className="ourWork-header--title">як ми працюємо</h2>
-          <div className="ourWork-header-logo">{logos.slice(0, 3)}</div>
-        </div>
-      )}
+      </div>
       <ul className="ourWork-list">
         {ourWorks.map((works, index) => (
           <li key={index} style={{ marginBottom: index === ourWorks.length - 1 ? '0' : '3rem' }}>

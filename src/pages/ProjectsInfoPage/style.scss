@@ -248,6 +248,8 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  position: relative;
+  overflow: hidden;
   height: 100%;
 }
 
@@ -281,4 +283,35 @@
   max-width: 90%;
   max-height: 90%;
   object-fit: cover;
+}
+.modal-arrow,
+.modal-close {
+  position: absolute;
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-color: transparent;
+  border: none;
+  outline: none !important;
+  z-index: 1; /* Важливий параметр для накладання на зображення */
+}
+
+.modal-close {
+  top: 3rem; /* Положення хрестика від верхнього краю */
+  right: 2.5rem; /* Положення хрестика від правого краю */
+}
+
+.modal-arrow {
+  top: 50%; /* Положення стрілок по центру вертикалі */
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 1rem; /* Положення лівої стрілки від лівого краю */
+}
+
+.next {
+  right: 1rem; /* Положення правої стрілки від правого краю */
 }

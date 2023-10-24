@@ -15,6 +15,7 @@
   padding: 0.45rem;
   background: none;
   transition: background 0.5s;
+
   &.scrolled {
     background: rgba(0, 0, 0, 0.4);
   }
@@ -69,7 +70,7 @@
     &__item {
       & a {
         color: #FFF;
-        font-family: Mariupol;
+        font-family: "IBM Plex Mono", monospace;
         font-size: 18px;
         font-style: normal;
         font-weight: 500;
@@ -88,7 +89,7 @@
     padding: 15px;
     background: rgba(223, 14, 14, 0.60);
     color: #FFF;
-    font-family: Mariupol;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 13px;
     font-style: normal;
     font-weight: 500;

@@ -8,7 +8,7 @@ function PopUp() {
         <p className="popUp-text">
           Залишайте Ваші дані і ми Вам обов'язково передзвонимо, коли Вам буде зручніше!
         </p>
-        <PopUpContainer />
+        <PopUpContainer source="Відправка з сайту" />
       </div>
     </section>
   );

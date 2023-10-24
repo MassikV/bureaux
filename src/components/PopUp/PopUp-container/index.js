@@ -5,22 +5,13 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { motion, AnimatePresence } from 'framer-motion';
 
-function PopUpContainer({ onCloseButton, onClose }) {
+function PopUpContainer({ onCloseButton, source, onClose }) {
   const [customTime, setCustomTime] = useState('');
   const [name, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [selectedPackage, setSelectedPackage] = useState('');
   const [timeSelection, setTimeSelection] = useState('Найближчим часом');
   const [isImmediateTimeSelected, setIsImmediateTimeSelected] = useState(true);
-  const [isOpenByButton, setIsOpenByButton] = useState(false);
-
-  useEffect(() => {
-    setCustomTime('');
-  }, [isOpenByButton]);
-
-  if (isOpenByButton) {
-    onCloseButton();
-  }
 
   const showErrorNotification = () => {
     toast.error('Помилка! Не вдалося відправити форму.', {
@@ -29,6 +20,34 @@ function PopUpContainer({ onCloseButton, onClose }) {
     });
   };
 
+  function getMinDateTime() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0'); // Перетворюємо місяць на строку та додаємо '0' при необхідності
+    const day = String(now.getDate()).padStart(2, '0'); // Перетворюємо день на строку та додаємо '0' при необхідності
+    const hours = String(now.getHours()).padStart(2, '0'); // Перетворюємо години на строку та додаємо '0' при необхідності
+    const minutes = String(now.getMinutes()).padStart(2, '0'); // Перетворюємо хвилини на строку та додаємо '0' при необхідності
+
+    // Форматуємо дату та час у форматі, прийнятому для властивості min у input типу "datetime-local".
+    return `${year}-${month}-${day}T${hours}:${minutes}`;
+  }
+
+  function formatDate(dateTime) {
+    if (!dateTime) {
+      return ''; // Повертає пустий рядок, якщо dateTime не вказано.
+    }
+
+    const date = new Date(dateTime);
+    const day = date.getDate();
+    const month = date.getMonth() + 1; // Додавання 1, оскільки місяці в Date починаються з 0.
+    const year = date.getFullYear();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const formattedMinutes = String(minutes).padStart(2, '0');
+    // Форматування дати та часу у вигляді "день:місяць:рік; година:хвилина".
+    return `${day}.${month}.${year}; ${hours}:${formattedMinutes}`;
+  }
+
   const showSuccessNotification = () => {
     toast.success('Дані успішно відправлено', {
       position: 'top-right',
@@ -36,29 +55,43 @@ function PopUpContainer({ onCloseButton, onClose }) {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (name && phoneNumber && selectedPackage && (timeSelection !== 'Інше' || customTime)) {
-      const formData = {
-        name,
-        phoneNumber,
-        selectedTime: timeSelection === 'Найближчим часом' ? timeSelection : customTime,
-        selectedPackage,
-      };
+      const formData = `
+        🔥Нове повiдомлення з сайту!🔥\n\n📩 Поп-ап: ${source}\n🤵‍♂️ Iм'я: ${name}\n📱 Номер телефону: +${phoneNumber}\n📋 Пакет послуг: ${selectedPackage}\n⌚️ Коли дзвонити: ${
+        timeSelection === 'Найближчим часом' ? timeSelection : formatDate(customTime)
+      }
+      `.trim();
 
-      console.log('Дані з форми:', formData);
+      try {
+        const botToken = '6809113635:AAEAPNVeXhN78oUhxyGEpuahfr1pMTWSLM0';
+        const groupId = '-1002050844018';
 
-      showSuccessNotification();
+        const message = encodeURIComponent(formData);
+        const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${groupId}&text=${message}`;
 
-      resetForm();
-      onClose();
-      setIsOpenByButton(true);
-    } else {
-      showErrorNotification();
+        const response = await fetch(url, {
+          method: 'POST',
+        });
+
+        if (response.ok) {
+          console.log('Дані відправлені в групу в Telegram.');
+          showSuccessNotification();
+          resetForm();
+        } else {
+          showErrorNotification();
+          console.log('Помилка під час відправлення даних.', response.status, response.statusText);
+        }
+      } catch (error) {
+        console.error(error);
+        alert('Помилка сервера.');
+        showErrorNotification();
+      }
+      console.log(formData);
     }
   };
-
   const resetForm = () => {
     setName('');
     setPhoneNumber('');
@@ -70,11 +103,10 @@ function PopUpContainer({ onCloseButton, onClose }) {
     hidden: { opacity: 0, y: '100%' },
     visible: { opacity: 1, y: 0 },
   };
-
   return (
     <AnimatePresence>
       <motion.div
-        className={`popUp-wrapper`}
+        className={`popUp-wrapper `}
         variants={popupVariants}
         initial="hidden"
         animate="visible"
@@ -130,7 +162,6 @@ function PopUpContainer({ onCloseButton, onClose }) {
                 width: '100%',
                 border: '1px solid black',
                 borderRadius: '11px',
-                height: '3rem',
               }}
               placeholder="Введіть ваш номер"
               autoComplete="off"
@@ -160,6 +191,7 @@ function PopUpContainer({ onCloseButton, onClose }) {
                 onChange={(e) => setCustomTime(e.target.value)}
                 style={{ marginTop: '10px', borderRadius: '11px', width: '100%' }}
                 autoComplete="off"
+                min={getMinDateTime()}
                 required
               />
             )}
@@ -187,7 +219,7 @@ function PopUpContainer({ onCloseButton, onClose }) {
             />
             Міні-проєкт
           </label>
-          <button className="popUp-wrapper__button" onClick={handleSubmit}>
+          <button className="popUp-wrapper__button" type="submit">
             Відправити
           </button>
         </form>

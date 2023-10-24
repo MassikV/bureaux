@@ -273,6 +273,15 @@
       width: 100%;
       text-align: center;
     }
+    input[type="text"],
+    input[type="email"] {
+      height: 35px;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
   }
 
   .progress-bar {
@@ -301,17 +310,13 @@
     color: #bf1616;
     width: 1rem;
     height: 1rem;
+    @media (max-width: 1023px) {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 
-  input[type="text"],
-  input[type="email"] {
-    height: 35px;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+
 
   button {
     background-color: #bf1616;
@@ -379,7 +384,7 @@
 }
 
 .no-scroll {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 @keyframes ticker-kf {
@@ -406,6 +411,15 @@
       font-size: 30px;
       line-height: 30px;
     }
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 0;
+      height: 2.5rem;
+    }
   }
   .progress-bar {
     order: 3;
@@ -418,15 +432,7 @@
     text-align: start;
     color: #bf1616;
   }
-  input[type="text"],
-  input[type="email"] {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 0;
-    height: 2.5rem;
-  }
+
   .react-tel-input .form-control {
     font-size: 14px;
     border: 1px solid #cacaca;
@@ -769,6 +775,15 @@
         font-size: 18px;
         line-height: 21px;
       }
+      input[type="text"],
+      input[type="email"] {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 0;
+        height: 2rem;
+      }
     }
 
     .question-counter {
@@ -791,15 +806,7 @@
       }
     }
 
-    input[type="text"],
-    input[type="email"] {
-      width: 100%;
-      padding: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      margin-bottom: 0;
-      height: 2rem;
-    }
+
 
     .react-tel-input .form-control {
       font-size: 14px;
