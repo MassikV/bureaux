@@ -52,6 +52,9 @@ function AboutUs() {
       document.querySelectorAll('.section-container--logo').forEach((logo) => {
         logo.style.width = `${logoWidth}px`;
       });
+      document.querySelectorAll('.section-container--logos').forEach((logo) => {
+        logo.style.width = `${logoWidth}px`;
+      });
     }
 
     handleResize();
