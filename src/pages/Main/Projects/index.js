@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 import union from './img/Union.svg';
@@ -6,7 +6,7 @@ import image1 from './img/1.png';
 import image2 from './img/2.png';
 import image3 from './img/3.png';
 import image4 from './img/4.png';
-import logo from './img/logo.svg';
+import logoImg from './img/logo.svg';
 
 const imageArrays = [
   [
@@ -141,71 +141,43 @@ const LOGO_WIDTHS = {
   medium: 65,
   large: 85,
 };
+const imageMap = {
+  logo: logoImg,
+};
 function OurProjects() {
   const [fullImageSrc, setFullImageSrc] = useState(null);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  let logoCount;
-  if (windowWidth <= 480) {
-    logoCount = 2;
-  } else if (windowWidth > 480 && windowWidth <= 576) {
-    logoCount = 2;
-  } else if (windowWidth > 480 && windowWidth <= 810) {
-    logoCount = 3;
-  } else if (windowWidth > 480 && windowWidth <= 912) {
-    logoCount = 4;
-  } else if (windowWidth > 480 && windowWidth <= 1024) {
-    logoCount = 5;
-  } else {
-    logoCount = 3;
-  }
-  const getLogoWidth = () => {
-    if (windowWidth <= 480) {
-      return LOGO_WIDTHS.small;
-    } else if (windowWidth > 480 && windowWidth <= 1024) {
-      return LOGO_WIDTHS.medium;
-    } else {
-      return LOGO_WIDTHS.large;
-    }
-  };
-
-  const logoWidth = getLogoWidth();
+  const [maxLogosInRow, setMaxLogosInRow] = useState(0);
+  const containerRef = useRef(null);
+  const titleRef = useRef(null);
+  const textRef = useRef(null);
+  const infoRef = useRef(null);
 
   useEffect(() => {
     function handleResize() {
-      setWindowWidth(window.innerWidth);
+      const containerWidth = containerRef.current.getBoundingClientRect().width;
+      const titleWidth = titleRef.current.getBoundingClientRect().width;
+      const textWidth = textRef.current.getBoundingClientRect().width;
+      const infoWidth = infoRef.current.getBoundingClientRect().width;
+      const logosWidth =
+        containerWidth - titleWidth - textWidth - infoWidth; /* еще какие-то элементы */
+      const maxLogosInRow = Math.floor(logosWidth / LOGO_WIDTHS.large);
+      if (maxLogosInRow <= 0) {
+        setMaxLogosInRow(2);
+      } else {
+        setMaxLogosInRow(maxLogosInRow);
+      }
     }
 
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [maxLogosInRow]);
 
-  const logos = Array(logoCount)
-    .fill(null)
-    .map((_, index) => (
-      <img
-        src={logo}
-        alt="#"
-        className="ourProjects-container--logo"
-        style={{ width: logoWidth }}
-        key={index}
-      />
-    ));
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const logos = Array.from({ length: maxLogosInRow }).fill(imageMap.logo);
 
   const showFullImage = (containerIndex, index) => {
     const currentImage = imageArrays[containerIndex][index];
@@ -217,21 +189,33 @@ function OurProjects() {
   const hideFullImage = () => {
     setFullImageSrc(null);
   };
-
+  console.log(maxLogosInRow);
   return (
     <section className="ourProjects" id="Projects">
-      <div className="ourProjects-header">
-        {windowWidth > 1023 && <>{logos.slice(0, 1)}</>}
-        <h2 className="ourProjects-header--title">Наші проєкти</h2>
-        <p className="ourProjects-header--text">
+      <div className="ourProjects-header" ref={containerRef}>
+        {windowWidth > 1023 && (
+          <div className="logos">
+            {logos.map((logo, index) => (
+              <img src={logo} alt="#" className="ourProjects-container--logos" key={index} />
+            ))}
+          </div>
+        )}
+        <h2 className="ourProjects-header--title" ref={titleRef}>
+          Наші проєкти
+        </h2>
+        <p className="ourProjects-header--text" ref={textRef}>
           У нас є можливість виконання проектів під ключ і для цього ми маємо надійних підрядників,
           які здатні якісно закрити весь спектр необхідних послуг.
         </p>
-        <p className="ourProjects-header--info">
+        <p className="ourProjects-header--info" ref={infoRef}>
           Тут зібрані проєкти, якими ми найбільше пишаємось, <span>наведіть</span> на кожен з них,
           щоб побачити більше
         </p>
-        <div className="logos">{logos}</div>
+        <div className="logos">
+          {logos.map((logo, index) => (
+            <img src={logo} alt="#" className="ourProjects-container--logos" key={index} />
+          ))}
+        </div>
         <svg
           width="214"
           height="90"

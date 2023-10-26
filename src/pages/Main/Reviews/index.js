@@ -122,13 +122,15 @@ function Reviews() {
             <img src={logo} alt="#" className="reviews-container--logo" key={index} />
           ))}
         </div>
-        <div className="reviews-people--container">{getReviews()}</div>
-        <p className="reviews-description">
-          Більше відгуків в нашому Інстаграмі{' '}
-          <a href="https://www.instagram.com/bureau.x_/" rel="noreferrer" target="_blank">
-            bureau.x_
-          </a>
-        </p>
+        <div className="container">
+          <div className="reviews-people--container">{getReviews()}</div>
+          <p className="reviews-description">
+            Більше відгуків в нашому Інстаграмі{' '}
+            <a href="https://www.instagram.com/bureau.x_/" rel="noreferrer" target="_blank">
+              bureau.x_
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   );

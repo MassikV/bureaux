@@ -35,6 +35,16 @@ const ourWorks = [
   },
 ];
 
+const LOGO_WIDTHS = {
+  small: 34,
+  medium: 65,
+  large: 85,
+};
+
+const imageMap = {
+  logo: logo,
+};
+
 function OurWork() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -134,10 +144,6 @@ function OurWork() {
     });
   }, []);
 
-  const logoWidth = windowWidth <= 480 ? 34 : windowWidth <= 1024 ? 65 : 85;
-
-  const maxLogosInRow = Math.floor(windowWidth / logoWidth);
-
   useEffect(() => {
     function handleResize() {
       setWindowWidth(window.innerWidth);
@@ -155,68 +161,86 @@ function OurWork() {
     return formattedIndex < 10 ? `0${formattedIndex}` : formattedIndex;
   };
 
+  const titleWidth = mainRef.current
+    ? mainRef.current.querySelector('.ourWork-header--title').getBoundingClientRect().width
+    : 0;
+
+  const logoWidth =
+    windowWidth <= 480
+      ? LOGO_WIDTHS.small
+      : windowWidth <= 1024
+      ? LOGO_WIDTHS.medium
+      : LOGO_WIDTHS.large;
+  const maxLogosInRow = Math.floor((windowWidth - titleWidth) / logoWidth);
+  const logosBeforeTitle = Math.floor((windowWidth - titleWidth) / (logoWidth * 2)); // Логотипи перед тайтлом
+  const logosAfterTitle = maxLogosInRow - logosBeforeTitle; // Логотипи після тайтлу
+
   const logos = Array(maxLogosInRow)
     .fill(null)
     .map((_, index) => (
       <img
-        src={logo}
+        src={imageMap.logo}
         alt="#"
         style={{ width: `${logoWidth}px` }}
         className="ourWork-container--logo"
         key={index}
       />
     ));
-
   return (
     <section className="ourWork" id="OurWork" ref={mainRef}>
       <div className="ourWork-header">
-        <div className="ourWork-header-logos">{windowWidth > 1024 && logos.slice(0, 2)}</div>
+        <div className="ourWork-header-logos">
+          {windowWidth > 1024 && logos.slice(0, logosBeforeTitle)}
+        </div>
         <h2 className="ourWork-header--title">як ми працюємо</h2>
         <div className="ourWork-header-logo">
           {windowWidth > 1024
-            ? logos.slice(0, 5)
+            ? logos.slice(logosBeforeTitle, logosBeforeTitle + logosAfterTitle)
             : windowWidth > 480
-            ? logos.slice(0, 3)
+            ? logos.slice(logosBeforeTitle, logosBeforeTitle + 3)
             : windowWidth > 395
-            ? logos.slice(0, 7)
-            : logos.slice(0, 6)}
+            ? logos.slice(logosBeforeTitle, logosBeforeTitle + 7)
+            : logos.slice(logosBeforeTitle, logosBeforeTitle + 6)}
         </div>
       </div>
-      <ul className="ourWork-list">
-        {ourWorks.map((works, index) => (
-          <li key={index} style={{ marginBottom: index === ourWorks.length - 1 ? '0' : '3rem' }}>
-            <div className={`ourWork-container box-${index + 1}`}>
-              <div
-                className={`ourWork-container--image image-box${index + 1} ${
-                  index === 2 ? 'image-box3' : 'image-box4'
-                } `}
-                style={{
-                  borderRadius:
-                    index % 4 === 0
-                      ? '10px 10px 0 10px'
-                      : index % 4 === 1
-                      ? '10px 10px 10px 0'
-                      : index % 4 === 2
-                      ? '10px 0 10px 10px'
-                      : '0 10px 10px 10px',
-                }}>
-                <img src={works.image} className={`box box-${index + 1}`} alt="" />
+
+      <div className="container">
+        <ul className="ourWork-list">
+          {ourWorks.map((works, index) => (
+            <li key={index} style={{ marginBottom: index === ourWorks.length - 1 ? '0' : '3rem' }}>
+              <div className={`ourWork-container box-${index + 1}`}>
+                <div
+                  className={`ourWork-container--image image-box${index + 1} ${
+                    index === 2 ? 'image-box3' : 'image-box4'
+                  } `}
+                  style={{
+                    borderRadius:
+                      index % 4 === 0
+                        ? '10px 10px 0 10px'
+                        : index % 4 === 1
+                        ? '10px 10px 10px 0'
+                        : index % 4 === 2
+                        ? '10px 0 10px 10px'
+                        : '0 10px 10px 10px',
+                  }}>
+                  <img src={works.image} className={`box box-${index + 1}`} alt="" />
+                </div>
+                <div className="ourWork-container--stepper">
+                  <div className="step-number">{formatIndex(index)}</div>
+                  {index < ourWorks.length - 1 && <div className="stepper-line"></div>}
+                </div>
+                <div
+                  className={`ourWork-container--info info-box${index + 1} ${
+                    windowWidth >= 1024 && index === currentIndex ? 'active' : ''
+                  }`}>
+                  <h3 className="ourWork-container--title">{works.title}</h3>
+                  <p className="ourWork-container--text box">{works.text}</p>
+                </div>
               </div>
-              <div className="ourWork-container--stepper">
-                <div className="step-number">{formatIndex(index)}</div>
-                {index < ourWorks.length - 1 && <div className="stepper-line"></div>}
-              </div>
-              <div
-                className={`ourWork-container--info ${
-                  index % 2 === 0 ? 'info-box1' : 'info-box2'
-                } ${windowWidth >= 1024 && index === currentIndex ? 'active' : ''}`}>
-                <h3 className="ourWork-container--title">{works.title}</h3>
-                <p className="ourWork-container--text box">{works.text}</p>
-              </div>
-            </div>
-          </li>
-        ))}
-      </ul>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

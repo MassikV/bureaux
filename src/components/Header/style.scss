@@ -17,7 +17,10 @@
   transition: background 0.5s;
 
   &.scrolled {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
+  }
+  &.infopage {
+    background: rgba(0, 0, 0, 0.5);
   }
   &-block {
     display: flex;
@@ -68,6 +71,20 @@
       flex-direction: column;
     }
     &__item {
+      position: relative;
+      cursor: pointer;
+      &__link {
+        color: #FFF;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+        @media (max-width: 992px) {
+          color: #000;
+        }
+      }
       & a {
         color: #FFF;
         font-family: "IBM Plex Mono", monospace;
@@ -80,8 +97,21 @@
           color: #000;
         }
       }
-      &:hover{
-        transform: scale(1.2);
+      &::before {
+        content: "";
+        position: absolute;
+        width: 0; /* Початкова ширина полоски 0, щоб її було невидно */
+        height: 3px; /* Висота полоски */
+        background: #FFF; /* Колір полоски */
+        bottom: 0;
+        left: 0;
+        transition: width 0.3s; /* Анімація появи ширини */
+      }
+
+      &:hover {
+        &::before {
+          width: 100%; /* Збільшуємо ширину полоски на 100% при наведенні */
+        }
       }
     }
   }

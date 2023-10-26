@@ -75,41 +75,43 @@ const ProjectInfo = () => {
           </div>
         </div>
       )}
-      <div className="container">
-        <Buttons />
-        {!loading && (
-          <div className="project-info">
-            {project.allPhoto.slice(0, shownPhotosCount).map((item, i) => (
-              <div
-                className="project-info__item"
-                key={i}
-                onClick={() => {
-                  setSliderIndex(i);
-                  setShowSlider(true);
-                }}>
-                <img key={i} className="project-info__img" src={item} alt="" />
-              </div>
-            ))}
-          </div>
+      <div className="project-container__photo">
+        <div className="container">
+          <Buttons />
+          {!loading && (
+            <div className="project-info">
+              {project.allPhoto.slice(0, shownPhotosCount).map((item, i) => (
+                <div
+                  className="project-info__item"
+                  key={i}
+                  onClick={() => {
+                    setSliderIndex(i);
+                    setShowSlider(true);
+                  }}>
+                  <img key={i} className="project-info__img" src={item} alt="" />
+                </div>
+              ))}
+            </div>
+          )}
+          {!loading && shownPhotosCount < project.allPhoto.length && (
+            <button className="project-info__load-more" onClick={handleLoadMorePhotos}>
+              Показати більше
+            </button>
+          )}
+          <Buttons />
+        </div>
+        {showSlider && (
+          <Modal
+            onClose={() => setShowSlider(false)}
+            imageSrc={project.allPhoto[sliderIndex]}
+            imageAlt="gallery image"
+            onPrev={handlePrev}
+            onNext={handleNext}
+            isPrevDisabled={sliderIndex === 0}
+            isNextDisabled={sliderIndex === project.allPhoto.length - 1}
+          />
         )}
-        {!loading && shownPhotosCount < project.allPhoto.length && (
-          <button className="project-info__load-more" onClick={handleLoadMorePhotos}>
-            Показати більше
-          </button>
-        )}
-        <Buttons />
       </div>
-      {showSlider && (
-        <Modal
-          onClose={() => setShowSlider(false)}
-          imageSrc={project.allPhoto[sliderIndex]}
-          imageAlt="gallery image"
-          onPrev={handlePrev}
-          onNext={handleNext}
-          isPrevDisabled={sliderIndex === 0}
-          isNextDisabled={sliderIndex === project.allPhoto.length - 1}
-        />
-      )}
     </div>
   );
 };

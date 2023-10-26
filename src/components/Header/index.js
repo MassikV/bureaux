@@ -1,17 +1,27 @@
-import './style.scss';
 import React, { useState, useEffect } from 'react';
-import PopUpContainer from '../PopUp/PopUp-container';
+import { useLocation } from 'react-router-dom';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { AiOutlineClose } from 'react-icons/ai';
+import PopUpContainer from '../PopUp/PopUp-container';
 import Logo from './img/logo.png';
+import './style.scss';
 
 function Header() {
+  const location = useLocation();
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [isPopupSubmitted, setPopupSubmitted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(true);
   const [nav, setNav] = useState(false);
+  const [isInfoPage, setIsInfoPage] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  useEffect(() => {
+    if (location.pathname.startsWith('/bureaux/projects/info/')) {
+      setIsInfoPage(true);
+    }
+  }, [location.pathname]);
+
+  console.log(isInfoPage);
   useEffect(() => {
     if (nav) {
       document.body.style.overflow = 'hidden';
@@ -22,27 +32,6 @@ function Header() {
       document.body.style.overflow = 'auto';
     };
   }, [nav]);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const handleScroll = () => {
-    if (window.scrollY >= 200) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-  };
-
-  const handleMobileNavClick = () => {
-    setNav(false);
-    setTimeout(() => {}, 300);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,6 +52,28 @@ function Header() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY >= 100) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  const handleMobileNavClick = () => {
+    setNav(false);
+    setTimeout(() => {}, 300);
+  };
+
   const openPopup = () => {
     setPopupVisible(true);
     setPopupSubmitted(true);
@@ -73,8 +84,9 @@ function Header() {
     setPopupVisible(false);
     document.body.classList.remove('no-scroll');
   };
+
   return (
-    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+    <header className={`header ${isInfoPage ? 'infopage' : ''} ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="header-block">
           <a href="/bureaux/">

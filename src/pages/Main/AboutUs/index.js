@@ -79,39 +79,41 @@ function AboutUs() {
           <img src={logo} alt="#" className="section-container--logos" key={index} />
         ))}
       </div>
-
-      <div className="section-grid">
-        <div className="section-grid__container--photo">
-          <img
-            src={windowWidth <= 1023 ? phonePhoto : firstPhoto}
-            alt="f"
-            className="section-grid--photo"
-          />
+      <div className="container">
+        <div className="section-grid">
+          <div className="section-grid__container--photo">
+            <img
+              src={windowWidth <= 1023 ? phonePhoto : firstPhoto}
+              alt="f"
+              className="section-grid--photo"
+            />
+          </div>
+          <p className="section-grid--bureaux">
+            <span>BureauX (Бюро Ікс)</span> – бюро архітектури та дизайну, засновниками якого є
+            молоде подружжя архітекторів за освітою та захопленням. Вже понад 5 років ми
+            розвиваємося у цій сфері та даруємо людям приємні емоції під час розробки дизайну та
+            ремонту.
+          </p>
+          <p className="section-grid--mission">
+            <span>Наша місія</span> – створювати ідеальний та унікальний простір для клієнтів з
+            урахуванням їхніх потреб та бажань, використовуючи сучасні технології та інноваційні
+            ідеї в дизайні, приділяючи увагу деталям та якості матеріалів.
+          </p>
+          <p className="section-grid--conclusion">
+            Ми просуваємо <b>новий стиль українського дизайну</b>, поєднуючи сучасні тенденції та
+            українські традиції, щоб створити для наших клієнтів затишний простір, який відповідає
+            їхньому способу життя.
+          </p>
         </div>
-        <p className="section-grid--bureaux">
-          <span>BureauX (Бюро Ікс)</span> – бюро архітектури та дизайну, засновниками якого є молоде
-          подружжя архітекторів за освітою та захопленням. Вже понад 5 років ми розвиваємося у цій
-          сфері та даруємо людям приємні емоції під час розробки дизайну та ремонту.
-        </p>
-        <p className="section-grid--mission">
-          <span>Наша місія</span> – створювати ідеальний та унікальний простір для клієнтів з
-          урахуванням їхніх потреб та бажань, використовуючи сучасні технології та інноваційні ідеї
-          в дизайні, приділяючи увагу деталям та якості матеріалів.
-        </p>
-        <p className="section-grid--conclusion">
-          Ми просуваємо <b>новий стиль українського дизайну</b>, поєднуючи сучасні тенденції та
-          українські традиції, щоб створити для наших клієнтів затишний простір, який відповідає
-          їхньому способу життя.
-        </p>
       </div>
       <div className="section-containers">
         {windowWidth > 1023 ? (
           <div className="logo-container">
-            {logos.slice(0, 2).map((logo, index) => (
+            {logos.map((logo, index) => (
               <img src={logo} alt="#" className="section-container--logo" key={index} />
             ))}
             <h2 className="title">Чому слід обирати нас</h2>
-            {logos.slice(0, 1).map((logo, index) => (
+            {logos.map((logo, index) => (
               <img src={logo} alt="#" className="section-container--logo" key={index} />
             ))}
           </div>

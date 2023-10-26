@@ -1,7 +1,7 @@
 .reviews {
   background-image: url(./img/Bg.png);
   padding: 5rem 0;
-overflow: hidden;
+  overflow: hidden;
   &-container {
     display: flex;
     justify-content: space-between;
@@ -28,7 +28,7 @@ overflow: hidden;
     column-gap: 2rem;
     grid-template-rows: 0.25fr 0.25fr 1fr;
     width: 35rem;
-    height: 18rem;
+    height: auto;
     border: 3px solid #BF1616;
     background-color: #FFFBF6;
     padding: 2rem 2.5rem 1rem;
@@ -46,7 +46,7 @@ overflow: hidden;
     }
 
     &--name {
-      font-family: 'Kyiv Region', sans-serif;
+      font-family: 'IBM Plex Mono', monospace;
       font-size: 21px;
       font-weight: 700;
       line-height: 28px;
@@ -117,12 +117,12 @@ overflow: hidden;
     align-items: center;
   }
   .reviews-container--logo:first-child {
-    display: none; 
+    display: none;
   }
 
-  
+
   .reviews-container--logo:not(:first-child) {
-    display: block; 
+    display: block;
   }
   .reviews-people--container {
     display: grid;

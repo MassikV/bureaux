@@ -9,7 +9,7 @@
     padding: 7rem 0 ;
     &--title {
       font-family: 'Kyiv Region', sans-serif;
-      font-size: 6vw;
+      font-size: 83px;
       font-weight: 500;
       line-height: 80px;
       letter-spacing: 0.07em;
@@ -91,7 +91,7 @@
 
     }
     &--title{
-      font-family: 'Kyiv Region',sans-serif;
+      font-family: 'IBM Plex Mono',monospace;
       font-size: 22px;
       font-weight: 700;
       line-height: 21px;
@@ -137,9 +137,17 @@
   grid-row: 1;
   justify-self: end;
 }
-
-
-
+.info-box4{
+  grid-column: 1;
+  grid-row: 1 ;
+  justify-self: end;
+}
+.info-box1, .info-box3{
+  padding: 1.25rem 0 ;
+}
+.info-box2, .info-box4{
+  padding: 1.25rem 0 0 4rem ;
+}
 .step-number{
   background-color: rgba(255,255,255, 0.1);
   border: 3px solid #BF1616;

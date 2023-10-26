@@ -50,6 +50,7 @@
     padding: 40px 50px;
     display: flex;
     width: 675px;
+    height: auto;
     flex-direction: column;
     margin: 0 auto;
     max-height: 100vh;
@@ -147,7 +148,7 @@
     }
     &__radio-label {
       display: grid;
-      grid-template-columns: 0.15fr 1fr;
+      grid-template-columns: 0.08fr 1fr;
       align-items: center;
       font-family: 'IBM Plex Mono', monospace;
       font-size: 20px;
@@ -190,9 +191,10 @@
       text-align: center;
       width: 100%;
       height: 5rem;
-      opacity: 0.5;
+      opacity: 1;
       margin-top: 2.5rem;
       border: none;
+      transition: 0.35s;
       @media (max-width: 768px) {
         margin-top: 1.5rem;
       }
@@ -200,34 +202,34 @@
         margin-top: 1rem;
       }
       &:hover{
-        opacity: 1;
+        opacity: 0.5;
       }
     }
   }
 
 }
-  .flag-dropdown {
-    background-color: transparent !important;
-    border: 0 !important;
-  }
+.flag-dropdown {
+  background-color: transparent !important;
+  border: 0 !important;
+}
 
-  .react-tel-input .selected-flag:hover,
-  .react-tel-input .selected-flag:focus {
-    background-color: transparent !important;
-  }
+.react-tel-input .selected-flag:hover,
+.react-tel-input .selected-flag:focus {
+  background-color: transparent !important;
+}
 
-  .react-tel-input .form-control:focus {
-    outline: none !important;
-    box-shadow: none !important;
-  }
+.react-tel-input .form-control:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
 
-  .react-tel-input .form-control {
-    width: 100%;
-  }
-  .react-tel-input .flag-dropdown.open .selected-flag {
-    background:  transparent !important;
-    border-radius: 3px 0 0 0;
-  }
+.react-tel-input .form-control {
+  width: 100%;
+}
+.react-tel-input .flag-dropdown.open .selected-flag {
+  background:  transparent !important;
+  border-radius: 3px 0 0 0;
+}
 .react-tel-input .selected-flag:hover, .react-tel-input .selected-flag:focus {
   background-color: transparent !important;
 }

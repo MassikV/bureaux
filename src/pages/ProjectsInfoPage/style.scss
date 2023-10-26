@@ -1,7 +1,9 @@
 .project-container {
   position: relative;
+  &__photo{
+    background-image: url(img/Bg.png);
+  }
   &__info {
-    background-image: url("img/bg.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -212,22 +214,21 @@
 .modal {
   position: relative;
   background-color: rgba(0, 0, 0, 0.1);
-  max-width: 90%;
+  max-width: 100%;
   height: 90%;
   overflow: hidden;
   & img{
     order: 2;
-    height: 100%;
-    width: 100%;
+    width: 85%;
   }
 }
 
 .modal-close {
   position: absolute;
   top: 3rem;
-  right: 3rem;
-  font-size: 24px;
-  font-weight: bold;
+  right: 2.5rem;
+  font-size: 40px;
+  font-weight: lighter;
   background-color: transparent;
   color: #fff;
   padding: 0;
@@ -254,8 +255,8 @@
 }
 
 .modal-arrow {
-  font-size: 40px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: lighter;
   color: #fff;
   padding: 0;
   cursor: pointer;
@@ -269,15 +270,6 @@
   color: #BF1616;
 }
 
-.prev {
-  order: 1;
-  margin-left: 2rem;
-}
-
-.next {
-  order: 3;
-  margin-right: 2rem;
-}
 
 .modal-img {
   max-width: 90%;
@@ -287,31 +279,33 @@
 .modal-arrow,
 .modal-close {
   position: absolute;
-  font-size: 40px;
-  font-weight: bold;
-  color: #fff;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   background-color: transparent;
   border: none;
   outline: none !important;
-  z-index: 1; /* Важливий параметр для накладання на зображення */
+  z-index: 1;
 }
 
-.modal-close {
-  top: 3rem; /* Положення хрестика від верхнього краю */
-  right: 2.5rem; /* Положення хрестика від правого краю */
-}
+
 
 .modal-arrow {
-  top: 50%; /* Положення стрілок по центру вертикалі */
+  top: 50%;
   transform: translateY(-50%);
 }
 
 .prev {
-  left: 1rem; /* Положення лівої стрілки від лівого краю */
+  &:disabled{
+    display: none;
+  }
+   order: 1;
+  left: 0;
 }
 
 .next {
-  right: 1rem; /* Положення правої стрілки від правого краю */
+  &:disabled{
+    display: none;
+  }
+   order: 3;
+  right: 0;
 }
