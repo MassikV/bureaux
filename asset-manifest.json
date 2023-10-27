@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/bureaux/static/css/main.0e48916c.css",
+    "main.css": "/bureaux/static/css/main.1522e5cc.css",
     "main.js": "/bureaux/static/js/main.8ee1ff23.js",
     "static/css/265.12a687c4.chunk.css": "/bureaux/static/css/265.12a687c4.chunk.css",
     "static/js/265.43e4d7a4.chunk.js": "/bureaux/static/js/265.43e4d7a4.chunk.js",
@@ -217,7 +217,6 @@
     "static/media/photo2.png": "/bureaux/static/media/photo2.69cbd7f9d711ef7e1ada.png",
     "static/media/photo1.png": "/bureaux/static/media/photo1.e4614e23e19109e4cf9e.png",
     "static/media/family1.png": "/bureaux/static/media/family1.2e7a46311ed4a53a3aa5.png",
-    "static/media/KyivRegion-Regular.ttf": "/bureaux/static/media/KyivRegion-Regular.2340c6b6d35f3206b3a8.ttf",
     "static/media/photo4.png": "/bureaux/static/media/photo4.69c6fa9b316d09535e43.png",
     "static/media/photo3.png": "/bureaux/static/media/photo3.d516fcfdf3b864664d2d.png",
     "static/media/family2.png": "/bureaux/static/media/family2.c09c56dc8942d6eaf5c4.png",
@@ -234,7 +233,7 @@
     "static/media/Union.svg": "/bureaux/static/media/Union.33db1c0cfaf43655c54e095b6ba6d041.svg",
     "index.html": "/bureaux/index.html",
     "static/media/icon.svg": "/bureaux/static/media/icon.507333765f8d5b050ab5491a71bcf476.svg",
-    "main.0e48916c.css.map": "/bureaux/static/css/main.0e48916c.css.map",
+    "main.1522e5cc.css.map": "/bureaux/static/css/main.1522e5cc.css.map",
     "main.8ee1ff23.js.map": "/bureaux/static/js/main.8ee1ff23.js.map",
     "265.12a687c4.chunk.css.map": "/bureaux/static/css/265.12a687c4.chunk.css.map",
     "265.43e4d7a4.chunk.js.map": "/bureaux/static/js/265.43e4d7a4.chunk.js.map",
@@ -249,7 +248,7 @@
     "450.bab4c2a6.chunk.js.map": "/bureaux/static/js/450.bab4c2a6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0e48916c.css",
+    "static/css/main.1522e5cc.css",
     "static/js/main.8ee1ff23.js"
   ]
 }
