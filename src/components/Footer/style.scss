@@ -16,7 +16,7 @@
   &-logo {
     text-decoration: none;
     color: black;
-    cursor: pointer;
+
 
     & img {
       display: block;
@@ -68,7 +68,7 @@
       letter-spacing: 0;
       text-align: left;
       margin-bottom: 0.62rem;
-      cursor: pointer;
+
       @media (max-width: 768px) {
         font-size: 14px;
       }

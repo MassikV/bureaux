@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 import union from './img/Union.svg';
@@ -146,36 +146,53 @@ const imageMap = {
 };
 function OurProjects() {
   const [fullImageSrc, setFullImageSrc] = useState(null);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [isActive, setIsActive] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
   const [maxLogosInRow, setMaxLogosInRow] = useState(0);
   const containerRef = useRef(null);
   const titleRef = useRef(null);
   const textRef = useRef(null);
   const infoRef = useRef(null);
 
+  const logoSize = useCallback(() => {
+    if (windowWidth <= 480) {
+      return LOGO_WIDTHS.small;
+    } else if (windowWidth <= 1024) {
+      return LOGO_WIDTHS.medium;
+    } else {
+      return LOGO_WIDTHS.large;
+    }
+  }, [windowWidth]);
+
   useEffect(() => {
     function handleResize() {
       const containerWidth = containerRef.current.getBoundingClientRect().width;
       const titleWidth = titleRef.current.getBoundingClientRect().width;
-      const textWidth = textRef.current.getBoundingClientRect().width;
-      const infoWidth = infoRef.current.getBoundingClientRect().width;
-      const logosWidth =
-        containerWidth - titleWidth - textWidth - infoWidth; /* еще какие-то элементы */
-      const maxLogosInRow = Math.floor(logosWidth / LOGO_WIDTHS.large);
+      let textWidth = 0;
+      if (windowWidth > 1024) {
+        textWidth = textRef.current.getBoundingClientRect().width;
+      }
+      const logosWidth = containerWidth - titleWidth - textWidth;
+      let maxLogosInRow = 0;
+      if (windowWidth > 1024) {
+        maxLogosInRow = Math.floor(logosWidth / logoSize() / 2);
+      } else {
+        maxLogosInRow = Math.floor(logosWidth / logoSize());
+      }
       if (maxLogosInRow <= 0) {
         setMaxLogosInRow(2);
       } else {
         setMaxLogosInRow(maxLogosInRow);
       }
     }
-
+    setWindowWidth(window.innerWidth);
     handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [maxLogosInRow]);
+  }, [maxLogosInRow, windowWidth, logoSize]);
 
   const logos = Array.from({ length: maxLogosInRow }).fill(imageMap.logo);
 
@@ -183,20 +200,28 @@ function OurProjects() {
     const currentImage = imageArrays[containerIndex][index];
     if (!staticImages.includes(currentImage)) {
       setFullImageSrc(containerIndex);
+      setIsActive(true);
     }
   };
 
   const hideFullImage = () => {
     setFullImageSrc(null);
+    setIsActive(false);
   };
-  console.log(maxLogosInRow);
+
   return (
     <section className="ourProjects" id="Projects">
       <div className="ourProjects-header" ref={containerRef}>
         {windowWidth > 1023 && (
           <div className="logos">
             {logos.map((logo, index) => (
-              <img src={logo} alt="#" className="ourProjects-container--logos" key={index} />
+              <img
+                loading="lazy"
+                src={logo}
+                alt="#"
+                className="ourProjects-container--logos"
+                key={index}
+              />
             ))}
           </div>
         )}
@@ -213,7 +238,14 @@ function OurProjects() {
         </p>
         <div className="logos">
           {logos.map((logo, index) => (
-            <img src={logo} alt="#" className="ourProjects-container--logos" key={index} />
+            <img
+              loading="lazy"
+              src={logo}
+              alt="#"
+              className="ourProjects-container--logos"
+              style={{ width: logoSize() + 'px' }}
+              key={index}
+            />
           ))}
         </div>
         <svg
@@ -296,7 +328,7 @@ function OurProjects() {
       <div className="ourProjects-container">
         {staticImages.map((image, index) => (
           <div className={`ourProjects-staticImage staticImage-${index}`} key={index}>
-            {/*<img src={image} alt={`Зображення ${index + 1}`} />*/}
+            {/*<img loading='lazy' src={image} alt={`Зображення ${index + 1}`} />*/}
           </div>
         ))}
         {windowWidth > 1023
@@ -307,16 +339,18 @@ function OurProjects() {
                 {containerIndex === fullImageSrc ? (
                   <Link
                     to={`/bureaux/projects/info/${FullImage[containerIndex].id + 9}`}
-                    className="full-image-container"
+                    className={`full-image-container ${isActive ? 'container-active' : ''}`}
                     onMouseLeave={hideFullImage}>
                     {staticImages.includes(FullImage[containerIndex].image) ? (
                       <img
+                        loading="lazy"
                         src={FullImage[containerIndex].image}
                         alt={`Зображення ${containerIndex + 1}`}
                       />
                     ) : (
-                      <div className="full-image-content">
+                      <div className={`full-image-content ${isActive ? 'active' : ''}`}>
                         <img
+                          loading="lazy"
                           src={FullImage[containerIndex].image}
                           alt={`Зображення ${containerIndex + 1}`}
                         />
@@ -332,14 +366,19 @@ function OurProjects() {
                   <div className={`grid-row `}>
                     {Array.from({ length: 4 * 6 }, (_, index) => {
                       const imageArray = imageArrays[containerIndex];
+
                       if (index <= 22 && imageArray[index]) {
                         return (
                           <div
                             className={`grid-item`}
                             key={index}
                             onMouseEnter={() => showFullImage(containerIndex, index)}>
-                            <div className="grid-item-content">
-                              <img src={imageArray[index]} alt={`Зображення ${index + 1}`} />
+                            <div className={`grid-item-content `}>
+                              <img
+                                loading="lazy"
+                                src={imageArray[index]}
+                                alt={`Зображення ${index + 1}`}
+                              />
                             </div>
                           </div>
                         );
@@ -352,10 +391,9 @@ function OurProjects() {
               </div>
             ))
           : FullImage.slice(0, 3).map((item, index) => (
-              <Link to={`/bureaux/projects/info/${item.id + 9}`}>
+              <Link key={item.id} to={`/bureaux/projects/info/${item.id + 9}`}>
                 <div
                   className={`grid-item`}
-                  key={index}
                   onMouseEnter={() => showFullImage(index, index)}
                   style={{
                     height: '20rem',
@@ -374,7 +412,7 @@ function OurProjects() {
       </div>
 
       <Link to="/bureaux/projects" className="ourProjects-button">
-        БІЛЬШЕ ПРОЄКТІВ <img src={union} alt="" />
+        БІЛЬШЕ ПРОЄКТІВ <img loading="lazy" src={union} alt="" />
       </Link>
     </section>
   );

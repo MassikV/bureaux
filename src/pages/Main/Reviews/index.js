@@ -49,7 +49,7 @@ function Reviews() {
       let maxLogosInRow;
       let logoWidth;
 
-      const newWindowWidth = window.innerWidth; // Отримайте поточну ширину вікна
+      const newWindowWidth = window.innerWidth;
 
       if (newWindowWidth <= 480) {
         const titleWidth = titleRef.current.getBoundingClientRect().width;
@@ -68,7 +68,7 @@ function Reviews() {
       }
 
       setMaxLogosInRow(maxLogosInRow);
-      setWindowWidth(newWindowWidth); // Оновіть windowWidth
+      setWindowWidth(newWindowWidth);
 
       document.querySelectorAll('.reviews-container--logo').forEach((logo) => {
         logo.style.width = `${logoWidth}px`;
@@ -91,7 +91,7 @@ function Reviews() {
 
       return (
         <div className="reviews-people" key={index}>
-          <img src={image} className="reviews-people--image" alt="" />
+          <img loading="lazy" src={image} className="reviews-people--image" alt="" />
           <p className="reviews-people--name">
             {name}
             <span>, {city}</span>
@@ -101,7 +101,7 @@ function Reviews() {
             rel="noreferrer"
             target="_blank"
             href={`https://www.instagram.com/${nickName}`}>
-            <img src={instagram} alt="" />
+            <img loading="lazy" src={instagram} alt="" />
             {nickName}
           </a>
           <p className="reviews-people--text">{text}</p>
@@ -114,12 +114,18 @@ function Reviews() {
     <section className="reviews" id="Reviews">
       <div className="reviews-content">
         <div className="reviews-container" ref={containerRef}>
-          <img src={logoImg} alt="#" className="reviews-container--logo" />
+          <img loading="lazy" src={logoImg} alt="#" className="reviews-container--logo" />
           <h2 className="reviews-container--title" ref={titleRef}>
             Відгуки
           </h2>
           {logos.map((logo, index) => (
-            <img src={logo} alt="#" className="reviews-container--logo" key={index} />
+            <img
+              loading="lazy"
+              src={logo}
+              alt="#"
+              className="reviews-container--logo"
+              key={index}
+            />
           ))}
         </div>
         <div className="container">

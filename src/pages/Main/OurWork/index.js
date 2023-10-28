@@ -49,7 +49,10 @@ function OurWork() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
   const mainRef = useRef();
+  const containerRef = useRef();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const titleRef = useRef(null);
+  const [maxLogosInRow, setMaxLogosInRow] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -146,61 +149,77 @@ function OurWork() {
 
   useEffect(() => {
     function handleResize() {
-      setWindowWidth(window.innerWidth);
+      const containerWidth = containerRef.current.getBoundingClientRect().width;
+      let maxLogosInRow;
+      let logoWidth;
+
+      const newWindowWidth = window.innerWidth;
+
+      if (newWindowWidth <= 480) {
+        const titleWidth = titleRef.current.getBoundingClientRect().width;
+        maxLogosInRow = Math.floor((containerWidth - titleWidth) / LOGO_WIDTHS.small + 4);
+        maxLogosInRow = Math.min(maxLogosInRow, 8);
+        logoWidth = LOGO_WIDTHS.small;
+      } else if (newWindowWidth <= 1024) {
+        const titleWidth = titleRef.current.getBoundingClientRect().width;
+        maxLogosInRow = Math.floor((containerWidth - titleWidth) / LOGO_WIDTHS.medium);
+        maxLogosInRow = Math.min(maxLogosInRow, 9);
+        logoWidth = LOGO_WIDTHS.medium;
+      } else {
+        const titleWidth = titleRef.current.getBoundingClientRect().width;
+        maxLogosInRow = Math.floor((containerWidth - titleWidth) / LOGO_WIDTHS.large / 2);
+        logoWidth = LOGO_WIDTHS.large;
+      }
+
+      setMaxLogosInRow(maxLogosInRow);
+      setWindowWidth(newWindowWidth);
+      document.querySelectorAll('.ourWork-container--logo').forEach((logo) => {
+        logo.style.width = `${logoWidth}px`;
+      });
     }
 
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [windowWidth]);
 
   const formatIndex = (index) => {
     const formattedIndex = index + 1;
     return formattedIndex < 10 ? `0${formattedIndex}` : formattedIndex;
   };
 
-  const titleWidth = mainRef.current
-    ? mainRef.current.querySelector('.ourWork-header--title').getBoundingClientRect().width
-    : 0;
+  const logos = new Array(maxLogosInRow || 0).fill(imageMap.logo);
 
-  const logoWidth =
-    windowWidth <= 480
-      ? LOGO_WIDTHS.small
-      : windowWidth <= 1024
-      ? LOGO_WIDTHS.medium
-      : LOGO_WIDTHS.large;
-  const maxLogosInRow = Math.floor((windowWidth - titleWidth) / logoWidth);
-  const logosBeforeTitle = Math.floor((windowWidth - titleWidth) / (logoWidth * 2)); // Логотипи перед тайтлом
-  const logosAfterTitle = maxLogosInRow - logosBeforeTitle; // Логотипи після тайтлу
-
-  const logos = Array(maxLogosInRow)
-    .fill(null)
-    .map((_, index) => (
-      <img
-        src={imageMap.logo}
-        alt="#"
-        style={{ width: `${logoWidth}px` }}
-        className="ourWork-container--logo"
-        key={index}
-      />
-    ));
   return (
     <section className="ourWork" id="OurWork" ref={mainRef}>
-      <div className="ourWork-header">
+      <div className="ourWork-header" ref={containerRef}>
         <div className="ourWork-header-logos">
-          {windowWidth > 1024 && logos.slice(0, logosBeforeTitle)}
+          {logos.map((logo, index) => (
+            <img
+              loading="lazy"
+              src={logo}
+              alt="#"
+              className="ourWork-container--logo"
+              key={index}
+            />
+          ))}
         </div>
-        <h2 className="ourWork-header--title">як ми працюємо</h2>
+        <h2 className="ourWork-header--title" ref={titleRef}>
+          як ми працюємо
+        </h2>
         <div className="ourWork-header-logo">
-          {windowWidth > 1024
-            ? logos.slice(logosBeforeTitle, logosBeforeTitle + logosAfterTitle)
-            : windowWidth > 480
-            ? logos.slice(logosBeforeTitle, logosBeforeTitle + 3)
-            : windowWidth > 395
-            ? logos.slice(logosBeforeTitle, logosBeforeTitle + 7)
-            : logos.slice(logosBeforeTitle, logosBeforeTitle + 6)}
+          {logos.map((logo, index) => (
+            <img
+              loading="lazy"
+              src={logo}
+              alt="#"
+              className="ourWork-container--logo"
+              key={index}
+            />
+          ))}
         </div>
       </div>
 
@@ -223,7 +242,7 @@ function OurWork() {
                         ? '10px 0 10px 10px'
                         : '0 10px 10px 10px',
                   }}>
-                  <img src={works.image} className={`box box-${index + 1}`} alt="" />
+                  <img loading="lazy" src={works.image} className={`box box-${index + 1}`} alt="" />
                 </div>
                 <div className="ourWork-container--stepper">
                   <div className="step-number">{formatIndex(index)}</div>

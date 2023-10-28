@@ -21,7 +21,6 @@ function Header() {
     }
   }, [location.pathname]);
 
-  console.log(isInfoPage);
   useEffect(() => {
     if (nav) {
       document.body.style.overflow = 'hidden';
@@ -90,7 +89,7 @@ function Header() {
       <div className="container">
         <div className="header-block">
           <a href="/bureaux/">
-            <img src={Logo} alt="logo" className="header-logo" />
+            <img loading="lazy" src={Logo} alt="logo" className="header-logo" />
           </a>
           <div className={`header-wrapper ${nav ? 'active' : ''}`}>
             <ul className="header-list">

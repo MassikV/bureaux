@@ -28,7 +28,7 @@ function Bottom() {
         </p>
         <a href="#3" className="services-bottom--button" onClick={openPopup}>
           безкоштовний розрахунок
-          <img src={union} alt="" />
+          <img loading="lazy" src={union} alt="" />
         </a>
         {isPopupVisible && (
           <div className="popup-overlay">

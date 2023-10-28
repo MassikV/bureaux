@@ -1,11 +1,17 @@
 .founders {
   background-image: url(./img/Bg.png);
   background-size: cover;
+  height: 200vh;
+  @media screen and (min-width: 1550px) {
+    height: 150vh;
+  }
   &-content{
+    position: sticky;
+    top: -180px;
     max-width: 1520px;
     margin: 0 auto;
     display: grid;
-    height: 67rem;
+    max-height: 67rem;
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: 0.5fr 1fr;
   }
@@ -64,12 +70,14 @@
     grid-template-rows: 1fr 1fr 0.5fr 1fr 1fr;
     grid-template-columns: 1fr 0.1fr;
     background-color: #FFFBF6;
-    height: 50rem;
+    height: 100vh;
     padding: 1.5rem 0 3rem 1.5rem;
-
+    @media screen and (min-width: 1550px) {
+      height: 75vh;
+    }
     &--ornament {
       grid-row: 1/3;
-      grid-column: 2/5;
+      grid-column: 2/3;
       justify-self: end;
     }
 
@@ -128,37 +136,32 @@
     grid-row: 2/6;
     grid-column: 2/3;
     margin: 0 auto;
+    flex-direction: column;
+    max-height: 110%;
+    height: 110%;
+    overflow: hidden scroll;
+
   }
 }
-.carousel{
-  height: 49.125rem;
-}
-.carousel, .slide{
-  text-align: start !important;
-}
-.carousel-root{
-  grid-row: 2/5;
-}
-.carousel.carousel-slider .control-arrow {
-  padding: 3px !important;
-}
 .animate-carousel-change {
-  animation: changeCarouselContent 0.5s ease-in-out;
+  animation: changeCarouselContent 1.5s ease-in-out;
+
 }
 
 @keyframes changeCarouselContent {
   0% {
-    opacity: 1;
+    opacity: 0;
     transform: translateY(0);
   }
   100% {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(-100%);
   }
 }
 
 @media screen and (max-width: 1023px) {
   .founders {
+    height: 500vh;
     background-image: url(./img/tabletBg.png);
     &-content{
       height: 500vh;
@@ -256,6 +259,7 @@
 @media screen and (max-width: 568px) {
   .founders {
     max-width: 480px;
+    height: 350vh;
     &-content{
       height: 101rem;
       grid-template-rows: 200px 1fr;
@@ -264,7 +268,7 @@
     &-container {
       grid-template-columns: 1fr;
       grid-template-rows: auto;
-      height: 40rem;
+      height: 44rem;
       width: 95vw;
       padding: 0 0 1rem;
       & img{

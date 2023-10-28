@@ -8,7 +8,7 @@ function Top() {
   const logos = Array(maxLogosInRow)
     .fill(null)
     .map((_, index) => (
-      <img src={logotype} alt="#" className="section-container--logo" key={index} />
+      <img loading="lazy" src={logotype} alt="#" className="section-container--logo" key={index} />
     ));
 
   return (

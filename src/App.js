@@ -6,6 +6,7 @@ import PopUp from './components/PopUp';
 import Preloader from './components/Preloader';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Cursor from './components/Cursor';
 
 const Main = lazy(() => import('./pages/Main'));
 const MoreOurProjects = lazy(() => import('./pages/MoreOurProjects'));
@@ -15,6 +16,7 @@ function App() {
   return (
     <Router>
       <Suspense fallback={<Preloader />}>
+        <Cursor />
         <Header />
         <Routes>
           <Route exact path="/bureaux/" element={<Main />} />

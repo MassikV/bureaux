@@ -70,19 +70,20 @@ function AboutUs() {
   return (
     <section className="section">
       <div className="section-container" id="AboutUs" ref={containerRef}>
-        <img src={logoImg} alt="#" className="section-container--logos" />
+        <img loading="lazy" src={logoImg} alt="#" className="section-container--logos" />
         <h1 className="section-container--title" ref={titleRef}>
           Про нас
         </h1>
 
         {logos.map((logo, index) => (
-          <img src={logo} alt="#" className="section-container--logos" key={index} />
+          <img loading="lazy" src={logo} alt="#" className="section-container--logos" key={index} />
         ))}
       </div>
       <div className="container">
         <div className="section-grid">
           <div className="section-grid__container--photo">
             <img
+              loading="lazy"
               src={windowWidth <= 1023 ? phonePhoto : firstPhoto}
               alt="f"
               className="section-grid--photo"
@@ -110,11 +111,23 @@ function AboutUs() {
         {windowWidth > 1023 ? (
           <div className="logo-container">
             {logos.map((logo, index) => (
-              <img src={logo} alt="#" className="section-container--logo" key={index} />
+              <img
+                loading="lazy"
+                src={logo}
+                alt="#"
+                className="section-container--logo"
+                key={index}
+              />
             ))}
             <h2 className="title">Чому слід обирати нас</h2>
             {logos.map((logo, index) => (
-              <img src={logo} alt="#" className="section-container--logo" key={index} />
+              <img
+                loading="lazy"
+                src={logo}
+                alt="#"
+                className="section-container--logo"
+                key={index}
+              />
             ))}
           </div>
         ) : (
@@ -122,7 +135,13 @@ function AboutUs() {
             <h2 className="title">Чому слід обирати нас</h2>
             <div className="logo-container logo-containers">
               {logos.map((logo, index) => (
-                <img src={logo} alt="#" className="section-container--logo" key={index} />
+                <img
+                  loading="lazy"
+                  src={logo}
+                  alt="#"
+                  className="section-container--logo"
+                  key={index}
+                />
               ))}
             </div>
           </>
@@ -139,7 +158,12 @@ function AboutUs() {
           </div>
           <div className="wrapper-number">
             <span className="container1-number box1">01</span>
-            <img src={firstGridPhoto} alt="" className="container1-image box1-photo" />
+            <img
+              loading="lazy"
+              src={firstGridPhoto}
+              alt=""
+              className="container1-image box1-photo"
+            />
           </div>
         </div>
         <div className="container1-wrapper ">
@@ -152,7 +176,12 @@ function AboutUs() {
           </div>
           <div className="wrapper-number">
             <span className="container1-number box2">02</span>
-            <img src={secondGridPhoto} alt="" className="container1-image box2-photo" />
+            <img
+              loading="lazy"
+              src={secondGridPhoto}
+              alt=""
+              className="container1-image box2-photo"
+            />
           </div>
         </div>
         <div className="container1-wrapper ">
@@ -166,7 +195,12 @@ function AboutUs() {
           </div>
           <div className="wrapper-number">
             <span className="container1-number box3">03</span>
-            <img src={thirdGridPhoto} alt="" className="container1-image box3-photo" />
+            <img
+              loading="lazy"
+              src={thirdGridPhoto}
+              alt=""
+              className="container1-image box3-photo"
+            />
           </div>
         </div>
         <div className="container1-wrapper ">
@@ -181,10 +215,20 @@ function AboutUs() {
           <div className="wrapper-number">
             <span className="container1-number box4">04</span>
             {windowWidth > 480 && windowWidth <= 1024 && (
-              <img src={fifthGridPhoto} alt="" className="container1-image box4-photo" />
+              <img
+                loading="lazy"
+                src={fifthGridPhoto}
+                alt=""
+                className="container1-image box4-photo"
+              />
             )}
             {windowWidth > 1024 && (
-              <img src={fourthGridPhoto} alt="" className="container1-image box4-photo" />
+              <img
+                loading="lazy"
+                src={fourthGridPhoto}
+                alt=""
+                className="container1-image box4-photo"
+              />
             )}
           </div>
         </div>

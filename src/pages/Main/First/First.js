@@ -80,7 +80,7 @@ const First = () => {
       <div className="container">
         <div className="First-content">
           <div className="First__info">
-            <img src={Logo} alt="" className="First__logo" />
+            <img loading="lazy" src={Logo} alt="" className="First__logo" />
             <p className="First__title">Оселя з українською душею</p>
           </div>
           <div className={`dots ${dotsVisible ? 'visible' : ''}`} onClick={toggleDotsVisibility}>
@@ -102,7 +102,12 @@ const First = () => {
                     key={item.id}
                     onMouseEnter={() => handleMouseEnter(item.id)}
                     onMouseLeave={handleMouseLeave}>
-                    <img src={item.mainPhoto} className="First__projects__img" alt="" />
+                    <img
+                      loading="lazy"
+                      src={item.mainPhoto}
+                      className="First__projects__img"
+                      alt=""
+                    />
                     {(isMobile || isTablet || (isDesktop && hoveredProject === item.id)) && (
                       <div className="First__projects--container">
                         <span className="First__projects--number">{item.id - 8}</span>

@@ -66,6 +66,7 @@ function FAQs() {
                 </span>
               </button>
               <img
+                loading="lazy"
                 onClick={() => toggleQuestion(index)}
                 src={icon}
                 alt=""

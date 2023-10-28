@@ -12,7 +12,7 @@
     border: 1px solid black;
     animation: pulse 2s infinite;
     &:hover {
-      cursor: pointer;
+
       background-color: lightgrey;
       transition: 0.35s;
     }
@@ -53,7 +53,7 @@
       color: white;
       border: none;
       border-radius: 5px;
-      cursor: pointer;
+
     }
 
     button:disabled {

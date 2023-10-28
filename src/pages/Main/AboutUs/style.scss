@@ -148,7 +148,7 @@
 }
 
 .container1 {
-  max-width: 1500px;
+
   padding: 2rem 5rem 5rem;
   margin: 0 auto;
   row-gap: 2rem;
@@ -361,7 +361,7 @@
 
 @media screen and (max-width: 480px) {
   .section {
-    padding-bottom: 4rem;
+    padding-bottom: 0;
     background-size: 450vh;
     &-container {
       padding: 3rem 0 2rem;
@@ -390,21 +390,37 @@
       }
     }
   }
-  .container1-wrapper{
-    row-gap: 1rem;
-    margin-bottom: 3rem;
+
+  .container1 {
+    padding: 0 1rem;
+    &-wrapper {
+      row-gap: 1rem;
+      margin-bottom: 3rem;
+      grid-template-rows: 0.3fr 1fr;
+    }
+    &-number {
+      width: 57px;
+      height: 57px;
+      font-size: 24px;
+      grid-column: 1/3;
+      justify-self: center;
+      align-self: center;
+      line-height: 60px;
+    }
+    &-title {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 16px;
+    }
+    &-info {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
   }
   .container1 .wrapper-number{
-    grid-template-rows: 200px;
-    grid-template-columns:1fr 1fr;
-  }
-  .container1-number{
-    width: 50%;
-    grid-column: 1/3;
-    justify-self: center;
-    align-self: center;
-    height: 100%;
-    line-height: 190px;
+    grid-template-rows: 0;
+    grid-template-columns:0.5fr 1fr;
   }
   .container1-image {
     display: none;

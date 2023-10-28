@@ -59,8 +59,13 @@ function MoreOurProjects() {
             <div className="moreOurProjects-center-ticker-wrapper">
               <div className="moreOurProjects-center-ticker">
                 <div className="moreOurProjects-center--container">
-                  <img src={logo} alt="" className="moreOurProjects-center--logo" />
-                  <img src={textLogo} alt="" className="moreOurProjects-center--logoText" />
+                  <img loading="lazy" src={logo} alt="" className="moreOurProjects-center--logo" />
+                  <img
+                    loading="lazy"
+                    src={textLogo}
+                    alt=""
+                    className="moreOurProjects-center--logoText"
+                  />
                 </div>
               </div>
             </div>
@@ -79,7 +84,7 @@ function MoreOurProjects() {
                     ? 'third-pair'
                     : 'fourth-pair'
                 }`}>
-                <img src={block.mainPhoto} alt={block.name} />
+                <img loading="lazy" src={block.mainPhoto} alt={block.name} />
                 <h3>{block.name}</h3>
                 <span>{block.square}</span>
                 <button className="round-button">

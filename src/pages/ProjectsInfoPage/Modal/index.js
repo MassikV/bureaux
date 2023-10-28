@@ -11,7 +11,7 @@ function Modal({ onClose, imageSrc, imageAlt, onPrev, onNext, isPrevDisabled, is
           <button className="modal-arrow prev" disabled={isPrevDisabled} onClick={onPrev}>
             &lt;
           </button>
-          <img className="modal-img" src={imageSrc} alt={imageAlt} />
+          <img loading="lazy" className="modal-img" src={imageSrc} alt={imageAlt} />
           <button className="modal-arrow next" disabled={isNextDisabled} onClick={onNext}>
             &gt;
           </button>

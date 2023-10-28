@@ -67,7 +67,7 @@
       right: 15px;
       top: 15px;
       border-radius: 50%;
-      cursor: pointer;
+
       &:hover {
         background-color: #BF1616;
         & path {
@@ -117,7 +117,7 @@
         height: 65px;
         border-radius: 11px;
         padding: 8px 40px;
-        cursor: pointer;
+
         font-size: 20px;
         @media (max-width: 568px) {
           padding: 8px 20px;

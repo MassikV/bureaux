@@ -14,7 +14,7 @@ function Footer() {
               offset={-70}
               duration={500}
               className="footer-logo">
-              <img src={logo} alt="Bureaux" />
+              <img loading="lazy" src={logo} alt="Bureaux" />
             </Link>
             <span className="footer-info--item">Design & Architecture</span>
             <span className="footer-info--item">Україна, Київ</span>

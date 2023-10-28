@@ -88,7 +88,7 @@ const ProjectInfo = () => {
                     setSliderIndex(i);
                     setShowSlider(true);
                   }}>
-                  <img key={i} className="project-info__img" src={item} alt="" />
+                  <img loading="lazy" key={i} className="project-info__img" src={item} alt="" />
                 </div>
               ))}
             </div>

@@ -73,13 +73,13 @@ function Services() {
         <div className="services-center-ticker-wrapper">
           <div className="services-center-ticker">
             <div className="services-center--container">
-              <img src={logo} alt="" className="services-center--logo" />
-              <img src={textLogo} alt="" className="services-center--textLogo" />
+              <img loading="lazy" src={logo} alt="" className="services-center--logo" />
+              <img loading="lazy" src={textLogo} alt="" className="services-center--textLogo" />
             </div>
 
             <div className="services-center--container">
-              <img src={logo} alt="" className="services-center--logo" />
-              <img src={textLogo} alt="" className="services-center--textLogo" />
+              <img loading="lazy" src={logo} alt="" className="services-center--logo" />
+              <img loading="lazy" src={textLogo} alt="" className="services-center--textLogo" />
             </div>
           </div>
         </div>
