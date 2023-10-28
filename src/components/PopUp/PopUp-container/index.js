@@ -23,28 +23,26 @@ function PopUpContainer({ onCloseButton, source, onClose }) {
   function getMinDateTime() {
     const now = new Date();
     const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, '0'); // Перетворюємо місяць на строку та додаємо '0' при необхідності
-    const day = String(now.getDate()).padStart(2, '0'); // Перетворюємо день на строку та додаємо '0' при необхідності
-    const hours = String(now.getHours()).padStart(2, '0'); // Перетворюємо години на строку та додаємо '0' при необхідності
-    const minutes = String(now.getMinutes()).padStart(2, '0'); // Перетворюємо хвилини на строку та додаємо '0' при необхідності
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
 
-    // Форматуємо дату та час у форматі, прийнятому для властивості min у input типу "datetime-local".
     return `${year}-${month}-${day}T${hours}:${minutes}`;
   }
 
   function formatDate(dateTime) {
     if (!dateTime) {
-      return ''; // Повертає пустий рядок, якщо dateTime не вказано.
+      return '';
     }
 
     const date = new Date(dateTime);
     const day = date.getDate();
-    const month = date.getMonth() + 1; // Додавання 1, оскільки місяці в Date починаються з 0.
+    const month = date.getMonth() + 1;
     const year = date.getFullYear();
     const hours = date.getHours();
     const minutes = date.getMinutes();
     const formattedMinutes = String(minutes).padStart(2, '0');
-    // Форматування дати та часу у вигляді "день:місяць:рік; година:хвилина".
     return `${day}.${month}.${year}; ${hours}:${formattedMinutes}`;
   }
 
@@ -77,19 +75,15 @@ function PopUpContainer({ onCloseButton, source, onClose }) {
         });
 
         if (response.ok) {
-          console.log('Дані відправлені в групу в Telegram.');
           showSuccessNotification();
           resetForm();
         } else {
           showErrorNotification();
-          console.log('Помилка під час відправлення даних.', response.status, response.statusText);
         }
       } catch (error) {
-        console.error(error);
         alert('Помилка сервера.');
         showErrorNotification();
       }
-      console.log(formData);
     }
   };
   const resetForm = () => {

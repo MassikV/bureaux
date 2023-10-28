@@ -138,7 +138,7 @@ function ServiceModal({ onClose }) {
         });
 
         if (response.ok) {
-          console.log('Дані відправлені в групу в Telegram.');
+          console.log('Дані успішно відправлені.');
           toast.success('Дані успішно відправлено');
           resetForm();
         } else {

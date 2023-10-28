@@ -40,17 +40,14 @@ function PhonePopUp({ onClose }) {
       });
 
       if (response.ok) {
-        console.log('Дані відправлені в групу в Telegram.');
         toast.success('Ваш номер телефону було надіслано успішно.');
         setIsSubmitting(false);
         setIsPhonePopupOpen(false);
       } else {
-        console.error('Помилка під час відправлення даних.', response.status, response.statusText);
         toast.error('Помилка! Не вдалося відправити форму.');
         setIsSubmitting(false);
       }
     } catch (error) {
-      console.error(error);
       alert('Помилка сервера.');
       toast.error('Помилка! Не вдалося відправити форму.');
       setIsSubmitting(false);
