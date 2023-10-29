@@ -28,7 +28,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    @media (max-width: 1024px) {
+    @media (max-width: 1150px) {
       justify-content: space-between;
     }
   }
@@ -37,16 +37,30 @@
     width: 162.357px;
     height: 39px;
   }
-
+  &-ornament {
+    display: none;
+    @media (max-width: 1150px) {
+      display: block;
+      width: 100%;
+      &:first-child {
+        margin-top: 40px;
+      }
+    
+      &:last-child {
+        margin-top: auto;
+        margin-bottom: 40px;
+      }
+    }
+  }
   &-wrapper {
     display: flex;
     align-items: center;
-    gap: 5rem;
     @media (max-width: 1150px) {
       background-image: url(./img/phoneBg.png);
       display: flex;
-      flex-direction: column;
       justify-content: center;
+      flex-direction: column;
+      gap: 5%;
       position: fixed;
       transform: translateX(-100%);
       top: 0;
@@ -58,7 +72,11 @@
       z-index: 10;
       transition: transform 1s;
     }
+    @media (max-width: 992px) {
+      gap: 20%;
+    }
     @media (max-width: 576px) {
+      gap: 10%;
       width: 100%;
       overflow: hidden;
     }
@@ -68,12 +86,19 @@
     }
 
   }
-
+  &-info {
+    display: flex;
+    align-items: center;
+    @media (max-width: 1150px) {
+      flex-direction: column;
+    }
+  }
   &-list {
-    margin-right: 30px;
+    margin-right: 60px;
     display: flex;
     gap: 55px;
-    @media (max-width: 992px) {
+    @media (max-width: 1150px) {
+      margin-top: 70px;
       flex-direction: column;
     }
 
@@ -88,9 +113,6 @@
         font-weight: 500;
         line-height: normal;
         text-transform: uppercase;
-        @media (max-width: 992px) {
-          color: #000;
-        }
       }
 
       & a {
@@ -101,7 +123,7 @@
         font-weight: 500;
         line-height: normal;
         text-transform: uppercase;
-        @media (max-width: 992px) {
+        @media (max-width: 1150px) {
           color: #000;
         }
       }
@@ -127,7 +149,7 @@
 
   &__btn {
     padding: 15px;
-    background: rgba(223, 14, 14, 0.60);
+    background: rgba(223, 14, 14, 1);
     color: #FFF;
     font-family: "IBM Plex Mono", monospace;
     font-size: 13px;
@@ -138,7 +160,10 @@
     border: 3px solid #FFF;
     border-radius: 0;
     &:hover{
-      background: rgba(223, 14, 14, 0.40);
+      background: rgba(223, 14, 14, 0.6);
+    }
+    @media (max-width: 1150px) {
+      margin-top: 40px;
     }
   }
 
