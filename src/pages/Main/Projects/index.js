@@ -180,7 +180,7 @@ function OurProjects() {
         maxLogosInRow = Math.floor(logosWidth / logoSize());
       }
       if (maxLogosInRow <= 0) {
-        setMaxLogosInRow(2);
+        setMaxLogosInRow(1);
       } else {
         setMaxLogosInRow(maxLogosInRow);
       }
@@ -410,7 +410,6 @@ function OurProjects() {
               </Link>
             ))}
       </div>
-
       <Link to="/bureaux/projects" className="ourProjects-button">
         БІЛЬШЕ ПРОЄКТІВ <img loading="lazy" src={union} alt="" />
       </Link>
