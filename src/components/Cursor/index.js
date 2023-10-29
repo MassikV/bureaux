@@ -30,11 +30,11 @@ function Cursor() {
     <AnimatedCursor
       className="animated-cursor"
       innerSize={8}
-      outerSize={35}
+      outerSize={25}
       color="0, 0, 0"
       outerAlpha={1}
       innerScale={1}
-      outerScale={2}
+      outerScale={1.5}
       outerStyle={{
         backgroundColor: 'white',
         mixBlendMode: 'exclusion',

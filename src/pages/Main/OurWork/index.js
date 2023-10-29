@@ -46,13 +46,51 @@ const imageMap = {
 };
 
 function OurWork() {
+  const containerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const mainRef = useRef();
-  const containerRef = useRef();
+  const mainRef = useRef(null);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const titleRef = useRef(null);
   const [maxLogosInRow, setMaxLogosInRow] = useState(0);
+
+  useEffect(() => {
+    function handleResize() {
+      const containerWidth = containerRef.current.getBoundingClientRect().width;
+      let maxLogosInRow;
+      let logoWidth;
+
+      const newWindowWidth = window.innerWidth;
+
+      if (newWindowWidth <= 480) {
+        const titleWidth = titleRef.current.getBoundingClientRect().width;
+        maxLogosInRow = Math.floor((containerWidth - titleWidth) / LOGO_WIDTHS.small + 4);
+        maxLogosInRow = Math.min(maxLogosInRow, 8);
+        logoWidth = LOGO_WIDTHS.small;
+      } else if (newWindowWidth <= 1024) {
+        const titleWidth = titleRef.current.getBoundingClientRect().width;
+        maxLogosInRow = Math.floor((containerWidth - titleWidth) / LOGO_WIDTHS.medium);
+        maxLogosInRow = Math.min(maxLogosInRow, 9);
+        logoWidth = LOGO_WIDTHS.medium;
+      } else {
+        const titleWidth = titleRef.current.getBoundingClientRect().width;
+        maxLogosInRow = Math.floor((containerWidth - titleWidth) / LOGO_WIDTHS.large / 2);
+        logoWidth = LOGO_WIDTHS.large;
+      }
+      setMaxLogosInRow(maxLogosInRow);
+      setWindowWidth(newWindowWidth);
+      document.querySelectorAll('.ourWork-container--logo').forEach((logo) => {
+        logo.style.width = `${logoWidth}px`;
+      });
+    }
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [windowWidth]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -146,45 +184,6 @@ function OurWork() {
       }
     });
   }, []);
-
-  useEffect(() => {
-    function handleResize() {
-      const containerWidth = containerRef.current.getBoundingClientRect().width;
-      let maxLogosInRow;
-      let logoWidth;
-
-      const newWindowWidth = window.innerWidth;
-
-      if (newWindowWidth <= 480) {
-        const titleWidth = titleRef.current.getBoundingClientRect().width;
-        maxLogosInRow = Math.floor((containerWidth - titleWidth) / LOGO_WIDTHS.small + 4);
-        maxLogosInRow = Math.min(maxLogosInRow, 8);
-        logoWidth = LOGO_WIDTHS.small;
-      } else if (newWindowWidth <= 1024) {
-        const titleWidth = titleRef.current.getBoundingClientRect().width;
-        maxLogosInRow = Math.floor((containerWidth - titleWidth) / LOGO_WIDTHS.medium);
-        maxLogosInRow = Math.min(maxLogosInRow, 9);
-        logoWidth = LOGO_WIDTHS.medium;
-      } else {
-        const titleWidth = titleRef.current.getBoundingClientRect().width;
-        maxLogosInRow = Math.floor((containerWidth - titleWidth) / LOGO_WIDTHS.large / 2);
-        logoWidth = LOGO_WIDTHS.large;
-      }
-
-      setMaxLogosInRow(maxLogosInRow);
-      setWindowWidth(newWindowWidth);
-      document.querySelectorAll('.ourWork-container--logo').forEach((logo) => {
-        logo.style.width = `${logoWidth}px`;
-      });
-    }
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [windowWidth]);
 
   const formatIndex = (index) => {
     const formattedIndex = index + 1;
