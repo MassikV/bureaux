@@ -4,6 +4,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import { AiOutlineClose } from 'react-icons/ai';
 import PopUpContainer from '../PopUp/PopUp-container';
 import Logo from './img/logo.png';
+import Ornament from './img/ornament.png';
 import './style.scss';
 
 function Header() {
@@ -92,31 +93,35 @@ function Header() {
             <img loading="lazy" src={Logo} alt="logo" className="header-logo" />
           </a>
           <div className={`header-wrapper ${nav ? 'active' : ''}`}>
-            <ul className="header-list">
-              <li className="header-list__item">
-                <a href="/bureaux/#AboutUs" onClick={() => handleMobileNavClick()}>
-                  Про нас
-                </a>
-              </li>
-              <li className="header-list__item">
-                <a href="/bureaux/#Projects" onClick={() => handleMobileNavClick()}>
-                  Проєкти
-                </a>
-              </li>
-              <li className="header-list__item">
-                <a href="/bureaux/#OurWork" onClick={() => handleMobileNavClick()}>
-                  Як ми працюємо
-                </a>
-              </li>
-              <li className="header-list__item">
-                <a href="/bureaux/#Services" onClick={() => handleMobileNavClick()}>
-                  Послуги
-                </a>
-              </li>
-            </ul>
-            <button className="header__btn" onClick={openPopup}>
-              Безкоштовний розрахунок
-            </button>
+            <img src={Ornament} alt="" className="header-ornament" />
+            <div className="header-info">
+              <ul className="header-list">
+                <li className="header-list__item">
+                  <a href="/bureaux/#AboutUs" onClick={() => handleMobileNavClick()}>
+                    Про нас
+                  </a>
+                </li>
+                <li className="header-list__item">
+                  <a href="/bureaux/#Projects" onClick={() => handleMobileNavClick()}>
+                    Проєкти
+                  </a>
+                </li>
+                <li className="header-list__item">
+                  <a href="/bureaux/#OurWork" onClick={() => handleMobileNavClick()}>
+                    Як ми працюємо
+                  </a>
+                </li>
+                <li className="header-list__item">
+                  <a href="/bureaux/#Services" onClick={() => handleMobileNavClick()}>
+                    Послуги
+                  </a>
+                </li>
+              </ul>
+              <button className="header__btn" onClick={openPopup}>
+                Безкоштовний розрахунок
+              </button>
+            </div>
+            <img src={Ornament} alt="" className="header-ornament" />
           </div>
           <div onClick={() => setNav(!nav)} className="header__btns">
             {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
