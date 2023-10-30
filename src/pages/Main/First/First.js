@@ -62,7 +62,7 @@ const First = () => {
   }, [backgroundImageUrls]);
 
   useEffect(() => {
-    const interval = setInterval(goToNextPhoto, 20000);
+    const interval = setInterval(goToNextPhoto, 10000);
     return () => clearInterval(interval);
   }, [goToNextPhoto]);
 
@@ -87,8 +87,7 @@ const First = () => {
             {backgroundImageUrls.map((_, index) => (
               <span
                 key={index}
-                className={`dotes ${index === currentPhotoIndex ? 'active' : ''}`}
-                onClick={() => setCurrentPhotoIndex(index)}></span>
+                className={`dotes ${index === currentPhotoIndex ? 'active' : ''}`}></span>
             ))}
           </div>
           {!location.pathname.includes('/projects') && (

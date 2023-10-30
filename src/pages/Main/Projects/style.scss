@@ -25,7 +25,9 @@
       justify-self: start;
       align-self: center;
       text-transform: uppercase;
-
+      @media (max-width: 1150px){
+        font-size: 7vw;
+      }
     }
 
     &--text {
@@ -35,6 +37,10 @@
       line-height: 22px;
       letter-spacing: 0em;
       text-align: left;
+      width: 418px;
+      @media (max-width: 1228px){
+        width: 300px;
+      }
     }
 
     &--info {
@@ -352,8 +358,8 @@
   height: 24rem ;
 
 }
-.full-image-container.container-active {
-  animation: kitty 0.8s ease;
+.full-image-container.container-active{
+  animation: kitty 1.2s ease-in-out;
 }
 @keyframes kitty {
   0% {

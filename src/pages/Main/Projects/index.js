@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 import union from './img/Union.svg';
@@ -154,45 +154,57 @@ function OurProjects() {
   const textRef = useRef(null);
   const infoRef = useRef(null);
 
-  const logoSize = useCallback(() => {
-    if (windowWidth <= 480) {
-      return LOGO_WIDTHS.small;
-    } else if (windowWidth <= 1024) {
-      return LOGO_WIDTHS.medium;
-    } else {
-      return LOGO_WIDTHS.large;
-    }
-  }, [windowWidth]);
+  // const logoSize = useCallback(() => {
+  //   if (windowWidth <= 480) {
+  //     return LOGO_WIDTHS.small;
+  //   } else if (windowWidth <= 1024) {
+  //     return LOGO_WIDTHS.medium;
+  //   } else {
+  //     return LOGO_WIDTHS.large;
+  //   }
+  // }, [windowWidth]);
 
   useEffect(() => {
     function handleResize() {
       const containerWidth = containerRef.current.getBoundingClientRect().width;
       const titleWidth = titleRef.current.getBoundingClientRect().width;
       let textWidth = 0;
+      let logoWidth;
       if (windowWidth > 1024) {
         textWidth = textRef.current.getBoundingClientRect().width;
       }
-      const logosWidth = containerWidth - titleWidth - textWidth;
-      let maxLogosInRow = 0;
-      if (windowWidth > 1024) {
-        maxLogosInRow = Math.floor(logosWidth / logoSize() / 2);
+      let maxLogosInRow;
+      if (windowWidth <= 480) {
+        maxLogosInRow = Math.floor((containerWidth - titleWidth - textWidth) / LOGO_WIDTHS.small);
+        logoWidth = LOGO_WIDTHS.small;
+      } else if (windowWidth > 480 && windowWidth <= 1024) {
+        maxLogosInRow = Math.floor((containerWidth - titleWidth - textWidth) / LOGO_WIDTHS.medium);
+        logoWidth = LOGO_WIDTHS.medium;
       } else {
-        maxLogosInRow = Math.floor(logosWidth / logoSize());
+        maxLogosInRow = Math.floor(
+          (containerWidth - titleWidth - textWidth) / LOGO_WIDTHS.large / 2
+        );
+        logoWidth = LOGO_WIDTHS.large;
       }
       if (maxLogosInRow <= 0) {
         setMaxLogosInRow(1);
       } else {
         setMaxLogosInRow(maxLogosInRow);
       }
+      document.querySelectorAll('.ourProjects-container--logos').forEach((logo) => {
+        logo.style.width = `${logoWidth}px`;
+      });
     }
+
     setWindowWidth(window.innerWidth);
+
     handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [maxLogosInRow, windowWidth, logoSize]);
+  }, [maxLogosInRow, windowWidth]);
 
   const logos = Array.from({ length: maxLogosInRow }).fill(imageMap.logo);
 
@@ -243,7 +255,7 @@ function OurProjects() {
               src={logo}
               alt="#"
               className="ourProjects-container--logos"
-              style={{ width: logoSize() + 'px' }}
+              // style={}
               key={index}
             />
           ))}

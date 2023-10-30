@@ -27,21 +27,19 @@ function AboutUs() {
   useEffect(() => {
     function handleResize() {
       const containerWidth = containerRef.current.getBoundingClientRect().width;
+      const titleWidth = titleRef.current.getBoundingClientRect().width;
       let maxLogosInRow;
       let logoWidth;
 
       if (windowWidth <= 480) {
-        const titleWidth = titleRef.current.getBoundingClientRect().width;
         maxLogosInRow = Math.floor((containerWidth - titleWidth) / LOGO_WIDTHS.small);
         maxLogosInRow = Math.min(maxLogosInRow, 5);
         logoWidth = LOGO_WIDTHS.small;
       } else if (windowWidth <= 1023) {
-        const titleWidth = titleRef.current.getBoundingClientRect().width;
         maxLogosInRow = Math.floor((containerWidth - titleWidth) / LOGO_WIDTHS.medium);
         maxLogosInRow = Math.min(maxLogosInRow, 9);
         logoWidth = LOGO_WIDTHS.medium;
       } else {
-        const titleWidth = titleRef.current.getBoundingClientRect().width;
         maxLogosInRow = Math.floor((containerWidth - titleWidth) / LOGO_WIDTHS.large);
         logoWidth = LOGO_WIDTHS.large;
       }
@@ -110,25 +108,29 @@ function AboutUs() {
       <div className="section-containers">
         {windowWidth > 1023 ? (
           <div className="logo-container">
-            {logos.map((logo, index) => (
-              <img
-                loading="lazy"
-                src={logo}
-                alt="#"
-                className="section-container--logo"
-                key={index}
-              />
-            ))}
+            {logos
+              .map((logo, index) => (
+                <img
+                  loading="lazy"
+                  src={logo}
+                  alt="#"
+                  className="section-container--logo"
+                  key={index}
+                />
+              ))
+              .slice(0, 1)}
             <h2 className="title">Чому слід обирати нас</h2>
-            {logos.map((logo, index) => (
-              <img
-                loading="lazy"
-                src={logo}
-                alt="#"
-                className="section-container--logo"
-                key={index}
-              />
-            ))}
+            {logos
+              .map((logo, index) => (
+                <img
+                  loading="lazy"
+                  src={logo}
+                  alt="#"
+                  className="section-container--logo"
+                  key={index}
+                />
+              ))
+              .slice(0, maxLogosInRow - 10)}
           </div>
         ) : (
           <>

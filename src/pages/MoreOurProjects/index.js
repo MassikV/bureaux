@@ -14,6 +14,10 @@ function MoreOurProjects() {
   const oldProjects = projects.filter((project) => project.section === 'old');
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const mm = gsap.matchMedia();
 
     mm.add('(min-width: 1024px)', () => {

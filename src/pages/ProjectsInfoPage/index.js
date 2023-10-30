@@ -17,6 +17,10 @@ const ProjectInfo = () => {
   const [sliderIndex, setSliderIndex] = useState(0);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     setLoading(true);
     setShownPhotosCount(16);
     setTimeout(() => setLoading(false), 500);

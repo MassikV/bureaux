@@ -5,6 +5,8 @@ import { AiOutlineClose } from 'react-icons/ai';
 import PopUpContainer from '../PopUp/PopUp-container';
 import Logo from './img/logo.png';
 import Ornament from './img/ornament.png';
+import { scroller, animateScroll } from 'react-scroll';
+
 import './style.scss';
 
 function Header() {
@@ -85,11 +87,32 @@ function Header() {
     document.body.classList.remove('no-scroll');
   };
 
+  const scrollToElement = (elementId) => {
+    scroller.scrollTo(elementId, {
+      duration: 500,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+      offset: -70,
+    });
+  };
+
+  const handleClick = (elementId) => {
+    if (location.pathname === '/bureaux/') {
+      scrollToElement(elementId);
+    } else {
+      window.location.replace(`/bureaux/`);
+      setTimeout(() => {
+        scrollToElement(elementId);
+      }, 1000);
+    }
+    handleMobileNavClick();
+  };
+
   return (
     <header className={`header ${isInfoPage ? 'infopage' : ''} ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="header-block">
-          <a href="/bureaux/">
+          <a href="/bureaux/#First" onClick={() => handleClick('First')}>
             <img loading="lazy" src={Logo} alt="logo" className="header-logo" />
           </a>
           <div className={`header-wrapper ${nav ? 'active' : ''}`}>
@@ -97,22 +120,22 @@ function Header() {
             <div className="header-info">
               <ul className="header-list">
                 <li className="header-list__item">
-                  <a href="/bureaux/#AboutUs" onClick={() => handleMobileNavClick()}>
+                  <a href="/bureaux/#AboutUs" onClick={() => handleClick('AboutUs')}>
                     Про нас
                   </a>
                 </li>
                 <li className="header-list__item">
-                  <a href="/bureaux/#Projects" onClick={() => handleMobileNavClick()}>
+                  <a href="/bureaux/#Projects" onClick={() => handleClick('Projects')}>
                     Проєкти
                   </a>
                 </li>
                 <li className="header-list__item">
-                  <a href="/bureaux/#OurWork" onClick={() => handleMobileNavClick()}>
+                  <a href="/bureaux/#OurWork" onClick={() => handleClick('OurWork')}>
                     Як ми працюємо
                   </a>
                 </li>
                 <li className="header-list__item">
-                  <a href="/bureaux/#Services" onClick={() => handleMobileNavClick()}>
+                  <a href="/bureaux/#Services" onClick={() => handleClick('Services')}>
                     Послуги
                   </a>
                 </li>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AboutUs from './AboutUs';
 import Founders from './Founders';
 import OurProjects from './Projects';
@@ -9,6 +9,9 @@ import Reviews from './Reviews';
 import First from './First/First';
 
 function Main() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <First />
