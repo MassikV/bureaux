@@ -5,7 +5,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import PopUpContainer from '../PopUp/PopUp-container';
 import Logo from './img/logo.png';
 import Ornament from './img/ornament.png';
-import { scroller, animateScroll } from 'react-scroll';
+import { scroller } from 'react-scroll';
 
 import './style.scss';
 

@@ -27,7 +27,7 @@
     right: 5%;
     z-index: 999;
     width:26rem;
-    padding: 30px 35px 40px;
+    padding: 30px 35px;
     border-radius: 5px;
     height: 22rem;
     background-color: white;
@@ -45,15 +45,21 @@
       margin-bottom: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 18px;
     }
 
     button {
-      padding: 10px 20px;
+      padding: 15px 30px;
       background-color: #DF0E0E99;
       color: white;
       border: none;
       border-radius: 5px;
-
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 18px;
+      &:hover{
+        background-color:#DF0E0E62 ;
+      }
     }
 
     button:disabled {
