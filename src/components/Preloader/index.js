@@ -1,13 +1,11 @@
-import Logo from './logos.svg';
+import Logo from './Logo.svg';
 import './style.scss';
 
 const Preloader = () => {
   return (
-    <div className="preloader-container">
-      <div className="flex-container">
+      <div className="preloader-container">
         <img src={Logo} alt="Logo" />
       </div>
-    </div>
   );
 };
 

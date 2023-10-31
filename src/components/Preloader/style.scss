@@ -4,15 +4,14 @@
   align-items: center;
   height: 100vh;
 
-  .flex-container {
-    display: flex;
-    align-items: center;
-  }
+
 
   img {
-    width: 15rem;
     animation: rotate 2s linear infinite;
+    width: 200px;
+    height: 200px;
   }
+
 }
 @keyframes rotate {
   from {
