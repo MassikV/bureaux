@@ -112,7 +112,7 @@ function Header() {
     <header className={`header ${isInfoPage ? 'infopage' : ''} ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="header-block">
-          <a onClick={() => handleClick('First')}>
+          <a onClick={() => handleClick('First ')}>
             <img loading="lazy" src={Logo} alt="logo" className="header-logo" />
           </a>
           <div className={`header-wrapper ${nav ? 'active' : ''}`}>
