@@ -14,7 +14,7 @@ const First = () => {
   const [isTablet, setIsTablet] = useState(false);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const projectsWrapperStyle =
-    location.pathname === '/bureaux/projects' ? { paddingBottom: '2rem', height: '40rem' } : {};
+    location.pathname === '/projects' ? { paddingBottom: '2rem', height: '40rem' } : {};
 
   const handleMouseEnter = (projectId) => {
     if (!isMobile) {
@@ -96,7 +96,7 @@ const First = () => {
               <div className="First__projects__wrapper">
                 {newProjects.slice(0, 3).map((item) => (
                   <Link
-                    to={`/bureaux/projects/info/${item.id}`}
+                    to={`/projects/info/${item.id}`}
                     className="First__projects__block"
                     key={item.id}
                     onMouseEnter={() => handleMouseEnter(item.id)}
@@ -120,7 +120,7 @@ const First = () => {
               <MoreProject />
             </div>
           )}
-          {location.pathname === '/bureaux/projects' && (
+          {location.pathname === '/projects' && (
             <div className="moreOurProjects-info">
               <h2>Наші проєкти</h2>
               <p>

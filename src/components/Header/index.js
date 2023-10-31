@@ -19,7 +19,7 @@ function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    if (location.pathname.startsWith('/bureaux/projects/info/')) {
+    if (location.pathname.startsWith('/projects/info/')) {
       setIsInfoPage(true);
     }
   }, [location.pathname]);
@@ -97,10 +97,10 @@ function Header() {
   };
 
   const handleClick = (elementId) => {
-    if (location.pathname === '/bureaux/') {
+    if (location.pathname === '/') {
       scrollToElement(elementId);
     } else {
-      window.location.replace(`/bureaux/`);
+      window.location.replace(`/`);
       setTimeout(() => {
         scrollToElement(elementId);
       }, 1000);
@@ -112,7 +112,7 @@ function Header() {
     <header className={`header ${isInfoPage ? 'infopage' : ''} ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="header-block">
-          <a href="/bureaux/#First" onClick={() => handleClick('First')}>
+          <a onClick={() => handleClick('First')}>
             <img loading="lazy" src={Logo} alt="logo" className="header-logo" />
           </a>
           <div className={`header-wrapper ${nav ? 'active' : ''}`}>
@@ -120,24 +120,16 @@ function Header() {
             <div className="header-info">
               <ul className="header-list">
                 <li className="header-list__item">
-                  <a href="/bureaux/#AboutUs" onClick={() => handleClick('AboutUs')}>
-                    Про нас
-                  </a>
+                  <a onClick={() => handleClick('AboutUs')}>Про нас</a>
                 </li>
                 <li className="header-list__item">
-                  <a href="/bureaux/#Projects" onClick={() => handleClick('Projects')}>
-                    Проєкти
-                  </a>
+                  <a onClick={() => handleClick('Projects')}>Проєкти</a>
                 </li>
                 <li className="header-list__item">
-                  <a href="/bureaux/#OurWork" onClick={() => handleClick('OurWork')}>
-                    Як ми працюємо
-                  </a>
+                  <a onClick={() => handleClick('OurWork')}>Як ми працюємо</a>
                 </li>
                 <li className="header-list__item">
-                  <a href="/bureaux/#Services" onClick={() => handleClick('Services')}>
-                    Послуги
-                  </a>
+                  <a onClick={() => handleClick('Services')}>Послуги</a>
                 </li>
               </ul>
               <button className="header__btn" onClick={openPopup}>

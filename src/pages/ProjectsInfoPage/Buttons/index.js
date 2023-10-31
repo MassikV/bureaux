@@ -17,13 +17,13 @@ function Buttons() {
   const goToNextProject = () => {
     const nextProjectIndex = (projectIndex + 1) % projects.length;
     const nextProjectId = projects[nextProjectIndex].id;
-    navigate(`/bureaux/projects/info/${nextProjectId}`);
+    navigate(`/projects/info/${nextProjectId}`);
   };
 
   const goToPreviousProject = () => {
     const previousProjectIndex = (projectIndex - 1 + projects.length) % projects.length;
     const previousProjectId = projects[previousProjectIndex].id;
-    navigate(`/bureaux/projects/info/${previousProjectId}`);
+    navigate(`/projects/info/${previousProjectId}`);
   };
   return (
     <div className="buttons buttons-padding">

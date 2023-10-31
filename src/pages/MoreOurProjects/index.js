@@ -78,7 +78,7 @@ function MoreOurProjects() {
             .map((block) => (
               <NavLink
                 key={block.id}
-                to={`/bureaux/projects/info/${block.id}`}
+                to={`/projects/info/${block.id}`}
                 className={`moreOurProjects-links moreOurProjects-grid--block ${
                   Math.floor(block.id / 2) % 4 === 0
                     ? 'first-pair'

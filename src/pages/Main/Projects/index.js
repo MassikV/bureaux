@@ -350,7 +350,7 @@ function OurProjects() {
                 key={containerIndex}>
                 {containerIndex === fullImageSrc ? (
                   <Link
-                    to={`/bureaux/projects/info/${FullImage[containerIndex].id + 9}`}
+                    to={`/projects/info/${FullImage[containerIndex].id + 9}`}
                     className={`full-image-container ${isActive ? 'container-active' : ''}`}
                     onMouseLeave={hideFullImage}>
                     {staticImages.includes(FullImage[containerIndex].image) ? (
@@ -403,7 +403,7 @@ function OurProjects() {
               </div>
             ))
           : FullImage.slice(0, 3).map((item, index) => (
-              <Link key={item.id} to={`/bureaux/projects/info/${item.id + 9}`}>
+              <Link key={item.id} to={`/projects/info/${item.id + 9}`}>
                 <div
                   className={`grid-item`}
                   onMouseEnter={() => showFullImage(index, index)}
@@ -422,7 +422,7 @@ function OurProjects() {
               </Link>
             ))}
       </div>
-      <Link to="/bureaux/projects" className="ourProjects-button">
+      <Link to="/projects" className="ourProjects-button">
         БІЛЬШЕ ПРОЄКТІВ <img loading="lazy" src={union} alt="" />
       </Link>
     </section>
