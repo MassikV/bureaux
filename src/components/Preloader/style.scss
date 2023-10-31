@@ -10,12 +10,8 @@
   }
 
   img {
+    width: 15rem;
     animation: rotate 2s linear infinite;
-  }
-
-  h1 {
-    font-size: 80px;
-    margin-left: 10px;
   }
 }
 @keyframes rotate {
