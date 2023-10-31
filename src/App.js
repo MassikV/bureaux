@@ -20,8 +20,8 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" element={<Main />} />
-          <Route path="projects" element={<MoreOurProjects />} />
-          <Route path="projects/info/:id" element={<ProjectsInfo />} />
+          <Route path="/projects" element={<MoreOurProjects />} />
+          <Route path="/projects/info/:id" element={<ProjectsInfo />} />
         </Routes>
         <PopUp />
         <Footer />
