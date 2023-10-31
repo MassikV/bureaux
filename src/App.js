@@ -7,8 +7,7 @@ import Preloader from './components/Preloader';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cursor from './components/Cursor';
-import Main from './pages/Main';
-// const Main = lazy(() => import('./pages/Main'));
+const Main = lazy(() => import('./pages/Main'));
 const MoreOurProjects = lazy(() => import('./pages/MoreOurProjects'));
 const ProjectsInfo = lazy(() => import('./pages/ProjectsInfoPage'));
 

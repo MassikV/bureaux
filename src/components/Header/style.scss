@@ -149,7 +149,7 @@
 
   &__btn {
     padding: 15px;
-    background: rgba(223, 14, 14, 1);
+    background: #BF1616;
     color: #FFF;
     font-family: "IBM Plex Mono", monospace;
     font-size: 13px;
@@ -160,7 +160,7 @@
     border: 3px solid #FFF;
     border-radius: 0;
     &:hover{
-      background: rgba(223, 14, 14, 0.6);
+      opacity: 0.6;
     }
     @media (max-width: 1150px) {
       margin-top: 40px;

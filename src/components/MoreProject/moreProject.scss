@@ -1,5 +1,5 @@
 .more-project {
-  background: rgba(223, 14, 14, 0.8);
+  background: #BF1616;
   padding: 20px;
   width: 441px;
   height: 175px;
@@ -9,10 +9,10 @@
   gap: 50px;
   transition: 0.35s;
   &:hover{
-    background: rgba(223, 14, 14, 0.6);
+    opacity: 0.6;
   }
   @media (max-width: 992px) {
-    background: rgba(223, 14, 14, 1);
+    background: #BF1616;
     margin-top: 65px;
     width: 400px;
     height: 95px;
