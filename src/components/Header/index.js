@@ -4,7 +4,6 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import { AiOutlineClose } from 'react-icons/ai';
 import PopUpContainer from '../PopUp/PopUp-container';
 import Logo from './img/logo.png';
-import Ornament from './img/ornament.png';
 import { scroller } from 'react-scroll';
 
 import './style.scss';
@@ -116,7 +115,6 @@ function Header() {
             <img loading="lazy" src={Logo} alt="logo" className="header-logo" />
           </a>
           <div className={`header-wrapper ${nav ? 'active' : ''}`}>
-            <img src={Ornament} alt="" className="header-ornament" />
             <div className="header-info">
               <ul className="header-list">
                 <li className="header-list__item">
@@ -136,7 +134,6 @@ function Header() {
                 Безкоштовний розрахунок
               </button>
             </div>
-            <img src={Ornament} alt="" className="header-ornament" />
           </div>
           <div onClick={() => setNav(!nav)} className="header__btns">
             {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
