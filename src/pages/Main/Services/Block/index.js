@@ -6,9 +6,9 @@ function ServiceBlock({ service, index, openModal }) {
       <p className="services-center--price">{service.price}</p>
       <p className="services-center--info">{service.info}</p>
       <p className="services-center--details">{service.details}</p>
-      <a href="#1" className="services-center--button" onClick={openModal}>
+      <button className="services-center--button" onClick={openModal}>
         {service.button}
-      </a>
+      </button>
     </section>
   );
 }
