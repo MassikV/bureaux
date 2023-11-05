@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import Logo from './img/logo.png';
+import Logo from '../../../img/white-logo.png';
 import './first.scss';
 import { projects } from '../../../data/projects';
 import MoreProject from '../../../components/MoreProject/MoreProject';
@@ -47,10 +47,10 @@ const First = () => {
 
   const backgroundImageUrls = useMemo(
     () => [
-      require('./img/Bg/bg.png'),
-      require('./img/Bg/bg2.png'),
-      require('./img/Bg/bg3.png'),
-      require('./img/Bg/bg4.png'),
+      require('./img/bg.png'),
+      require('./img/bg2.png'),
+      require('./img/bg3.png'),
+      require('./img/bg4.png'),
     ],
     []
   );

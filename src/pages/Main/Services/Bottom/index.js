@@ -1,4 +1,4 @@
-import union from '../img/Union.svg';
+import union from '../../../../img/Union.svg';
 import PopUpContainer from '../../../../components/PopUp/PopUp-container';
 import React, { useState } from 'react';
 function Bottom() {
