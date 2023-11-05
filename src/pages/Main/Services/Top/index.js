@@ -22,4 +22,4 @@ function Top() {
     </section>
   );
 }
-export default Top;
+export default React.memo(Top);

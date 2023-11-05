@@ -1,7 +1,34 @@
-import './style.scss';
+import React from 'react';
 import logo from './logo.png';
 import { Link } from 'react-scroll';
+import { useLocation } from 'react-router-dom';
+import { scroller } from 'react-scroll';
+
+import './style.scss';
+
 function Footer() {
+  const location = useLocation();
+
+  const handleClick = (elementId) => {
+    if (location.pathname === '/') {
+      scrollToElement(elementId);
+    } else {
+      window.location.replace(`/`);
+      setTimeout(() => {
+        scrollToElement(elementId);
+      }, 1000);
+    }
+  };
+
+  const scrollToElement = (elementId) => {
+    scroller.scrollTo(elementId, {
+      duration: 500,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+      offset: -70,
+    });
+  };
+
   return (
     <footer className="footer">
       <div className="container">
@@ -22,24 +49,24 @@ function Footer() {
           </div>
           <div className="footer-navigation">
             <h3 className="footer-navigation--title">Навігація</h3>
-            <Link to="First" spy={true} smooth={true} offset={-70} duration={500}>
-              <span className="footer-navigation--item">Головна</span>
-            </Link>
-            <Link to="AboutUs" spy={true} smooth={true} offset={-70} duration={500}>
-              <span className="footer-navigation--item">Про нас</span>
-            </Link>
-            <Link to="Services" spy={true} smooth={true} offset={-70} duration={500}>
-              <span className="footer-navigation--item">Послуги</span>
-            </Link>
-            <Link to="Projects" spy={true} smooth={true} offset={-70} duration={500}>
-              <span className="footer-navigation--item">Проєкти</span>
-            </Link>
-            <Link to="Reviews" spy={true} smooth={true} offset={-70} duration={500}>
-              <span className="footer-navigation--item">Відгуки</span>
-            </Link>
-            <Link to="FAQs" spy={true} smooth={true} offset={-70} duration={500}>
-              <span className="footer-navigation--item">Запитання</span>
-            </Link>
+            <span className="footer-navigation--item" onClick={() => handleClick('First')}>
+              Головна
+            </span>
+            <span className="footer-navigation--item" onClick={() => handleClick('AboutUs')}>
+              Про нас
+            </span>
+            <span className="footer-navigation--item" onClick={() => handleClick('Services')}>
+              Послуги
+            </span>
+            <span className="footer-navigation--item" onClick={() => handleClick('Projects')}>
+              Проєкти
+            </span>
+            <span className="footer-navigation--item" onClick={() => handleClick('Reviews')}>
+              Відгуки
+            </span>
+            <span className="footer-navigation--item" onClick={() => handleClick('FAQs')}>
+              Запитання
+            </span>
           </div>
           <div className="footer-contacts">
             <h3 className="footer-contacts--title">Контакти</h3>
@@ -65,4 +92,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default React.memo(Footer);

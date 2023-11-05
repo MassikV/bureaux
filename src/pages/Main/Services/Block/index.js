@@ -13,4 +13,4 @@ function ServiceBlock({ service, index, openModal }) {
   );
 }
 
-export default ServiceBlock;
+export default React.memo(ServiceBlock);

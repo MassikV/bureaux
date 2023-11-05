@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { projects } from '../../data/projects';
@@ -130,4 +130,4 @@ function MoreOurProjects() {
   );
 }
 
-export default MoreOurProjects;
+export default React.memo(MoreOurProjects);

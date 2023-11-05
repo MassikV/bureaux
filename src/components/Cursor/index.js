@@ -58,4 +58,4 @@ function Cursor() {
   );
 }
 
-export default Cursor;
+export default React.memo(Cursor);

@@ -118,16 +118,16 @@ function Header() {
             <div className="header-info">
               <ul className="header-list">
                 <li className="header-list__item">
-                  <a onClick={() => handleClick('AboutUs')}>Про нас</a>
+                  <span onClick={() => handleClick('AboutUs')}>Про нас</span>
                 </li>
                 <li className="header-list__item">
-                  <a onClick={() => handleClick('Projects')}>Проєкти</a>
+                  <span onClick={() => handleClick('Projects')}>Проєкти</span>
                 </li>
                 <li className="header-list__item">
-                  <a onClick={() => handleClick('OurWork')}>Як ми працюємо</a>
+                  <span onClick={() => handleClick('OurWork')}>Як ми працюємо</span>
                 </li>
                 <li className="header-list__item">
-                  <a onClick={() => handleClick('Services')}>Послуги</a>
+                  <span onClick={() => handleClick('Services')}>Послуги</span>
                 </li>
               </ul>
               <button className="header__btn" onClick={openPopup}>
@@ -157,4 +157,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default React.memo(Header);

@@ -1,3 +1,4 @@
+import React from 'react';
 import './style.scss';
 import PopUpContainer from './PopUp-container';
 function PopUp() {
@@ -14,4 +15,4 @@ function PopUp() {
   );
 }
 
-export default PopUp;
+export default React.memo(PopUp);

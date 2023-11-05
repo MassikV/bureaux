@@ -121,4 +121,4 @@ function Carousel({ items, currentItem }) {
     </div>
   );
 }
-export default Founders;
+export default React.memo(Founders);

@@ -263,4 +263,4 @@ function OurWork() {
   );
 }
 
-export default OurWork;
+export default React.memo(OurWork);

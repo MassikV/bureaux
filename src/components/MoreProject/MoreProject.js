@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Union from './Union.svg';
 import './moreProject.scss';
@@ -11,4 +12,4 @@ const MoreProject = () => {
   );
 };
 
-export default MoreProject;
+export default React.memo(MoreProject);

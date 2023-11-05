@@ -133,4 +133,4 @@ function PhonePopUp({ onClose }) {
   );
 }
 
-export default PhonePopUp;
+export default React.memo(PhonePopUp);

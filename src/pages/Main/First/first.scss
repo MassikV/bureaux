@@ -6,20 +6,23 @@
   background-position: center;
   transition: background-image 2.2s ease-in-out;
   transition-delay: 0.5s;
+
   &__info {
     padding-top: 122px;
     display: grid;
     justify-content: center;
-    @media (max-width: 480px){
+    @media (max-width: 480px) {
       padding: 122px 30px 0;
     }
   }
+
   &__logo {
     width: 800px;
     @media (max-width: 992px) {
       width: 100%;
     }
   }
+
   &__title {
     color: #FFF;
     font-family: 'IBM Plex Mono', monospace;
@@ -34,6 +37,7 @@
       }
     }
   }
+
   &__projects {
     padding-top: 186px;
     padding-bottom: 108px;
@@ -44,6 +48,7 @@
       padding-top: 90px;
       flex-direction: column;
     }
+
     &__title {
       transform: rotate(-90deg);
       color: #FFF;
@@ -58,6 +63,7 @@
         transform: rotate(0deg);
       }
     }
+
     &__wrapper {
       display: flex;
       gap: 25px;
@@ -68,10 +74,26 @@
         gap: 5%;
       }
     }
+
     &__block {
       position: relative;
       display: flex;
       border: 3px solid #FFF;
+
+      &:hover {
+        .First__projects--container {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          display: grid;
+          grid-template-columns: 0.2fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          column-gap: 1rem;
+          align-items: center;
+          transition: transform 0.25s;
+
+        }
+      }
 
       @media (max-width: 992px) {
         width: 166px;
@@ -85,32 +107,32 @@
         }
       }
     }
+
     &__img {
       width: 166px;
       height: 169px;
       object-fit: cover;
       transition: filter 0.3s ease;
       filter: blur(0);
-      &:hover{
+
+      &:hover {
         filter: blur(2px);
       }
+
       @media (max-width: 992px) {
         width: 100%;
         height: 100%;
       }
     }
-    &--container{
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      display: grid;
-      grid-template-columns: 0.2fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      column-gap: 1rem;
-      align-items: center;
-      transition: transform 0.25s;
+
+    &--container {
+      display: none;
+      @media (max-width: 992px) {
+        display: grid;
+      }
     }
-    &--number{
+
+    &--number {
       text-align: center;
       color: white;
       width: 1.25rem;
@@ -124,13 +146,15 @@
       align-self: center;
       justify-self: center;
     }
+
     &--info {
       display: flex;
       flex-direction: column;
       margin-left: 5px;
       gap: 5px;
     }
-    &--title{
+
+    &--title {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
       font-weight: 600;
@@ -140,7 +164,8 @@
       justify-self: center;
       align-self: center;
     }
-    &--square{
+
+    &--square {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9px;
       font-weight: 400;
@@ -153,6 +178,7 @@
 
   }
 }
+
 .dots {
   justify-self: end;
   position: absolute;

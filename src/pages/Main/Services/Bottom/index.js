@@ -47,4 +47,4 @@ function Bottom() {
     </section>
   );
 }
-export default Bottom;
+export default React.memo(Bottom);
