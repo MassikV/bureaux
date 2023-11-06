@@ -1,6 +1,9 @@
 .moreOurProjects {
    .container {
     margin: 0;
+     @media (min-width: 1800px){
+       margin: 0 auto;
+     }
   }
   &-section {
     background-image: url(./img/Bg.png);
