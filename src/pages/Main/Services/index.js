@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import './style.scss';
-import logo from './img/logo.png';
+import logo from '../../../img/ornament.svg';
 import textLogo from './img/text-logo.png';
 import ServiceBlock from './Block';
 import ServiceModal from './ServiceModal';

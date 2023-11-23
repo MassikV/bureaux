@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { AiOutlineClose } from 'react-icons/ai';
 import PopUpContainer from '../PopUp/PopUp-container';
-import Logo from './img/logo.png';
+import Logo from '../../img/white-logo.png';
 import { scroller } from 'react-scroll';
 
 import './style.scss';

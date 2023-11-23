@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import logoImg from './img/logo.svg';
+import logoImg from '../../../img/ornament.svg';
 import review1Img from './img/Rectangle54.jpg';
 import review2Img from './img/Rectangle53.jpg';
 import instImg from './img/Frame.svg';

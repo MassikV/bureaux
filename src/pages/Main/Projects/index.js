@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
-import union from './img/Union.svg';
+import union from '../../../img/Union.svg';
 import image1 from './img/1.png';
 import image2 from './img/2.png';
 import image3 from './img/3.png';
 import image4 from './img/4.png';
-import logoImg from './img/logo.svg';
+import logoImg from '../../../img/ornament.svg';
 
 const imageArrays = [
   [

@@ -1,5 +1,5 @@
 import './style.scss';
-import logo from './logo.png';
+import logo from '../../img/black-logo.png';
 import { Link } from 'react-scroll';
 function Footer() {
   return (

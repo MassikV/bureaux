@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './style.scss';
-import logoImg from './img/logo.svg'; // Додайте імпорт логотипу
+import logoImg from '../../../img/ornament.svg';
 import firstPhoto from './img/first.png';
 import phonePhoto from './img/phonePhoto.png';
 import firstGridPhoto from './img/photo2.png';

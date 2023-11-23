@@ -1,5 +1,5 @@
 import React from 'react';
-import logotype from '../img/logos.svg';
+import logotype from '../../../../img/ornament.svg';
 
 function Top() {
   const logoWidth = window.innerWidth <= 480 ? 34 : window.innerWidth <= 1024 ? 65 : 85;

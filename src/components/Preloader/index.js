@@ -1,4 +1,4 @@
-import Logo from './logos.svg';
+import Logo from '../../img/ornament.svg';
 import './style.scss';
 
 const Preloader = () => {
