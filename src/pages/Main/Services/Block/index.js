@@ -1,3 +1,4 @@
+import React from 'react';
 function ServiceBlock({ service, index, openModal }) {
   return (
     <section className={`service-block ${index === 0 ? 'black-bg' : 'white-bg'}`}>
