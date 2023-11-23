@@ -70,8 +70,8 @@ function Footer() {
           </div>
           <div className="footer-contacts">
             <h3 className="footer-contacts--title">Контакти</h3>
-            <a href="tel:+380 98 979 86 48" rel="noreferrer" target="_blank">
-              <span className="footer-contacts--item">+380 98 979 86 48</span>
+            <a href="tel:+380 98 949 86 48" rel="noreferrer" target="_blank">
+              <span className="footer-contacts--item">+380 98 949 86 48</span>
             </a>
             <a href="mailto:bureaux.ivan@gmail.com" rel=" noreferrer" target="_blank">
               <span className="footer-contacts--item">bureaux.ivan@gmail.com</span>
