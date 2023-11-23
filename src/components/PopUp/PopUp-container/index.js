@@ -140,7 +140,6 @@ function PopUpContainer({ onCloseButton, source, onClose }) {
               placeholder="Ім'я"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              autoComplete="off"
               required
             />
           </label>
@@ -158,7 +157,6 @@ function PopUpContainer({ onCloseButton, source, onClose }) {
                 borderRadius: '11px',
               }}
               placeholder="Введіть ваш номер"
-              autoComplete="off"
               required
             />
           </label>
@@ -184,7 +182,6 @@ function PopUpContainer({ onCloseButton, source, onClose }) {
                 value={customTime}
                 onChange={(e) => setCustomTime(e.target.value)}
                 style={{ marginTop: '10px', borderRadius: '11px', width: '100%' }}
-                autoComplete="off"
                 min={getMinDateTime()}
                 required
               />
@@ -222,4 +219,4 @@ function PopUpContainer({ onCloseButton, source, onClose }) {
   );
 }
 
-export default PopUpContainer;
+export default React.memo(PopUpContainer);

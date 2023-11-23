@@ -194,11 +194,6 @@ function ServiceModal({ onClose }) {
                 value={option}
                 checked={selectedOptions[`step${currentStep + 1}`] === option}
                 onChange={() => handleOptionChange(`step${currentStep + 1}`, option)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' && selectedOptions[`step${currentStep + 1}`]) {
-                    nextStep();
-                  }
-                }}
               />
               {option}
             </motion.label>
@@ -225,7 +220,13 @@ function ServiceModal({ onClose }) {
             />
             <label className={labelClass}>Телефон:</label>
             <div className="phone-input-container">
-              <PhoneInput country={'ua'} value={phone} onChange={(phone) => setPhone(phone)} />
+              <PhoneInput
+                country={'ua'}
+                value={phone}
+                onChange={(phone) => setPhone(phone)}
+                enableSearch
+                placeholder="Введіть ваш номер"
+              />
             </div>
           </motion.div>
         )}
@@ -271,4 +272,4 @@ function ServiceModal({ onClose }) {
   );
 }
 
-export default ServiceModal;
+export default React.memo(ServiceModal);

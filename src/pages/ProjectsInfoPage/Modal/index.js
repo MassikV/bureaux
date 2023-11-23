@@ -21,4 +21,4 @@ function Modal({ onClose, imageSrc, imageAlt, onPrev, onNext, isPrevDisabled, is
   );
 }
 
-export default Modal;
+export default React.memo(Modal);

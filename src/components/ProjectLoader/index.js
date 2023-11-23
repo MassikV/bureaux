@@ -26,4 +26,4 @@ const ProjectLoader = ({ loading }) => {
   );
 };
 
-export default ProjectLoader;
+export default React.memo(ProjectLoader);

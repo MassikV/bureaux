@@ -84,4 +84,4 @@ function Buttons() {
   );
 }
 
-export default Buttons;
+export default React.memo(Buttons);

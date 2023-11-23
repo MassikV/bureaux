@@ -5,61 +5,38 @@ import './first.scss';
 import { projects } from '../../../data/projects';
 import MoreProject from '../../../components/MoreProject/MoreProject';
 import PhonePopUp from '../../../components/PhonePopUp';
+import bg1 from './img/Bg/bg.png';
+import bg2 from './img/Bg/bg2.png';
+import bg3 from './img/Bg/bg3.png';
+import bg4 from './img/Bg/bg4.png';
 
 const First = () => {
   const location = useLocation();
   const newProjects = projects.filter((project) => project.section === 'new');
-  const [hoveredProject, setHoveredProject] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+  const [backgroundLoaded, setBackgroundLoaded] = useState(false); // Доданий стан для відстеження завантаження фону
   const projectsWrapperStyle =
     location.pathname === '/projects' ? { paddingBottom: '2rem', height: '40rem' } : {};
 
-  const handleMouseEnter = (projectId) => {
-    if (!isMobile) {
-      setHoveredProject(projectId);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (!isMobile) {
-      setHoveredProject(null);
-    }
-  };
-
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 480);
-      setIsTablet(window.innerWidth <= 1024);
-      setIsDesktop(window.innerWidth > 1024);
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  const backgroundImageUrls = useMemo(
-    () => [
-      require('./img/bg.png'),
-      require('./img/bg2.png'),
-      require('./img/bg3.png'),
-      require('./img/bg4.png'),
-    ],
-    []
-  );
+  const backgroundImageUrls = useMemo(() => [bg1, bg2, bg3, bg4], []);
 
   const backgroundImageUrl = backgroundImageUrls[currentPhotoIndex];
 
+  useEffect(() => {
+    const preloadImage = new Image();
+    preloadImage.src = backgroundImageUrl;
+    preloadImage.onload = () => {
+      document.querySelector('.First').style.backgroundImage = `url(${backgroundImageUrl})`;
+      setBackgroundLoaded(true); // Позначити, що фон завантажено
+    };
+  }, [backgroundImageUrl]);
+
   const goToNextPhoto = useCallback(() => {
-    setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % backgroundImageUrls.length);
-  }, [backgroundImageUrls]);
+    if (backgroundLoaded) {
+      // Переконатися, що фон завантажено перед анімацією
+      setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % backgroundImageUrls.length);
+    }
+  }, [backgroundImageUrls, backgroundLoaded]);
 
   useEffect(() => {
     const interval = setInterval(goToNextPhoto, 10000);
@@ -73,10 +50,7 @@ const First = () => {
   };
 
   return (
-    <section
-      className="First"
-      id="First"
-      style={{ ...projectsWrapperStyle, backgroundImage: `url(${backgroundImageUrl})` }}>
+    <section className="First" id="First" style={{ ...projectsWrapperStyle }}>
       <div className="container">
         <div className="First-content">
           <div className="First__info">
@@ -98,22 +72,18 @@ const First = () => {
                   <Link
                     to={`/projects/info/${item.id}`}
                     className="First__projects__block"
-                    key={item.id}
-                    onMouseEnter={() => handleMouseEnter(item.id)}
-                    onMouseLeave={handleMouseLeave}>
+                    key={item.id}>
                     <img
                       loading="lazy"
                       src={item.mainPhoto}
                       className="First__projects__img"
                       alt=""
                     />
-                    {(isMobile || isTablet || (isDesktop && hoveredProject === item.id)) && (
-                      <div className="First__projects--container">
-                        <span className="First__projects--number">{item.id - 8}</span>
-                        <p className="First__projects--title">{item.name}</p>
-                        <p className="First__projects--square">{item.square}</p>
-                      </div>
-                    )}
+                    <div className="First__projects--container">
+                      <span className="First__projects--number">{item.id - 8}</span>
+                      <p className="First__projects--title">{item.name}</p>
+                      <p className="First__projects--square">{item.square}</p>
+                    </div>
                   </Link>
                 ))}
               </div>

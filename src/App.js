@@ -1,12 +1,12 @@
 import React, { lazy, Suspense } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import PopUp from './components/PopUp';
 import Preloader from './components/Preloader';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cursor from './components/Cursor';
+const Footer = lazy(() => import('./components/Footer'));
+const Header = lazy(() => import('./components/Header'));
+const PopUp = lazy(() => import('./components/PopUp'));
 const Main = lazy(() => import('./pages/Main'));
 const MoreOurProjects = lazy(() => import('./pages/MoreOurProjects'));
 const ProjectsInfo = lazy(() => import('./pages/ProjectsInfoPage'));

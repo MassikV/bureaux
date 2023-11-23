@@ -10,104 +10,104 @@ import logoImg from '../../../img/ornament.svg';
 
 const imageArrays = [
   [
-    'img/first/1.png',
-    'img/first/2.png',
-    'img/first/4.png',
-    'img/first/5.png',
-    'img/first/6.png',
-    'img/first/7.png',
-    'img/first/8.png',
-    'img/first/9.png',
-    'img/first/12.png',
-    'img/first/13.png',
-    'img/first/14.png',
-    'img/first/16.png',
-    'img/first/17.png',
-    'img/first/18.png',
-    'img/first/19.png',
-    'img/first/20.png',
-    'img/first/21.png',
-    'img/first/22.png',
-    'img/first/23.png',
-    'img/first/24.png',
-    'img/first/25.png',
+    require('./img/img/first/1.png'),
+    require('./img/img/first/2.png'),
+    require('./img/img/first/4.png'),
+    require('./img/img/first/5.png'),
+    require('./img/img/first/6.png'),
+    require('./img/img/first/7.png'),
+    require('./img/img/first/8.png'),
+    require('./img/img/first/9.png'),
+    require('./img/img/first/12.png'),
+    require('./img/img/first/13.png'),
+    require('./img/img/first/14.png'),
+    require('./img/img/first/16.png'),
+    require('./img/img/first/17.png'),
+    require('./img/img/first/18.png'),
+    require('./img/img/first/19.png'),
+    require('./img/img/first/20.png'),
+    require('./img/img/first/21.png'),
+    require('./img/img/first/22.png'),
+    require('./img/img/first/23.png'),
+    require('./img/img/first/24.png'),
+    require('./img/img/first/25.png'),
   ],
   [
-    'img/second/1.png',
-    'img/second/2.png',
-    'img/second/3.png',
-    'img/second/4.png',
-    'img/second/5.png',
-    'img/second/6.png',
-    'img/second/7.png',
-    'img/second/8.png',
-    'img/second/9.png',
-    'img/second/10.png',
-    'img/second/11.png',
-    'img/second/12.png',
-    'img/second/13.png',
-    'img/second/14.png',
-    'img/second/15.png',
-    'img/second/16.png',
-    'img/second/17.png',
-    'img/second/18.png',
-    'img/second/19.png',
-    'img/second/20.png',
-    'img/second/21.png',
+    require('./img/img/second/1.png'),
+    require('./img/img/second/2.png'),
+    require('./img/img/second/3.png'),
+    require('./img/img/second/4.png'),
+    require('./img/img/second/5.png'),
+    require('./img/img/second/6.png'),
+    require('./img/img/second/7.png'),
+    require('./img/img/second/8.png'),
+    require('./img/img/second/9.png'),
+    require('./img/img/second/10.png'),
+    require('./img/img/second/11.png'),
+    require('./img/img/second/12.png'),
+    require('./img/img/second/13.png'),
+    require('./img/img/second/14.png'),
+    require('./img/img/second/15.png'),
+    require('./img/img/second/16.png'),
+    require('./img/img/second/17.png'),
+    require('./img/img/second/18.png'),
+    require('./img/img/second/19.png'),
+    require('./img/img/second/20.png'),
+    require('./img/img/second/21.png'),
   ],
   [
-    'img/third/1.png',
-    'img/third/2.png',
-    'img/third/3.png',
-    'img/third/4.png',
-    'img/third/5.png',
-    'img/third/6.png',
-    'img/third/7.png',
-    'img/third/8.png',
-    'img/third/9.png',
-    'img/third/10.png',
-    'img/third/11.png',
-    'img/third/12.png',
-    'img/third/13.png',
-    'img/third/14.png',
-    'img/third/15.png',
-    'img/third/16.png',
-    'img/third/17.png',
-    'img/third/18.png',
-    'img/third/19.png',
-    'img/third/20.png',
-    'img/third/21.png',
+    require('./img/img/third/1.png'),
+    require('./img/img/third/2.png'),
+    require('./img/img/third/3.png'),
+    require('./img/img/third/4.png'),
+    require('./img/img/third/5.png'),
+    require('./img/img/third/6.png'),
+    require('./img/img/third/7.png'),
+    require('./img/img/third/8.png'),
+    require('./img/img/third/9.png'),
+    require('./img/img/third/10.png'),
+    require('./img/img/third/11.png'),
+    require('./img/img/third/12.png'),
+    require('./img/img/third/13.png'),
+    require('./img/img/third/14.png'),
+    require('./img/img/third/15.png'),
+    require('./img/img/third/16.png'),
+    require('./img/img/third/17.png'),
+    require('./img/img/third/18.png'),
+    require('./img/img/third/19.png'),
+    require('./img/img/third/20.png'),
+    require('./img/img/third/21.png'),
   ],
   [
-    'img/fourth/1.png',
-    'img/fourth/2.png',
-    'img/fourth/3.png',
-    'img/fourth/4.png',
-    'img/fourth/5.png',
-    'img/fourth/6.png',
-    'img/fourth/7.png',
-    'img/fourth/8.png',
-    'img/fourth/9.png',
-    'img/fourth/10.png',
-    'img/fourth/11.png',
-    'img/fourth/12.png',
-    'img/fourth/13.png',
-    'img/fourth/14.png',
-    'img/fourth/15.png',
-    'img/fourth/16.png',
-    'img/fourth/17.png',
-    'img/fourth/18.png',
-    'img/fourth/19.png',
-    'img/fourth/20.png',
-    'img/fourth/21.png',
+    require('./img/img/fourth/1.png'),
+    require('./img/img/fourth/2.png'),
+    require('./img/img/fourth/3.png'),
+    require('./img/img/fourth/4.png'),
+    require('./img/img/fourth/5.png'),
+    require('./img/img/fourth/6.png'),
+    require('./img/img/fourth/7.png'),
+    require('./img/img/fourth/8.png'),
+    require('./img/img/fourth/9.png'),
+    require('./img/img/fourth/10.png'),
+    require('./img/img/fourth/11.png'),
+    require('./img/img/fourth/12.png'),
+    require('./img/img/fourth/13.png'),
+    require('./img/img/fourth/14.png'),
+    require('./img/img/fourth/15.png'),
+    require('./img/img/fourth/16.png'),
+    require('./img/img/fourth/17.png'),
+    require('./img/img/fourth/18.png'),
+    require('./img/img/fourth/19.png'),
+    require('./img/img/fourth/20.png'),
+    require('./img/img/fourth/21.png'),
   ],
 ];
 
 const staticImages = [
-  'img/first/26.png',
-  'img/third/22.png',
-  'img/third/23.png',
-  'img/fourth/22.png',
+  require('./img/img/first/26.png'),
+  require('./img/img/third/22.png'),
+  require('./img/img/third/23.png'),
+  require('./img/img/fourth/22.png'),
 ];
 
 const FullImage = [
@@ -153,16 +153,6 @@ function OurProjects() {
   const titleRef = useRef(null);
   const textRef = useRef(null);
   const infoRef = useRef(null);
-
-  // const logoSize = useCallback(() => {
-  //   if (windowWidth <= 480) {
-  //     return LOGO_WIDTHS.small;
-  //   } else if (windowWidth <= 1024) {
-  //     return LOGO_WIDTHS.medium;
-  //   } else {
-  //     return LOGO_WIDTHS.large;
-  //   }
-  // }, [windowWidth]);
 
   useEffect(() => {
     function handleResize() {
@@ -255,7 +245,6 @@ function OurProjects() {
               src={logo}
               alt="#"
               className="ourProjects-container--logos"
-              // style={}
               key={index}
             />
           ))}
@@ -339,9 +328,7 @@ function OurProjects() {
       </div>
       <div className="ourProjects-container">
         {staticImages.map((image, index) => (
-          <div className={`ourProjects-staticImage staticImage-${index}`} key={index}>
-            {/*<img loading='lazy' src={image} alt={`Зображення ${index + 1}`} />*/}
-          </div>
+          <div className={`ourProjects-staticImage staticImage-${index}`} key={index}></div>
         ))}
         {windowWidth > 1023
           ? Array.from({ length: 4 }, (_, containerIndex) => (
@@ -429,4 +416,4 @@ function OurProjects() {
   );
 }
 
-export default OurProjects;
+export default React.memo(OurProjects);

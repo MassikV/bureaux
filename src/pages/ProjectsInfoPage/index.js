@@ -120,4 +120,4 @@ const ProjectInfo = () => {
   );
 };
 
-export default ProjectInfo;
+export default React.memo(ProjectInfo);
