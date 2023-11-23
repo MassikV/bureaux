@@ -5,10 +5,10 @@ import './first.scss';
 import { projects } from '../../../data/projects';
 import MoreProject from '../../../components/MoreProject/MoreProject';
 import PhonePopUp from '../../../components/PhonePopUp';
-import bg1 from './img/Bg/bg.png';
-import bg2 from './img/Bg/bg2.png';
-import bg3 from './img/Bg/bg3.png';
-import bg4 from './img/Bg/bg4.png';
+import bg1 from './img/bg.png';
+import bg2 from './img/bg2.png';
+import bg3 from './img/bg3.png';
+import bg4 from './img/bg4.png';
 
 const First = () => {
   const location = useLocation();
