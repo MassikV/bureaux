@@ -27,7 +27,6 @@ function App() {
         <Footer />
         <ToastContainer />
       </Suspense>
-      <Analytics />
     </Router>
   );
 }
