@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Preloader from './components/Preloader';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -26,6 +27,7 @@ function App() {
         <Footer />
         <ToastContainer />
       </Suspense>
+      <Analytics />
     </Router>
   );
 }
