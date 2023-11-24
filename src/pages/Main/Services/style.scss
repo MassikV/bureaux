@@ -39,7 +39,7 @@
       height: 100%;
 
       .services-center-ticker {
-        animation: ticker-kf 8s linear infinite;
+        animation: ticker-kf 10s linear infinite;
         height: 100%;
       }
     }
@@ -309,8 +309,8 @@
     font-size: 24px;
     padding: 0;
     color: #bf1616;
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
     @media (max-width: 1023px) {
       width: 2rem;
       height: 2rem;
@@ -797,12 +797,12 @@
     }
 
     .close-modal-button {
-      width: 0.5rem;
-      height: 0.5rem;
+      width: 1rem;
+      height: 1rem;
 
       &::before,
       &::after {
-        width: 0.65rem;
+        width: 1rem;
 
       }
     }
