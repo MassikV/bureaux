@@ -57,6 +57,16 @@ function PopUpContainer({ onCloseButton, source, onClose }) {
     event.preventDefault();
 
     if (name && phoneNumber && selectedPackage && (timeSelection !== 'Інше' || customTime)) {
+      const namePattern = /^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ]+$/u;
+      if (!namePattern.test(name)) {
+        toast.error('Будь ласка, введіть коректне ім’я.');
+        return;
+      }
+      const phonePattern = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+      if (!phonePattern.test(phoneNumber)) {
+        toast.error('Будь ласка, введіть коректний номер телефону.');
+        return;
+      }
       const formData = `
         🔥Нове повiдомлення з сайту!🔥\n\n📩 Поп-ап: ${source}\n🤵‍♂️ Iм'я: ${name}\n📱 Номер телефону: +${phoneNumber}\n📋 Пакет послуг: ${selectedPackage}\n⌚️ Коли дзвонити: ${
         timeSelection === 'Найближчим часом' ? timeSelection : formatDate(customTime)

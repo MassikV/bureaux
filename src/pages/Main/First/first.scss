@@ -6,7 +6,7 @@
   background-position: center;
   transition: background-image 2.2s ease-in-out;
   transition-delay: 0.5s;
-
+  image-rendering: auto;
   &__info {
     padding-top: 122px;
     display: grid;

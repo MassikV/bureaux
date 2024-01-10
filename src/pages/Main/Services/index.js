@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
+// import ScrollTrigger from 'gsap/ScrollTrigger';
 import './style.scss';
 import logo from './img/logo.png';
 import textLogo from './img/text-logo.png';
@@ -9,7 +9,7 @@ import ServiceModal from './ServiceModal';
 import Top from './Top';
 import Bottom from './Bottom';
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
@@ -42,26 +42,30 @@ function Services() {
   };
 
   useEffect(() => {
-    const mm = gsap.matchMedia();
+    import('gsap/ScrollTrigger').then(() => {
+      // const ScrollTrigger = module.default;
 
-    mm.add('(min-width: 1023px)', () => {
-      gsap.utils.toArray('.service-block').forEach((block, index) => {
-        gsap.fromTo(
-          block,
-          {
-            y: index === 0 ? 100 : 200,
-          },
-          {
-            y: index === 0 ? -50 : 50,
-            duration: 2,
-            scrollTrigger: {
-              trigger: block,
-              start: 'top 80%',
-              end: 'bottom 50%',
-              scrub: true,
+      const mm = gsap.matchMedia();
+
+      mm.add('(min-width: 1023px)', () => {
+        gsap.utils.toArray('.service-block').forEach((block, index) => {
+          gsap.fromTo(
+            block,
+            {
+              y: index === 0 ? 100 : 200,
             },
-          }
-        );
+            {
+              y: index === 0 ? -50 : 50,
+              duration: 2,
+              scrollTrigger: {
+                trigger: block,
+                start: 'top 80%',
+                end: 'bottom 50%',
+                scrub: true,
+              },
+            }
+          );
+        });
       });
     });
   }, []);

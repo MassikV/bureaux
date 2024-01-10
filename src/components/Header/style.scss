@@ -190,3 +190,33 @@
   width: 100%;
   z-index: 1001;
 }
+.menu-icon {
+  width: 30px;
+  height: 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.open span:nth-child(1) {
+  background-color: #000;
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.menu-icon.open span:nth-child(3) {
+  background-color: #000;
+  transform: translateY(-8.5px) rotate(-45deg);
+}

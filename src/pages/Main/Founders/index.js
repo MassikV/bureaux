@@ -6,7 +6,6 @@ import foundersIvan from './img/Ivan.png';
 import foundersDasha from './img/Daria.png';
 import ornament from './img/ornament.png';
 import tabletOr from './img/tabletOr.png';
-import { useMediaQuery } from 'react-responsive';
 
 const founders = [
   {
@@ -28,11 +27,21 @@ const founders = [
 ];
 
 function Founders() {
-  const isDesktopOrLaptop = useMediaQuery({
-    query: '(min-width: 1024px)',
-  });
+  const [isDesktopOrLaptop, setIsDesktopOrLaptop] = useState(window.innerWidth >= 1024);
   const foundersRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktopOrLaptop(window.innerWidth >= 1024);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
