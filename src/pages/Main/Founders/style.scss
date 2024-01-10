@@ -309,10 +309,11 @@
 }
 @media screen and (max-width: 568px) {
   .founders {
-    max-width: 480px;
+    overflow: hidden;
     height: 260vh;
     &-content{
       grid-template-rows: 200px 1fr;
+      grid-template-columns: 100%;
       position: relative;
       top: 0;
     }

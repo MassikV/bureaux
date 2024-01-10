@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { AiOutlineMenu } from 'react-icons/ai';
-import { AiOutlineClose } from 'react-icons/ai';
 import PopUpContainer from '../PopUp/PopUp-container';
 import Logo from '../../img/white-logo.png';
 import { scroller } from 'react-scroll';
-
 import './style.scss';
 
 function Header() {
@@ -24,27 +21,24 @@ function Header() {
   }, [location.pathname]);
 
   useEffect(() => {
-    if (nav) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [nav]);
-
-  useEffect(() => {
     const handleScroll = () => {
-      if (window.innerWidth >= 768 && window.scrollY > 740) {
-        setIsScrolled(true);
-      } else if (window.innerWidth < 768 && window.scrollY > 492) {
-        setIsScrolled(true);
-      } else if (window.innerWidth < 1024 && window.scrollY > 800) {
-        setIsScrolled(true);
+      const innerWidth = window.innerWidth;
+      const thresholds = {
+        768: 740,
+        1024: 800,
+      };
+
+      let threshold = 0;
+      if (innerWidth >= 1024) {
+        threshold = thresholds[1024];
+      } else if (innerWidth >= 768) {
+        threshold = thresholds[768];
       } else {
-        setIsScrolled(false);
+        threshold = 492;
       }
+
+      setIsScrolled(window.scrollY > threshold);
+      setScrolled(window.scrollY >= 100);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -53,26 +47,9 @@ function Header() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const handleScroll = () => {
-    if (window.scrollY >= 100) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-  };
 
   const handleMobileNavClick = () => {
     setNav(false);
-    setTimeout(() => {}, 300);
   };
 
   const openPopup = () => {
@@ -136,7 +113,11 @@ function Header() {
             </div>
           </div>
           <div onClick={() => setNav(!nav)} className="header__btns">
-            {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
+            <div className={`menu-icon ${nav ? 'open' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
         </div>
       </div>

@@ -1,12 +1,12 @@
-import React, { useEffect, lazy } from 'react';
-const First = lazy(() => import('./First/First'));
-const AboutUs = lazy(() => import('./AboutUs'));
-const Founders = lazy(() => import('./Founders'));
-const OurProjects = lazy(() => import('./Projects'));
-const Services = lazy(() => import('./Services'));
-const OurWork = lazy(() => import('./OurWork'));
-const FAQs = lazy(() => import('./FAQs'));
-const Reviews = lazy(() => import('./Reviews'));
+import React, { useEffect } from 'react';
+import First from './First/First';
+import AboutUs from './AboutUs';
+import Founders from './Founders';
+import OurProjects from './Projects';
+import Services from './Services';
+import OurWork from './OurWork';
+import FAQs from './FAQs';
+import Reviews from './Reviews';
 
 function Main() {
   useEffect(() => {

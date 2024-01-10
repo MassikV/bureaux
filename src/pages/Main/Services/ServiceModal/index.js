@@ -122,6 +122,21 @@ function ServiceModal({ onClose }) {
       phone &&
       email
     ) {
+      const namePattern = /^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ]+$/u;
+      if (!namePattern.test(name)) {
+        toast.error('Будь ласка, введіть коректне ім’я.');
+        return;
+      }
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        toast.error('Будь ласка, введіть коректну адресу електронної пошти.');
+        return;
+      }
+      const phonePattern = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+      if (!phonePattern.test(phone)) {
+        toast.error('Будь ласка, введіть коректний номер телефону.');
+        return;
+      }
       const formData = `
         🔥 Нове повідомлення з сайту! 🔥\n\n 📩 Квіз\n 🏠 Площа об'єкту: ${selectedOptions.step1}\n 🏢 Тип приміщення: ${selectedOptions.step2}\n 🎨 Стиль ремонту: ${selectedOptions.step3}\n ⏰ Планований час початку: ${selectedOptions.step4}\n 🤵 Ім'я: ${name}\n 📱 Телефон: +${phone}\n ✉️ Email: ${email}
       `.trim();
@@ -221,8 +236,8 @@ function ServiceModal({ onClose }) {
             <label className={labelClass}>Телефон:</label>
             <div className="phone-input-container">
               <PhoneInput
-                country={'ua'}
-                value={phone}
+                // country={'ua'}
+                // value={phone}
                 onChange={(phone) => setPhone(phone)}
                 enableSearch
                 placeholder="Введіть ваш номер"

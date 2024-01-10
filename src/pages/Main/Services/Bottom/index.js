@@ -26,10 +26,10 @@ function Bottom() {
             обговорити більше деталей у телефонній розмові!
           </span>
         </p>
-        <a href="#3" className="services-bottom--button" onClick={openPopup}>
+        <span className="services-bottom--button" onClick={openPopup}>
           безкоштовний розрахунок
           <img loading="lazy" src={union} alt="" />
-        </a>
+        </span>
         {isPopupVisible && (
           <div className="popup-overlay">
             <PopUpContainer

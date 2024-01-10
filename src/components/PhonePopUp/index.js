@@ -16,11 +16,9 @@ function PhonePopUp({ onClose }) {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const phonePattern = /^\+?\d{10,12}$/;
-
+    const phonePattern = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
     if (!phonePattern.test(phoneNumber)) {
-      toast.error('Введений номер телефону не є дійсним.');
-      setIsSubmitting(false);
+      toast.error('Будь ласка, введіть коректний номер телефону.');
       return;
     }
 
