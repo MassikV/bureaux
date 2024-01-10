@@ -70,7 +70,7 @@
       height: 100vh;
       background-color: #f8f8f8;
       z-index: 10;
-      transition: transform 1s;
+      transition: transform .75s;
     }
     @media (max-width: 992px) {
       gap: 20%;
@@ -207,16 +207,20 @@
   transition: all 0.3s ease-in-out;
 }
 
+
+
 .menu-icon.open span:nth-child(2) {
   opacity: 0;
 }
 
 .menu-icon.open span:nth-child(1) {
+  transition: 1s;
   background-color: #000;
   transform: translateY(8.5px) rotate(45deg);
 }
 
 .menu-icon.open span:nth-child(3) {
+  transition: 1s;
   background-color: #000;
   transform: translateY(-8.5px) rotate(-45deg);
 }
