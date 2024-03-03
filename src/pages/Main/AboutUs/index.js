@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './style.scss';
-import logoImg from './img/logo.svg';
+import logoImg from '../../../img/ornament.svg';
 import firstPhoto from './img/IMG_0969.JPG';
 import firstGridPhoto from './img/photo2.png';
 import secondGridPhoto from './img/photo1.png';

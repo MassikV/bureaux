@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import logotype from '../img/logos.svg';
+import logotype from '../../../../img/ornament.svg';
 
 
 const LOGO_WIDTHS = {

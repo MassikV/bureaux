@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
-import union from './img/Union.svg';
+import union from '../../../img/Union.svg';
 import image1 from './img/UA_PROJECT2.png';
 import image2 from './img/METROPOLIS2.png';
 import image3 from './img/1991-BEAUTY2.png';
 import image4 from './img/GUNIA2.png';
-import logoImg from './img/logo.svg';
-
+import logoImg from '../../../img/ornament.svg';
 
 const imageArrays = [
   [
@@ -16,13 +15,6 @@ const imageArrays = [
     require('./img/1991-BEAUTY.png'),
     require('./img/GUNIA.png'),
   ],
-];
-
-const staticImages = [
-  require('./img/UA_PROJECT2.png'),
-  require('./img/METROPOLIS2.png'),
-  require('./img/1991-BEAUTY2.png'),
-  require('./img/GUNIA2.png'),
 ];
 
 const FullImage = [
@@ -60,7 +52,6 @@ const imageMap = {
   logo: logoImg,
 };
 function OurProjects() {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
   const [windowWidth, setWindowWidth] = useState(0);
   const [maxLogosInRow, setMaxLogosInRow] = useState(0);
   const containerRef = useRef(null);
