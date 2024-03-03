@@ -1,6 +1,8 @@
+@import "../../styles/variables";
+
 .footer {
   width: 100%;
-  background-image: url(background.png);
+  background-image: url(../../img/textureBg.png);
   &-content{
     padding: 2rem 0;
     display: flex;
@@ -15,7 +17,7 @@
   }
   &-logo {
     text-decoration: none;
-    color: black;
+    color: $white-color;
 
 
     & img {

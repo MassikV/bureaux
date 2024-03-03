@@ -8,6 +8,7 @@ import image3 from './img/1991-BEAUTY2.png';
 import image4 from './img/GUNIA2.png';
 import logoImg from './img/logo.svg';
 
+
 const imageArrays = [
   [
     require('./img/UA_PROJECT.png'),
@@ -60,8 +61,6 @@ const imageMap = {
 };
 function OurProjects() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  // const [fullImageSrc, setFullImageSrc] = useState(null);
-  // const [isActive, setIsActive] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
   const [maxLogosInRow, setMaxLogosInRow] = useState(0);
   const containerRef = useRef(null);
@@ -113,18 +112,6 @@ function OurProjects() {
 
   const logos = Array.from({ length: maxLogosInRow }).fill(imageMap.logo);
 
-  // const showFullImage = (containerIndex, index) => {
-  //   const currentImage = imageArrays[containerIndex][index];
-  //   if (!staticImages.includes(currentImage)) {
-  //     setFullImageSrc(containerIndex);
-  //     setIsActive(true);
-  //   }
-  // };
-  //
-  // const hideFullImage = () => {
-  //   setFullImageSrc(null);
-  //   setIsActive(false);
-  // };
 
   return (
     <section className="ourProjects" id="Projects">

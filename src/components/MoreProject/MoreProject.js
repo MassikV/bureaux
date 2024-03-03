@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Union from './Union.svg';
+import Union from '../../img/Union.svg';
 import './moreProject.scss';
 
 const MoreProject = () => {

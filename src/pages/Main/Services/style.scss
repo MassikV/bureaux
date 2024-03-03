@@ -2,7 +2,7 @@
   width: 100%;
   height: auto;
   overflow: hidden;
-  background-image: url(./img/Bg.png);
+  background-image: url(../../../img/textureBg.png);
 
   &-top {
     display: flex;
@@ -140,7 +140,7 @@
   .services {
     &-top {
       height: auto;
-      background-image: url(./img/Bg.png);
+      background-image: url(../../../img/textureBg.png);
       &--logos {
         padding-bottom: 2rem;
       }

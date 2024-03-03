@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './style.scss';
 import logoImg from './img/logo.svg';
-// import phonePhoto from './img/phonePhoto.png';
 import firstPhoto from './img/IMG_0969.JPG';
 import firstGridPhoto from './img/photo2.png';
 import secondGridPhoto from './img/photo1.png';
@@ -239,4 +238,4 @@ function AboutUs() {
   );
 }
 
-export default React.memo(AboutUs);
+export default AboutUs;
