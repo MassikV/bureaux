@@ -1,100 +1,56 @@
-import React, { useEffect, useState } from 'react';
-import gsap from 'gsap';
-// import ScrollTrigger from 'gsap/ScrollTrigger';
+import React from 'react';
 import './style.scss';
-import logo from '../../../img/ornament.svg';
-import textLogo from './img/text-logo.png';
-import ServiceBlock from './Block';
-import ServiceModal from './ServiceModal';
 import Top from './Top';
 import Bottom from './Bottom';
 
-// gsap.registerPlugin(ScrollTrigger);
+const ServiceItem = ({ text }) => (
+  <div className="services-center-container">
+    <p className="services-center-container__text">{text}</p>
+    <button className="services-center-container__button">
+      <svg
+        width="27"
+        height="27"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <g clipPath="url(#clip0)">
+          <path
+            d="M21.9557 9.04175L9.03906 21.9584"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M10.3359 9.04175H21.9609V20.6667"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0">
+            <rect width="31" height="31" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+    </button>
+  </div>
+);
 
-const services = [
-  {
-    title: 'Міні-проект',
-    price: '$25 за м²',
-    info: 'Дизайн проєкт інтерʼєру квартири або будинку',
-    details: '(візуалізації + креслення інженерії)',
-    button: 'Замовити',
-  },
-  {
-    title: 'Авторський проєкт в українському етностилі',
-    price: '$45 за м²',
-    info: 'Дизайн проєкт інтерʼєру квартири або будинку у сучасному українському етностилі',
-    details: '(креслення + візуалізації + авторський супровід)',
-    button: 'Замовити',
-  },
-];
-
-function Services() {
-  const [isModalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => {
-    setModalOpen(true);
-    document.body.classList.add('no-scroll');
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-    document.body.classList.remove('no-scroll');
-  };
-
-  useEffect(() => {
-    import('gsap/ScrollTrigger').then(() => {
-      // const ScrollTrigger = module.default;
-
-      const mm = gsap.matchMedia();
-
-      mm.add('(min-width: 1023px)', () => {
-        gsap.utils.toArray('.service-block').forEach((block, index) => {
-          gsap.fromTo(
-            block,
-            {
-              y: index === 0 ? 100 : 200,
-            },
-            {
-              y: index === 0 ? -50 : 50,
-              duration: 2,
-              scrollTrigger: {
-                trigger: block,
-                start: 'top 80%',
-                end: 'bottom 50%',
-                scrub: true,
-              },
-            }
-          );
-        });
-      });
-    });
-  }, []);
-
-  return (
-    <section className="services" id="Services">
-      <Top />
-      <div className="services-center">
-        <div className="services-center-ticker-wrapper">
-          <div className="services-center-ticker">
-            <div className="services-center--container">
-              <img loading="lazy" src={logo} alt="" className="services-center--logo" />
-              <img loading="lazy" src={textLogo} alt="" className="services-center--textLogo" />
-            </div>
-
-            <div className="services-center--container">
-              <img loading="lazy" src={logo} alt="" className="services-center--logo" />
-              <img loading="lazy" src={textLogo} alt="" className="services-center--textLogo" />
-            </div>
-          </div>
-        </div>
-        {services.map((service, index) => (
-          <ServiceBlock key={index} service={service} index={index} openModal={openModal} />
-        ))}
-      </div>
-      <Bottom />
-      {isModalOpen && <ServiceModal onClose={closeModal} />}
-    </section>
-  );
-}
+const Services = () => (
+  <section className="services" id="Services">
+    <Top />
+    <div className="services-center container">
+      {['Приватні простори', 'Комерційні приміщення', 'Архітектура та будівництво'].map(
+        (item, index) => (
+          <ServiceItem key={index} text={item} />
+        )
+      )}
+    </div>
+    <Bottom />
+  </section>
+);
 
 export default React.memo(Services);

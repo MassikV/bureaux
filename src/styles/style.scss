@@ -13,9 +13,9 @@
 
 .container {
   position: relative;
-  width: 1500px;
+  width: clamp(320px, 100%,1440px);
   margin: 0 auto;
-  @media (max-width: 1600px) {
-    width: 90%;
+  @media (max-width: 992px) {
+    width: 100%;
   }
 }

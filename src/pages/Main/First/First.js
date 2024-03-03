@@ -5,20 +5,22 @@ import './first.scss';
 import { projects } from '../../../data/projects';
 import MoreProject from '../../../components/MoreProject/MoreProject';
 import PhonePopUp from '../../../components/PhonePopUp';
-import bg1 from './img/bg.png';
-import bg2 from './img/bg2.png';
-import bg3 from './img/bg3.png';
-import bg4 from './img/bg4.png';
+import bg1 from './img/Bg/bg.png';
+import bg2 from './img/Bg/bg2.png';
+import bg3 from './img/Bg/bg3.png';
+import bg4 from './img/Bg/bg4.png';
+import bg5 from './img/Bg/bg5.png';
+
 
 const First = () => {
   const location = useLocation();
   const newProjects = projects.filter((project) => project.section === 'new');
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
-  const [backgroundLoaded, setBackgroundLoaded] = useState(false); // Доданий стан для відстеження завантаження фону
+  const [backgroundLoaded, setBackgroundLoaded] = useState(false);
   const projectsWrapperStyle =
     location.pathname === '/projects' ? { paddingBottom: '2rem', height: '40rem' } : {};
 
-  const backgroundImageUrls = useMemo(() => [bg1, bg2, bg3, bg4], []);
+  const backgroundImageUrls = useMemo(() => [bg1, bg2, bg3, bg4, bg5], []);
 
   const backgroundImageUrl = backgroundImageUrls[currentPhotoIndex];
 
@@ -27,13 +29,12 @@ const First = () => {
     preloadImage.src = backgroundImageUrl;
     preloadImage.onload = () => {
       document.querySelector('.First').style.backgroundImage = `url(${backgroundImageUrl})`;
-      setBackgroundLoaded(true); // Позначити, що фон завантажено
+      setBackgroundLoaded(true);
     };
   }, [backgroundImageUrl]);
 
   const goToNextPhoto = useCallback(() => {
     if (backgroundLoaded) {
-      // Переконатися, що фон завантажено перед анімацією
       setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % backgroundImageUrls.length);
     }
   }, [backgroundImageUrls, backgroundLoaded]);
