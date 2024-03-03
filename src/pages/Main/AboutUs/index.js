@@ -27,6 +27,7 @@ function AboutUs() {
     function handleResize() {
       const containerWidth = containerRef.current.getBoundingClientRect().width;
       const titleWidth = titleRef.current.getBoundingClientRect().width;
+
       let maxLogosInRow;
       let logoWidth;
 
