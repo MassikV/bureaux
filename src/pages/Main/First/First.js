@@ -5,6 +5,7 @@ import './first.scss';
 import { projects } from '../../../data/projects';
 import MoreProject from '../../../components/MoreProject/MoreProject';
 import PhonePopUp from '../../../components/PhonePopUp';
+
 import bg1 from './img/Bg/bg.png';
 import bg2 from './img/Bg/bg2.png';
 import bg3 from './img/Bg/bg3.png';
