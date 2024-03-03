@@ -29,16 +29,16 @@ function Cursor() {
   return (
     <AnimatedCursor
       className="animated-cursor"
-      innerSize={8}
-      outerSize={25}
+      innerSize={10}
       color="0, 0, 0"
-      outerAlpha={1}
-      innerScale={1}
-      outerScale={1.5}
-      outerStyle={{
+      innerScale={2}
+      innerStyle={{
         backgroundColor: 'white',
         mixBlendMode: 'exclusion',
         zIndex: '9999999',
+      }}
+      outerStyle={{
+        display: 'none',
       }}
       clickables={[
         'a',
@@ -47,6 +47,7 @@ function Cursor() {
         'input[type="number"]',
         'input[type="submit"]',
         'input[type="image"]',
+        'input[type="radio"]',
         'label[for]',
         'select',
         'textarea',

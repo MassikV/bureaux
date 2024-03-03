@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './style.scss';
 import logoImg from './img/logo.svg';
-import firstPhoto from './img/first.png';
-import phonePhoto from './img/phonePhoto.png';
+// import phonePhoto from './img/phonePhoto.png';
+import firstPhoto from './img/IMG_0969.JPG';
 import firstGridPhoto from './img/photo2.png';
 import secondGridPhoto from './img/photo1.png';
 import thirdGridPhoto from './img/photo4.png';
@@ -82,7 +82,7 @@ function AboutUs() {
           <div className="section-grid__container--photo">
             <img
               loading="lazy"
-              src={windowWidth <= 1023 ? phonePhoto : firstPhoto}
+              src={windowWidth <= 1023 ? fifthGridPhoto : firstPhoto}
               alt="f"
               className="section-grid--photo"
             />

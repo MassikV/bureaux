@@ -46,30 +46,25 @@ function Reviews() {
   useEffect(() => {
     function handleResize() {
       const containerWidth = containerRef.current.getBoundingClientRect().width;
+      const titleWidth = titleRef.current.getBoundingClientRect().width;
       let maxLogosInRow;
       let logoWidth;
 
-      const newWindowWidth = window.innerWidth;
-
-      if (newWindowWidth <= 480) {
-        const titleWidth = titleRef.current.getBoundingClientRect().width;
+      if (windowWidth <= 480) {
         maxLogosInRow = Math.floor((containerWidth - titleWidth) / LOGO_WIDTHS.small);
-        maxLogosInRow = Math.min(maxLogosInRow, 7);
+        maxLogosInRow = Math.min(maxLogosInRow, 5);
         logoWidth = LOGO_WIDTHS.small;
-      } else if (newWindowWidth <= 1024) {
-        const titleWidth = titleRef.current.getBoundingClientRect().width;
+      } else if (windowWidth <= 1023) {
         maxLogosInRow = Math.floor((containerWidth - titleWidth) / LOGO_WIDTHS.medium);
         maxLogosInRow = Math.min(maxLogosInRow, 9);
         logoWidth = LOGO_WIDTHS.medium;
       } else {
-        const titleWidth = titleRef.current.getBoundingClientRect().width;
         maxLogosInRow = Math.floor((containerWidth - titleWidth) / LOGO_WIDTHS.large);
         logoWidth = LOGO_WIDTHS.large;
       }
 
       setMaxLogosInRow(maxLogosInRow);
-      setWindowWidth(newWindowWidth);
-
+      setWindowWidth(containerWidth);
       document.querySelectorAll('.reviews-container--logo').forEach((logo) => {
         logo.style.width = `${logoWidth}px`;
       });

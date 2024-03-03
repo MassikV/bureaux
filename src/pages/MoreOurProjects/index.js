@@ -25,12 +25,12 @@ function MoreOurProjects() {
         const isUpwards =
           block.classList.contains('first-pair') || block.classList.contains('second-pair');
 
-        let startY = 0; // Початкове значення y
+        let startY = 0;
 
         if (isUpwards) {
-          startY = -100; // Якщо це "first-pair" або "second-pair", рухати вгору від 0 до -100
+          startY = -100;
         } else {
-          startY = 100; // Якщо це "third-pair" або "fourth-pair", рухати вниз від 0 до 100
+          startY = 100;
         }
 
         gsap.fromTo(
