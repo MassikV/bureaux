@@ -2,112 +2,19 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 import union from '../../../img/Union.svg';
-import image1 from './img/1.png';
-import image2 from './img/2.png';
-import image3 from './img/3.png';
-import image4 from './img/4.png';
+import image1 from './img/UA_PROJECT2.png';
+import image2 from './img/METROPOLIS2.png';
+import image3 from './img/1991-BEAUTY2.png';
+import image4 from './img/GUNIA2.png';
 import logoImg from '../../../img/ornament.svg';
 
 const imageArrays = [
   [
-    require('./img/img/first/1.png'),
-    require('./img/img/first/2.png'),
-    require('./img/img/first/4.png'),
-    require('./img/img/first/5.png'),
-    require('./img/img/first/6.png'),
-    require('./img/img/first/7.png'),
-    require('./img/img/first/8.png'),
-    require('./img/img/first/9.png'),
-    require('./img/img/first/12.png'),
-    require('./img/img/first/13.png'),
-    require('./img/img/first/14.png'),
-    require('./img/img/first/16.png'),
-    require('./img/img/first/17.png'),
-    require('./img/img/first/18.png'),
-    require('./img/img/first/19.png'),
-    require('./img/img/first/20.png'),
-    require('./img/img/first/21.png'),
-    require('./img/img/first/22.png'),
-    require('./img/img/first/23.png'),
-    require('./img/img/first/24.png'),
-    require('./img/img/first/25.png'),
+    require('./img/UA_PROJECT.png'),
+    require('./img/METROPOLIS.png'),
+    require('./img/1991-BEAUTY.png'),
+    require('./img/GUNIA.png'),
   ],
-  [
-    require('./img/img/second/1.png'),
-    require('./img/img/second/2.png'),
-    require('./img/img/second/3.png'),
-    require('./img/img/second/4.png'),
-    require('./img/img/second/5.png'),
-    require('./img/img/second/6.png'),
-    require('./img/img/second/7.png'),
-    require('./img/img/second/8.png'),
-    require('./img/img/second/9.png'),
-    require('./img/img/second/10.png'),
-    require('./img/img/second/11.png'),
-    require('./img/img/second/12.png'),
-    require('./img/img/second/13.png'),
-    require('./img/img/second/14.png'),
-    require('./img/img/second/15.png'),
-    require('./img/img/second/16.png'),
-    require('./img/img/second/17.png'),
-    require('./img/img/second/18.png'),
-    require('./img/img/second/19.png'),
-    require('./img/img/second/20.png'),
-    require('./img/img/second/21.png'),
-  ],
-  [
-    require('./img/img/third/1.png'),
-    require('./img/img/third/2.png'),
-    require('./img/img/third/3.png'),
-    require('./img/img/third/4.png'),
-    require('./img/img/third/5.png'),
-    require('./img/img/third/6.png'),
-    require('./img/img/third/7.png'),
-    require('./img/img/third/8.png'),
-    require('./img/img/third/9.png'),
-    require('./img/img/third/10.png'),
-    require('./img/img/third/11.png'),
-    require('./img/img/third/12.png'),
-    require('./img/img/third/13.png'),
-    require('./img/img/third/14.png'),
-    require('./img/img/third/15.png'),
-    require('./img/img/third/16.png'),
-    require('./img/img/third/17.png'),
-    require('./img/img/third/18.png'),
-    require('./img/img/third/19.png'),
-    require('./img/img/third/20.png'),
-    require('./img/img/third/21.png'),
-  ],
-  [
-    require('./img/img/fourth/1.png'),
-    require('./img/img/fourth/2.png'),
-    require('./img/img/fourth/3.png'),
-    require('./img/img/fourth/4.png'),
-    require('./img/img/fourth/5.png'),
-    require('./img/img/fourth/6.png'),
-    require('./img/img/fourth/7.png'),
-    require('./img/img/fourth/8.png'),
-    require('./img/img/fourth/9.png'),
-    require('./img/img/fourth/10.png'),
-    require('./img/img/fourth/11.png'),
-    require('./img/img/fourth/12.png'),
-    require('./img/img/fourth/13.png'),
-    require('./img/img/fourth/14.png'),
-    require('./img/img/fourth/15.png'),
-    require('./img/img/fourth/16.png'),
-    require('./img/img/fourth/17.png'),
-    require('./img/img/fourth/18.png'),
-    require('./img/img/fourth/19.png'),
-    require('./img/img/fourth/20.png'),
-    require('./img/img/fourth/21.png'),
-  ],
-];
-
-const staticImages = [
-  require('./img/img/first/26.png'),
-  require('./img/img/third/22.png'),
-  require('./img/img/third/23.png'),
-  require('./img/img/fourth/22.png'),
 ];
 
 const FullImage = [
@@ -131,9 +38,9 @@ const FullImage = [
   },
   {
     id: 3,
-    name: 'YK',
+    name: 'GUNIA',
     image: image4,
-    square: '80',
+    square: '250',
   },
 ];
 const LOGO_WIDTHS = {
@@ -145,8 +52,6 @@ const imageMap = {
   logo: logoImg,
 };
 function OurProjects() {
-  const [fullImageSrc, setFullImageSrc] = useState(null);
-  const [isActive, setIsActive] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
   const [maxLogosInRow, setMaxLogosInRow] = useState(0);
   const containerRef = useRef(null);
@@ -198,18 +103,6 @@ function OurProjects() {
 
   const logos = Array.from({ length: maxLogosInRow }).fill(imageMap.logo);
 
-  const showFullImage = (containerIndex, index) => {
-    const currentImage = imageArrays[containerIndex][index];
-    if (!staticImages.includes(currentImage)) {
-      setFullImageSrc(containerIndex);
-      setIsActive(true);
-    }
-  };
-
-  const hideFullImage = () => {
-    setFullImageSrc(null);
-    setIsActive(false);
-  };
 
   return (
     <section className="ourProjects" id="Projects">
@@ -327,87 +220,34 @@ function OurProjects() {
         </svg>{' '}
       </div>
       <div className="ourProjects-container">
-        {staticImages.map((image, index) => (
-          <div className={`ourProjects-staticImage staticImage-${index}`} key={index}></div>
-        ))}
-        {windowWidth > 1023
-          ? Array.from({ length: 4 }, (_, containerIndex) => (
+        {imageArrays.map((imageArray, containerIndex) => (
+          <div key={containerIndex} className="ourProjects-container__elements">
+            {imageArray.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`Image ${index}`}
+                className={`ourProjects-container__elements--image image-${index}`}
+              />
+            ))}
+            {[1, 2, 3, 4].map((square, index) => (
               <div
-                className={`ourProjects-container--grid grid-${containerIndex}`}
-                key={containerIndex}>
-                {containerIndex === fullImageSrc ? (
-                  <Link
-                    to={`/projects/info/${FullImage[containerIndex].id + 9}`}
-                    className={`full-image-container ${isActive ? 'container-active' : ''}`}
-                    onMouseLeave={hideFullImage}>
-                    {staticImages.includes(FullImage[containerIndex].image) ? (
-                      <img
-                        loading="lazy"
-                        src={FullImage[containerIndex].image}
-                        alt={`Зображення ${containerIndex + 1}`}
-                      />
-                    ) : (
-                      <div className={`full-image-content ${isActive ? 'active' : ''}`}>
-                        <img
-                          loading="lazy"
-                          src={FullImage[containerIndex].image}
-                          alt={`Зображення ${containerIndex + 1}`}
-                        />
-                        <div className="grid-item-imageInfo">
-                          <p>0{FullImage[containerIndex].id + 1}</p>
-                          <p>{FullImage[containerIndex].name}</p>
-                          <p>{FullImage[containerIndex].square} м. кв.</p>
-                        </div>
-                      </div>
-                    )}
-                  </Link>
-                ) : (
-                  <div className={`grid-row `}>
-                    {Array.from({ length: 4 * 6 }, (_, index) => {
-                      const imageArray = imageArrays[containerIndex];
-
-                      if (index <= 22 && imageArray[index]) {
-                        return (
-                          <div
-                            className={`grid-item`}
-                            key={index}
-                            onMouseEnter={() => showFullImage(containerIndex, index)}>
-                            <div className={`grid-item-content `}>
-                              <img
-                                loading="lazy"
-                                src={imageArray[index]}
-                                alt={`Зображення ${index + 1}`}
-                              />
-                            </div>
-                          </div>
-                        );
-                      } else {
-                        return null;
-                      }
-                    })}
-                  </div>
-                )}
-              </div>
-            ))
-          : FullImage.slice(0, 3).map((item, index) => (
-              <Link key={item.id} to={`/projects/info/${item.id + 9}`}>
-                <div
-                  className={`grid-item`}
-                  onMouseEnter={() => showFullImage(index, index)}
-                  style={{
-                    height: '20rem',
-                    backgroundImage: `url(${item.image})`,
-                  }}>
-                  <div className="grid-item-content">
-                    <div className="grid-item-imageInfo">
-                      <p> 0{item.id + 1}</p>
-                      <p> {item.name}</p>
-                      <p> {item.square} м. кв.</p>
-                    </div>
-                  </div>
-                </div>
+                key={square}
+                className={`ourProjects-container__elements--square square-${index}`}></div>
+            ))}
+            {FullImage.map((item, index) => (
+              <Link
+                to={`/projects/info/${item.id + 9}`}
+                key={index}
+                className={`ourProjects-container__elements--staticImage staticImage-${index}`}
+                style={{ backgroundImage: `url(${item.image})` }}>
+                <p> 0{item.id + 1}</p>
+                <p> {item.name}</p>
+                <p> {item.square} м. кв.</p>
               </Link>
             ))}
+          </div>
+        ))}
       </div>
       <Link to="/projects" className="ourProjects-button">
         БІЛЬШЕ ПРОЄКТІВ <img loading="lazy" src={union} alt="" />

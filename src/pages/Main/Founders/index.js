@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './style.scss';
-import firstFamilyPhoto from './img/family1.png';
+import firstFamilyPhoto from './img/IMG_0871.JPG';
 import secondFamilyPhoto from './img/family2.png';
-import foundersIvan from './img/Ivan.png';
-import foundersDasha from './img/Daria.png';
+import foundersIvan from './img/IMG_0981.JPG';
+import foundersDasha from './img/IMG_0850.JPG';
 import ornament from './img/ornament.png';
 import tabletOr from './img/tabletOr.png';
 
@@ -118,7 +118,7 @@ function Carousel({ items, currentItem }) {
           className={`carousel-item ${item.id === currentItem.id ? 'active' : ''}`}
           key={item.id}>
           <div className="founders-container">
-            <img src={item.image} alt="img" />
+            <img src={item.image} alt="img" className="founders-container__photo" />
             <img src={ornament} alt="" className="founders-container--ornament" />
             <p className="founders-container--name">{item.name}</p>
             <h4 className="founders-container--title">{item.title}</h4>
