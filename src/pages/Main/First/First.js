@@ -1,15 +1,16 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '../../../img/white-logo.png';
 import './first.scss';
 import { projects } from '../../../data/projects';
 import MoreProject from '../../../components/MoreProject/MoreProject';
 import PhonePopUp from '../../../components/PhonePopUp';
-import bg1 from './img/bg.png';
-import bg2 from './img/bg2.png';
-import bg3 from './img/bg3.png';
-import bg4 from './img/bg4.png';
-import bg5 from './img/bg5.png';
+
+import bg1 from './img/Bg/bg.png';
+import bg2 from './img/Bg/bg2.png';
+import bg3 from './img/Bg/bg3.png';
+import bg4 from './img/Bg/bg4.png';
+import bg5 from './img/Bg/bg5.png';
 
 
 const First = () => {
@@ -39,9 +40,21 @@ const First = () => {
     }
   }, [backgroundImageUrls, backgroundLoaded]);
 
+  const handleDotClick = (index) => {
+    if (backgroundLoaded) {
+      setCurrentPhotoIndex(index);
+      resetTimer(); // Сбросить таймер при клике на точку
+    }
+  };
+
+  const resetTimer = useCallback(() => {
+    clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(goToNextPhoto, 10000);
+  }, [goToNextPhoto]);
+
   useEffect(() => {
-    const interval = setInterval(goToNextPhoto, 10000);
-    return () => clearInterval(interval);
+    intervalRef.current = setInterval(goToNextPhoto, 10000);
+    return () => clearInterval(intervalRef.current);
   }, [goToNextPhoto]);
 
   const [dotsVisible, setDotsVisible] = useState(false);
@@ -49,6 +62,8 @@ const First = () => {
   const toggleDotsVisibility = () => {
     setDotsVisible(!dotsVisible);
   };
+
+  const intervalRef = useRef(null);
 
   return (
     <section className="First" id="First" style={{ ...projectsWrapperStyle }}>
@@ -62,7 +77,8 @@ const First = () => {
             {backgroundImageUrls.map((_, index) => (
               <span
                 key={index}
-                className={`dotes ${index === currentPhotoIndex ? 'active' : ''}`}></span>
+                className={`dotes ${index === currentPhotoIndex ? 'active' : ''}`}
+                onClick={() => handleDotClick(index)}></span>
             ))}
           </div>
           {!location.pathname.includes('/projects') && (

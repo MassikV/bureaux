@@ -8,38 +8,33 @@ import image3 from './img/1991-BEAUTY2.png';
 import image4 from './img/GUNIA2.png';
 import logoImg from '../../../img/ornament.svg';
 
-const imageArrays = [
-  [
-    require('./img/UA_PROJECT.png'),
-    require('./img/METROPOLIS.png'),
-    require('./img/1991-BEAUTY.png'),
-    require('./img/GUNIA.png'),
-  ],
-];
-
 const FullImage = [
   {
     id: 0,
-    image: image1,
+    image: require('./img/UA_PROJECT.png'),
+    fullImage: image1,
     name: 'UA PROJECT',
     square: '80',
   },
   {
     id: 1,
-    image: image2,
+    image: require('./img/METROPOLIS.png'),
+    fullImage: image2,
     name: 'METROPOLIS',
     square: '95',
   },
   {
     id: 2,
-    image: image3,
+    image: require('./img/1991-BEAUTY.png'),
+    fullImage: image3,
     name: '1991 BEAUTY SALON',
     square: '80',
   },
   {
     id: 3,
+    image: require('./img/GUNIA.png'),
     name: 'GUNIA',
-    image: image4,
+    fullImage: image4,
     square: '250',
   },
 ];
@@ -51,6 +46,7 @@ const LOGO_WIDTHS = {
 const imageMap = {
   logo: logoImg,
 };
+
 function OurProjects() {
   const [windowWidth, setWindowWidth] = useState(0);
   const [maxLogosInRow, setMaxLogosInRow] = useState(0);
@@ -103,7 +99,6 @@ function OurProjects() {
 
   const logos = Array.from({ length: maxLogosInRow }).fill(imageMap.logo);
 
-
   return (
     <section className="ourProjects" id="Projects">
       <div className="ourProjects-header" ref={containerRef}>
@@ -151,16 +146,16 @@ function OurProjects() {
           className="ourProjects-svg">
           <style type="text/css">
             {`
-              #arrow { fill: #000; }
-              #curveLine {
-                fill: none;
-                stroke: #000;
-                stroke-width: 4;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                stroke-miterlimit: 10;
-              }
-            `}
+                #arrow { fill: #000; }
+                #curveLine {
+                  fill: none;
+                  stroke: #000;
+                  stroke-width: 4;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-miterlimit: 10;
+                }
+              `}
           </style>
 
           <defs>
@@ -190,10 +185,10 @@ function OurProjects() {
                 strokeDasharray="204"
                 strokeDashoffset="204"
                 d="M181.2,86.9c1.8-2,3.7-3.9,5.6-5.8c1.9-1.9,3.8-3.7,5.9-5.5c2-1.8,4.1-3.5,6.2-5.2c2.1-1.7,4.3-3.4,6.5-4.9
-                  l0.3,4.3c-2.3-0.7-4.5-1.5-6.8-2.4c-2.2-0.9-4.4-1.8-6.6-2.8c-2.2-1-4.3-2.2-6.3-3.5c-2-1.3-4-2.7-5.7-4.5c-0.5-0.5-0.5-1.4,0-1.9
-                  c0.3-0.3,0.8-0.4,1.2-0.4c2.4,0.5,4.7,1.2,6.9,2c2.2,0.8,4.4,1.7,6.5,2.7c2.1,1,4.2,2,6.3,3l6.3,3.1l0.3,0.2c1.1,0.6,1.6,2,1,3.1
-                  c-0.2,0.5-0.6,0.8-1.1,1.1c-2.3,1.1-4.6,2.3-6.9,3.6c-2.2,1.3-4.4,2.8-6.5,4.4c-2.1,1.6-4.1,3.3-5.9,5.1c-1.9,1.8-3.7,3.7-5.3,5.8
-                  c-0.4,0.6-1.2,0.7-1.8,0.2S180.6,87.6,181.2,86.9C181.1,87,181.1,87,181.2,86.9z">
+                    l0.3,4.3c-2.3-0.7-4.5-1.5-6.8-2.4c-2.2-0.9-4.4-1.8-6.6-2.8c-2.2-1-4.3-2.2-6.3-3.5c-2-1.3-4-2.7-5.7-4.5c-0.5-0.5-0.5-1.4,0-1.9
+                    c0.3-0.3,0.8-0.4,1.2-0.4c2.4,0.5,4.7,1.2,6.9,2c2.2,0.8,4.4,1.7,6.5,2.7c2.1,1,4.2,2,6.3,3l6.3,3.1l0.3,0.2c1.1,0.6,1.6,2,1,3.1
+                    c-0.2,0.5-0.6,0.8-1.1,1.1c-2.3,1.1-4.6,2.3-6.9,3.6c-2.2,1.3-4.4,2.8-6.5,4.4c-2.1,1.6-4.1,3.3-5.9,5.1c-1.9,1.8-3.7,3.7-5.3,5.8
+                    c-0.4,0.6-1.2,0.7-1.8,0.2S180.6,87.6,181.2,86.9C181.1,87,181.1,87,181.2,86.9z">
                 <animate
                   id="an2"
                   attributeName="stroke-dashoffset"
@@ -211,43 +206,36 @@ function OurProjects() {
           <path
             id="arrow"
             d="M181.2,86.9c1.8-2,3.7-3.9,5.6-5.8c1.9-1.9,3.8-3.7,5.9-5.5c2-1.8,4.1-3.5,6.2-5.2c2.1-1.7,4.3-3.4,6.5-4.9
-            l0.3,4.3c-2.3-0.7-4.5-1.5-6.8-2.4c-2.2-0.9-4.4-1.8-6.6-2.8c-2.2-1-4.3-2.2-6.3-3.5c-2-1.3-4-2.7-5.7-4.5c-0.5-0.5-0.5-1.4,0-1.9
-            c0.3-0.3-0.4,1.2-0.4,1.2c2.4,0.5,4.7,1.2,6.9,2c2.2,0.8,4.4,1.7,6.5,2.7c-2.1,1,4.2,2.0,6.3,3l6.3,3.1l0.3,0.2c1.1,0.6,1.6,2,1,3.1
-            c-0.2,0.5-0.6,0.8-1.1,1.1c-2.3,1.1-4.6,2.3-6.9,3.6c-2.2,1.3-4.4,2.8-6.5,4.4c-2.1,1.6-4.1,3.3-5.9,5.1c-1.9,1.8-3.7,3.7-5.3,5.8
-            c-0.4,0.6-1.2,0.7-1.8,0.2S180.6,87.6,181.2,86.9"
+              l0.3,4.3c-2.3-0.7-4.5-1.5-6.8-2.4c-2.2-0.9-4.4-1.8-6.6-2.8c-2.2-1-4.3-2.2-6.3-3.5c-2-1.3-4-2.7-5.7-4.5c-0.5-0.5-0.5-1.4,0-1.9
+              c0.3-0.3-0.4,1.2-0.4,1.2c2.4,0.5,4.7,1.2,6.9,2c2.2,0.8,4.4,1.7,6.5,2.7c-2.1,1,4.2,2.0,6.3,3l6.3,3.1l0.3,0.2c1.1,0.6,1.6,2,1,3.1
+              c-0.2,0.5-0.6,0.8-1.1,1.1c-2.3,1.1-4.6,2.3-6.9,3.6c-2.2,1.3-4.4,2.8-6.5,4.4c-2.1,1.6-4.1,3.3-5.9,5.1c-1.9,1.8-3.7,3.7-5.3,5.8
+              c-0.4,0.6-1.2,0.7-1.8,0.2S180.6,87.6,181.2,86.9"
             mask="url(#mask2)"
           />
         </svg>{' '}
       </div>
       <div className="ourProjects-container">
-        {imageArrays.map((imageArray, containerIndex) => (
-          <div key={containerIndex} className="ourProjects-container__elements">
-            {imageArray.map((image, index) => (
+        <div className="ourProjects-container__elements">
+          {FullImage.map((item, index) => (
+            <>
               <img
-                key={index}
-                src={image}
-                alt={`Image ${index}`}
+                src={item.image}
+                alt={` ${index}`}
                 className={`ourProjects-container__elements--image image-${index}`}
               />
-            ))}
-            {[1, 2, 3, 4].map((square, index) => (
-              <div
-                key={square}
-                className={`ourProjects-container__elements--square square-${index}`}></div>
-            ))}
-            {FullImage.map((item, index) => (
+
+              <div className={`ourProjects-container__elements--square square-${index}`}></div>
               <Link
                 to={`/projects/info/${item.id + 9}`}
-                key={index}
                 className={`ourProjects-container__elements--staticImage staticImage-${index}`}
-                style={{ backgroundImage: `url(${item.image})` }}>
+                style={{ backgroundImage: `url(${item.fullImage})` }}>
                 <p> 0{item.id + 1}</p>
                 <p> {item.name}</p>
                 <p> {item.square} м. кв.</p>
               </Link>
-            ))}
-          </div>
-        ))}
+            </>
+          ))}
+        </div>
       </div>
       <Link to="/projects" className="ourProjects-button">
         БІЛЬШЕ ПРОЄКТІВ <img loading="lazy" src={union} alt="" />
