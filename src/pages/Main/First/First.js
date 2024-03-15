@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from './img/logo.png';
 import './first.scss';
@@ -39,9 +39,21 @@ const First = () => {
     }
   }, [backgroundImageUrls, backgroundLoaded]);
 
+  const handleDotClick = (index) => {
+    if (backgroundLoaded) {
+      setCurrentPhotoIndex(index);
+      resetTimer(); // Сбросить таймер при клике на точку
+    }
+  };
+
+  const resetTimer = useCallback(() => {
+    clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(goToNextPhoto, 10000);
+  }, [goToNextPhoto]);
+
   useEffect(() => {
-    const interval = setInterval(goToNextPhoto, 10000);
-    return () => clearInterval(interval);
+    intervalRef.current = setInterval(goToNextPhoto, 10000);
+    return () => clearInterval(intervalRef.current);
   }, [goToNextPhoto]);
 
   const [dotsVisible, setDotsVisible] = useState(false);
@@ -49,6 +61,8 @@ const First = () => {
   const toggleDotsVisibility = () => {
     setDotsVisible(!dotsVisible);
   };
+
+  const intervalRef = useRef(null);
 
   return (
     <section className="First" id="First" style={{ ...projectsWrapperStyle }}>
@@ -62,7 +76,8 @@ const First = () => {
             {backgroundImageUrls.map((_, index) => (
               <span
                 key={index}
-                className={`dotes ${index === currentPhotoIndex ? 'active' : ''}`}></span>
+                className={`dotes ${index === currentPhotoIndex ? 'active' : ''}`}
+                onClick={() => handleDotClick(index)}></span>
             ))}
           </div>
           {!location.pathname.includes('/projects') && (
