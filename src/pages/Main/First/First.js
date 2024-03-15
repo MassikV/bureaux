@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import Logo from './img/logo.png';
+import Logo from '../../../img/white-logo.png';
 import './first.scss';
 import { projects } from '../../../data/projects';
 import MoreProject from '../../../components/MoreProject/MoreProject';
@@ -11,6 +11,7 @@ import bg2 from './img/Bg/bg2.png';
 import bg3 from './img/Bg/bg3.png';
 import bg4 from './img/Bg/bg4.png';
 import bg5 from './img/Bg/bg5.png';
+
 
 const First = () => {
   const location = useLocation();

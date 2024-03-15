@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './style.scss';
 import logoImg from './img/logo.svg';
-// import phonePhoto from './img/phonePhoto.png';
 import firstPhoto from './img/mainPhoto.JPG';
 import firstGridPhoto from './img/photo2.png';
 import secondGridPhoto from './img/photo1.png';
@@ -28,6 +27,7 @@ function AboutUs() {
     function handleResize() {
       const containerWidth = containerRef.current.getBoundingClientRect().width;
       const titleWidth = titleRef.current.getBoundingClientRect().width;
+
       let maxLogosInRow;
       let logoWidth;
 
@@ -234,4 +234,4 @@ function AboutUs() {
   );
 }
 
-export default React.memo(AboutUs);
+export default AboutUs;
